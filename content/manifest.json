@@ -1,0 +1,14 @@
+{
+  "sourceSha256": "91f6581cfe57d985881617bd7cba43da8bd8d8dee852e909d4b9d789fcf9e595",
+  "contentSha256": "970525e3ee224de22a5b464cf151814c11adcbca9acd9b3a554c798f814812e3",
+  "generatedAt": "2026-10-15T06:36:23.985Z",
+  "schemaVersion": 1,
+  "importVersion": 1,
+  "counts": {
+    "weeks": 91,
+    "blocks": 14,
+    "projects": 10,
+    "milestones": 11,
+    "boundedCore": 16
+  }
+}

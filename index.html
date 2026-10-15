@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+    <title>Learning OS</title>
+    <script>
+      (function () {
+        try {
+          var u = JSON.parse(localStorage.getItem("los.ui") || "{}");
+          var q = new URLSearchParams(location.search).get("theme");
+          var t = q || u.theme || "system";
+          if (q) {
+            u.theme = q;
+            localStorage.setItem("los.ui", JSON.stringify(u));
+          }
+          if (
+            t == "dark" ||
+            (t == "system" &&
+              matchMedia("(prefers-color-scheme: dark)").matches)
+          )
+            document.documentElement.classList.add("dark");
+        } catch (e) {}
+      })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/app/main.tsx"></script>
+  </body>
+</html>

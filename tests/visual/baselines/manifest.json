@@ -1,0 +1,379 @@
+{
+  "viewports": [
+    {
+      "name": "390",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "name": "768",
+      "width": 768,
+      "height": 1024
+    },
+    {
+      "name": "1440",
+      "width": 1440,
+      "height": 1000
+    }
+  ],
+  "themes": [
+    "light",
+    "dark"
+  ],
+  "routes": [
+    {
+      "id": "login",
+      "referenceHash": "#/login",
+      "appPath": "/login"
+    },
+    {
+      "id": "today",
+      "referenceHash": "#/today",
+      "appPath": "/today"
+    },
+    {
+      "id": "roadmap",
+      "referenceHash": "#/roadmap",
+      "appPath": "/roadmap"
+    },
+    {
+      "id": "week-9-overview",
+      "referenceHash": "#/week/9/overview",
+      "appPath": "/weeks/9/overview"
+    },
+    {
+      "id": "projects",
+      "referenceHash": "#/projects",
+      "appPath": "/projects"
+    },
+    {
+      "id": "projects-p01",
+      "referenceHash": "#/projects/P01",
+      "appPath": "/projects/P01"
+    },
+    {
+      "id": "library",
+      "referenceHash": "#/library",
+      "appPath": "/library"
+    },
+    {
+      "id": "studio",
+      "referenceHash": "#/studio",
+      "appPath": "/studio"
+    },
+    {
+      "id": "progress",
+      "referenceHash": "#/progress",
+      "appPath": "/progress"
+    },
+    {
+      "id": "settings",
+      "referenceHash": "#/settings",
+      "appPath": "/settings"
+    }
+  ],
+  "paths": [
+    {
+      "routeId": "login",
+      "reference": "tests/visual/baselines/reference/login/390-light.png",
+      "app": "tests/visual/baselines/app/login/390-light.png"
+    },
+    {
+      "routeId": "login",
+      "reference": "tests/visual/baselines/reference/login/390-dark.png",
+      "app": "tests/visual/baselines/app/login/390-dark.png"
+    },
+    {
+      "routeId": "login",
+      "reference": "tests/visual/baselines/reference/login/768-light.png",
+      "app": "tests/visual/baselines/app/login/768-light.png"
+    },
+    {
+      "routeId": "login",
+      "reference": "tests/visual/baselines/reference/login/768-dark.png",
+      "app": "tests/visual/baselines/app/login/768-dark.png"
+    },
+    {
+      "routeId": "login",
+      "reference": "tests/visual/baselines/reference/login/1440-light.png",
+      "app": "tests/visual/baselines/app/login/1440-light.png"
+    },
+    {
+      "routeId": "login",
+      "reference": "tests/visual/baselines/reference/login/1440-dark.png",
+      "app": "tests/visual/baselines/app/login/1440-dark.png"
+    },
+    {
+      "routeId": "today",
+      "reference": "tests/visual/baselines/reference/today/390-light.png",
+      "app": "tests/visual/baselines/app/today/390-light.png"
+    },
+    {
+      "routeId": "today",
+      "reference": "tests/visual/baselines/reference/today/390-dark.png",
+      "app": "tests/visual/baselines/app/today/390-dark.png"
+    },
+    {
+      "routeId": "today",
+      "reference": "tests/visual/baselines/reference/today/768-light.png",
+      "app": "tests/visual/baselines/app/today/768-light.png"
+    },
+    {
+      "routeId": "today",
+      "reference": "tests/visual/baselines/reference/today/768-dark.png",
+      "app": "tests/visual/baselines/app/today/768-dark.png"
+    },
+    {
+      "routeId": "today",
+      "reference": "tests/visual/baselines/reference/today/1440-light.png",
+      "app": "tests/visual/baselines/app/today/1440-light.png"
+    },
+    {
+      "routeId": "today",
+      "reference": "tests/visual/baselines/reference/today/1440-dark.png",
+      "app": "tests/visual/baselines/app/today/1440-dark.png"
+    },
+    {
+      "routeId": "roadmap",
+      "reference": "tests/visual/baselines/reference/roadmap/390-light.png",
+      "app": "tests/visual/baselines/app/roadmap/390-light.png"
+    },
+    {
+      "routeId": "roadmap",
+      "reference": "tests/visual/baselines/reference/roadmap/390-dark.png",
+      "app": "tests/visual/baselines/app/roadmap/390-dark.png"
+    },
+    {
+      "routeId": "roadmap",
+      "reference": "tests/visual/baselines/reference/roadmap/768-light.png",
+      "app": "tests/visual/baselines/app/roadmap/768-light.png"
+    },
+    {
+      "routeId": "roadmap",
+      "reference": "tests/visual/baselines/reference/roadmap/768-dark.png",
+      "app": "tests/visual/baselines/app/roadmap/768-dark.png"
+    },
+    {
+      "routeId": "roadmap",
+      "reference": "tests/visual/baselines/reference/roadmap/1440-light.png",
+      "app": "tests/visual/baselines/app/roadmap/1440-light.png"
+    },
+    {
+      "routeId": "roadmap",
+      "reference": "tests/visual/baselines/reference/roadmap/1440-dark.png",
+      "app": "tests/visual/baselines/app/roadmap/1440-dark.png"
+    },
+    {
+      "routeId": "week-9-overview",
+      "reference": "tests/visual/baselines/reference/week-9-overview/390-light.png",
+      "app": "tests/visual/baselines/app/week-9-overview/390-light.png"
+    },
+    {
+      "routeId": "week-9-overview",
+      "reference": "tests/visual/baselines/reference/week-9-overview/390-dark.png",
+      "app": "tests/visual/baselines/app/week-9-overview/390-dark.png"
+    },
+    {
+      "routeId": "week-9-overview",
+      "reference": "tests/visual/baselines/reference/week-9-overview/768-light.png",
+      "app": "tests/visual/baselines/app/week-9-overview/768-light.png"
+    },
+    {
+      "routeId": "week-9-overview",
+      "reference": "tests/visual/baselines/reference/week-9-overview/768-dark.png",
+      "app": "tests/visual/baselines/app/week-9-overview/768-dark.png"
+    },
+    {
+      "routeId": "week-9-overview",
+      "reference": "tests/visual/baselines/reference/week-9-overview/1440-light.png",
+      "app": "tests/visual/baselines/app/week-9-overview/1440-light.png"
+    },
+    {
+      "routeId": "week-9-overview",
+      "reference": "tests/visual/baselines/reference/week-9-overview/1440-dark.png",
+      "app": "tests/visual/baselines/app/week-9-overview/1440-dark.png"
+    },
+    {
+      "routeId": "projects",
+      "reference": "tests/visual/baselines/reference/projects/390-light.png",
+      "app": "tests/visual/baselines/app/projects/390-light.png"
+    },
+    {
+      "routeId": "projects",
+      "reference": "tests/visual/baselines/reference/projects/390-dark.png",
+      "app": "tests/visual/baselines/app/projects/390-dark.png"
+    },
+    {
+      "routeId": "projects",
+      "reference": "tests/visual/baselines/reference/projects/768-light.png",
+      "app": "tests/visual/baselines/app/projects/768-light.png"
+    },
+    {
+      "routeId": "projects",
+      "reference": "tests/visual/baselines/reference/projects/768-dark.png",
+      "app": "tests/visual/baselines/app/projects/768-dark.png"
+    },
+    {
+      "routeId": "projects",
+      "reference": "tests/visual/baselines/reference/projects/1440-light.png",
+      "app": "tests/visual/baselines/app/projects/1440-light.png"
+    },
+    {
+      "routeId": "projects",
+      "reference": "tests/visual/baselines/reference/projects/1440-dark.png",
+      "app": "tests/visual/baselines/app/projects/1440-dark.png"
+    },
+    {
+      "routeId": "projects-p01",
+      "reference": "tests/visual/baselines/reference/projects-p01/390-light.png",
+      "app": "tests/visual/baselines/app/projects-p01/390-light.png"
+    },
+    {
+      "routeId": "projects-p01",
+      "reference": "tests/visual/baselines/reference/projects-p01/390-dark.png",
+      "app": "tests/visual/baselines/app/projects-p01/390-dark.png"
+    },
+    {
+      "routeId": "projects-p01",
+      "reference": "tests/visual/baselines/reference/projects-p01/768-light.png",
+      "app": "tests/visual/baselines/app/projects-p01/768-light.png"
+    },
+    {
+      "routeId": "projects-p01",
+      "reference": "tests/visual/baselines/reference/projects-p01/768-dark.png",
+      "app": "tests/visual/baselines/app/projects-p01/768-dark.png"
+    },
+    {
+      "routeId": "projects-p01",
+      "reference": "tests/visual/baselines/reference/projects-p01/1440-light.png",
+      "app": "tests/visual/baselines/app/projects-p01/1440-light.png"
+    },
+    {
+      "routeId": "projects-p01",
+      "reference": "tests/visual/baselines/reference/projects-p01/1440-dark.png",
+      "app": "tests/visual/baselines/app/projects-p01/1440-dark.png"
+    },
+    {
+      "routeId": "library",
+      "reference": "tests/visual/baselines/reference/library/390-light.png",
+      "app": "tests/visual/baselines/app/library/390-light.png"
+    },
+    {
+      "routeId": "library",
+      "reference": "tests/visual/baselines/reference/library/390-dark.png",
+      "app": "tests/visual/baselines/app/library/390-dark.png"
+    },
+    {
+      "routeId": "library",
+      "reference": "tests/visual/baselines/reference/library/768-light.png",
+      "app": "tests/visual/baselines/app/library/768-light.png"
+    },
+    {
+      "routeId": "library",
+      "reference": "tests/visual/baselines/reference/library/768-dark.png",
+      "app": "tests/visual/baselines/app/library/768-dark.png"
+    },
+    {
+      "routeId": "library",
+      "reference": "tests/visual/baselines/reference/library/1440-light.png",
+      "app": "tests/visual/baselines/app/library/1440-light.png"
+    },
+    {
+      "routeId": "library",
+      "reference": "tests/visual/baselines/reference/library/1440-dark.png",
+      "app": "tests/visual/baselines/app/library/1440-dark.png"
+    },
+    {
+      "routeId": "studio",
+      "reference": "tests/visual/baselines/reference/studio/390-light.png",
+      "app": "tests/visual/baselines/app/studio/390-light.png"
+    },
+    {
+      "routeId": "studio",
+      "reference": "tests/visual/baselines/reference/studio/390-dark.png",
+      "app": "tests/visual/baselines/app/studio/390-dark.png"
+    },
+    {
+      "routeId": "studio",
+      "reference": "tests/visual/baselines/reference/studio/768-light.png",
+      "app": "tests/visual/baselines/app/studio/768-light.png"
+    },
+    {
+      "routeId": "studio",
+      "reference": "tests/visual/baselines/reference/studio/768-dark.png",
+      "app": "tests/visual/baselines/app/studio/768-dark.png"
+    },
+    {
+      "routeId": "studio",
+      "reference": "tests/visual/baselines/reference/studio/1440-light.png",
+      "app": "tests/visual/baselines/app/studio/1440-light.png"
+    },
+    {
+      "routeId": "studio",
+      "reference": "tests/visual/baselines/reference/studio/1440-dark.png",
+      "app": "tests/visual/baselines/app/studio/1440-dark.png"
+    },
+    {
+      "routeId": "progress",
+      "reference": "tests/visual/baselines/reference/progress/390-light.png",
+      "app": "tests/visual/baselines/app/progress/390-light.png"
+    },
+    {
+      "routeId": "progress",
+      "reference": "tests/visual/baselines/reference/progress/390-dark.png",
+      "app": "tests/visual/baselines/app/progress/390-dark.png"
+    },
+    {
+      "routeId": "progress",
+      "reference": "tests/visual/baselines/reference/progress/768-light.png",
+      "app": "tests/visual/baselines/app/progress/768-light.png"
+    },
+    {
+      "routeId": "progress",
+      "reference": "tests/visual/baselines/reference/progress/768-dark.png",
+      "app": "tests/visual/baselines/app/progress/768-dark.png"
+    },
+    {
+      "routeId": "progress",
+      "reference": "tests/visual/baselines/reference/progress/1440-light.png",
+      "app": "tests/visual/baselines/app/progress/1440-light.png"
+    },
+    {
+      "routeId": "progress",
+      "reference": "tests/visual/baselines/reference/progress/1440-dark.png",
+      "app": "tests/visual/baselines/app/progress/1440-dark.png"
+    },
+    {
+      "routeId": "settings",
+      "reference": "tests/visual/baselines/reference/settings/390-light.png",
+      "app": "tests/visual/baselines/app/settings/390-light.png"
+    },
+    {
+      "routeId": "settings",
+      "reference": "tests/visual/baselines/reference/settings/390-dark.png",
+      "app": "tests/visual/baselines/app/settings/390-dark.png"
+    },
+    {
+      "routeId": "settings",
+      "reference": "tests/visual/baselines/reference/settings/768-light.png",
+      "app": "tests/visual/baselines/app/settings/768-light.png"
+    },
+    {
+      "routeId": "settings",
+      "reference": "tests/visual/baselines/reference/settings/768-dark.png",
+      "app": "tests/visual/baselines/app/settings/768-dark.png"
+    },
+    {
+      "routeId": "settings",
+      "reference": "tests/visual/baselines/reference/settings/1440-light.png",
+      "app": "tests/visual/baselines/app/settings/1440-light.png"
+    },
+    {
+      "routeId": "settings",
+      "reference": "tests/visual/baselines/reference/settings/1440-dark.png",
+      "app": "tests/visual/baselines/app/settings/1440-dark.png"
+    }
+  ],
+  "captureStatus": "NOT_CAPTURED",
+  "note": "Set RUN_VISUAL_CAPTURE=1 to write PNGs. Do not mark visual parity DONE until captures are inspected."
+}
