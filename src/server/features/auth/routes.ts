@@ -27,7 +27,7 @@ authRoutes.get("/google/start", async (c) => {
   setFlowCookie(c, state);
   const url = new URL("https://accounts.google.com/o/oauth2/v2/auth");
   for (const [key, value] of Object.entries({
-    client_id: c.env.GOOGLE_CLIENT_ID, redirect_uri: redirectUri(c.env.APP_ORIGIN),
+    client_id: c.env.GOOGLE_CLIENT_ID, redirect_uri: redirectUri(c.env.APP_ORIGIN || new URL(c.req.url).origin),
     response_type: "code", scope: "openid email profile", state, nonce,
     code_challenge: await sha256(verifier), code_challenge_method: "S256",
   })) url.searchParams.set(key, value);

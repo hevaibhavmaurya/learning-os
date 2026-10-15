@@ -23,8 +23,19 @@ export async function sha256(value: string): Promise<string> {
   return base64url(new Uint8Array(await crypto.subtle.digest("SHA-256", new TextEncoder().encode(value))));
 }
 
+export function getAppOrigin(c: Context<AppEnv>): string {
+  const configured = c.env.APP_ORIGIN?.trim();
+  if (configured) return configured.replace(/\/$/, "");
+  try {
+    return new URL(c.req.url).origin;
+  } catch {
+    return "http://localhost";
+  }
+}
+
 export function redirectUri(origin: string): string {
-  return new URL(CALLBACK_PATH, `${origin.replace(/\/$/, "")}/`).toString();
+  const base = origin || "http://localhost";
+  return new URL(CALLBACK_PATH, `${base.replace(/\/$/, "")}/`).toString();
 }
 
 export function flowCookie(c: Context<AppEnv>): string | undefined {
@@ -32,9 +43,13 @@ export function flowCookie(c: Context<AppEnv>): string | undefined {
 }
 
 export function setFlowCookie(c: Context<AppEnv>, state: string): void {
+  const origin = getAppOrigin(c);
   setCookie(c, FLOW_COOKIE, state, {
-    httpOnly: true, secure: c.env.APP_ORIGIN.startsWith("https://"),
-    sameSite: "Lax", path: CALLBACK_PATH, maxAge: 600,
+    httpOnly: true,
+    secure: origin.startsWith("https://"),
+    sameSite: "Lax",
+    path: CALLBACK_PATH,
+    maxAge: 600,
   });
 }
 
@@ -46,50 +61,84 @@ export async function exchangeAndVerify(c: Context<AppEnv>, code: string, verifi
   email: string; subject: string; name: string | null;
 }> {
   const env = c.env;
+  const origin = getAppOrigin(c);
   let tokenResponse: Response;
   try {
     tokenResponse = await fetch("https://oauth2.googleapis.com/token", {
-      method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      method: "POST",
+      headers: { "content-type": "application/x-www-form-urlencoded" },
       body: new URLSearchParams({
-        code, client_id: env.GOOGLE_CLIENT_ID, client_secret: env.GOOGLE_CLIENT_SECRET,
-        redirect_uri: redirectUri(env.APP_ORIGIN), grant_type: "authorization_code", code_verifier: verifier,
+        client_id: env.GOOGLE_CLIENT_ID,
+        client_secret: env.GOOGLE_CLIENT_SECRET,
+        code,
+        grant_type: "authorization_code",
+        redirect_uri: redirectUri(origin),
+        code_verifier: verifier,
       }),
     });
-  } catch {
-    throw new AppError("google_unavailable", "Google sign-in is temporarily unavailable", 502);
+  } catch (error) {
+    throw new AppError("google_network_error", `Google token request failed: ${String(error)}`, 502);
   }
-  if (!tokenResponse.ok) throw new AppError("google_code_invalid", "Google sign-in expired. Please try again", 401);
-  const body = await tokenResponse.json() as { id_token?: unknown };
-  if (typeof body.id_token !== "string") throw new AppError("google_token_invalid", "Google sign-in could not be verified", 401);
-  return verifyGoogleIdToken(body.id_token, env.GOOGLE_CLIENT_ID, nonce);
+
+  if (!tokenResponse.ok) {
+    throw new AppError("google_exchange_failed", `Google rejected OAuth code (${tokenResponse.status})`, 401);
+  }
+
+  const payload = (await tokenResponse.json()) as { id_token?: string };
+  if (!payload.id_token) throw new AppError("google_exchange_failed", "Google response did not contain an id_token", 401);
+
+  return verifyIdToken(payload.id_token, env.GOOGLE_CLIENT_ID, nonce);
 }
 
-export async function verifyGoogleIdToken(token: string, clientId: string, nonce: string): Promise<{
+export async function verifyIdToken(idToken: string, expectedAudience: string, expectedNonce?: string): Promise<{
   email: string; subject: string; name: string | null;
 }> {
-  try {
-    const parts = token.split(".");
-    if (parts.length !== 3 || parts.some((part) => part.length > 8192)) throw new Error("Invalid JWT");
-    const [encodedHeader, encodedPayload, encodedSignature] = parts as [string, string, string];
-    const header = JSON.parse(new TextDecoder().decode(decodeBase64url(encodedHeader))) as { alg?: string; kid?: string };
-    if (header.alg !== "RS256" || !header.kid) throw new Error("Invalid algorithm");
-    const response = await fetch("https://www.googleapis.com/oauth2/v3/certs");
-    if (!response.ok) throw new Error("Google keys unavailable");
-    const { keys } = await response.json() as { keys: Array<JsonWebKey & { kid?: string }> };
-    const jwk = keys.find((key) => key.kid === header.kid && key.kty === "RSA");
-    if (!jwk) throw new Error("Unknown key");
-    const key = await crypto.subtle.importKey("jwk", jwk, { name: "RSASSA-PKCS1-v1_5", hash: "SHA-256" }, false, ["verify"]);
-    const valid = await crypto.subtle.verify("RSASSA-PKCS1-v1_5", key, decodeBase64url(encodedSignature), new TextEncoder().encode(`${encodedHeader}.${encodedPayload}`));
-    if (!valid) throw new Error("Invalid signature");
-    const claims = JSON.parse(new TextDecoder().decode(decodeBase64url(encodedPayload))) as Record<string, unknown>;
-    const now = Math.floor(Date.now() / 1000);
-    if (!(["https://accounts.google.com", "accounts.google.com"].includes(String(claims.iss))) ||
-      claims.aud !== clientId || typeof claims.exp !== "number" || claims.exp <= now ||
-      typeof claims.iat !== "number" || claims.iat > now + 60 || claims.nonce !== nonce ||
-      claims.email_verified !== true || typeof claims.email !== "string" ||
-      typeof claims.sub !== "string" || !claims.sub) throw new Error("Invalid claims");
-    return { email: claims.email, subject: claims.sub, name: typeof claims.name === "string" ? claims.name : null };
-  } catch {
-    throw new AppError("google_token_invalid", "Google sign-in could not be verified", 401);
+  const parts = idToken.split(".");
+  if (parts.length !== 3) throw new AppError("google_invalid_token", "Malformed ID token", 401);
+  const [headerJson, claimsJson, signatureBytes] = [
+    new TextDecoder().decode(decodeBase64url(parts[0])),
+    new TextDecoder().decode(decodeBase64url(parts[1])),
+    decodeBase64url(parts[2]),
+  ];
+  const header = JSON.parse(headerJson) as { alg?: string; kid?: string };
+  const claims = JSON.parse(claimsJson) as {
+    iss?: string; aud?: string | string[]; exp?: number;
+    email?: string; email_verified?: boolean; sub?: string; nonce?: string; name?: string;
+  };
+  if (header.alg !== "RS256" || !header.kid) {
+    throw new AppError("google_invalid_token", "Unsupported Google signing algorithm", 401);
   }
+  const audMatches = Array.isArray(claims.aud) ? claims.aud.includes(expectedAudience) : claims.aud === expectedAudience;
+  if (!audMatches) throw new AppError("google_invalid_token", "Google token could not be verified (audience mismatch)", 401);
+  if (!["https://accounts.google.com", "accounts.google.com"].includes(claims.iss ?? "")) {
+    throw new AppError("google_invalid_token", "Google token could not be verified (issuer mismatch)", 401);
+  }
+  const now = Math.floor(Date.now() / 1000);
+  if (!claims.exp || claims.exp < now - 60) throw new AppError("google_invalid_token", "Google token could not be verified (expired)", 401);
+  if (expectedNonce && claims.nonce !== expectedNonce) throw new AppError("google_invalid_token", "Google token could not be verified (nonce mismatch)", 401);
+  if (!claims.email || claims.email_verified !== true) {
+    throw new AppError("google_unverified_email", "Google token could not be verified (email unverified)", 403);
+  }
+  if (!claims.sub) throw new AppError("google_invalid_token", "Missing Google account subject", 401);
+
+  const jwksResponse = await fetch("https://www.googleapis.com/oauth2/v3/certs");
+  if (!jwksResponse.ok) throw new AppError("google_network_error", "Failed to retrieve Google public keys", 502);
+  const jwks = (await jwksResponse.json()) as { keys?: Array<{ kid: string; n: string; e: string; kty: string }> };
+  const key = jwks.keys?.find((k) => k.kid === header.kid);
+  if (!key) throw new AppError("google_invalid_token", "Matching Google public key not found", 401);
+
+  const cryptoKey = await crypto.subtle.importKey(
+    "jwk",
+    { kty: key.kty, n: key.n, e: key.e, alg: "RS256", ext: true },
+    { name: "RSASSA-PKCS1-v1_5", hash: "SHA-256" },
+    false,
+    ["verify"],
+  );
+  const signedData = new TextEncoder().encode(`${parts[0]}.${parts[1]}`);
+  const verified = await crypto.subtle.verify("RSASSA-PKCS1-v1_5", cryptoKey, signatureBytes, signedData);
+  if (!verified) throw new AppError("google_invalid_token", "Signature check failed", 401);
+
+  return { email: claims.email.toLowerCase(), subject: claims.sub, name: claims.name ?? null };
 }
+
+export const verifyGoogleIdToken = verifyIdToken;
