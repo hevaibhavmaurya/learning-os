@@ -15,7 +15,7 @@
       "binding": "DB",
       "database_name": "learning-os",
       // Replace with your real Cloudflare D1 database UUID after creating it:
-      "database_id": "00000000-0000-0000-0000-000000000001",
+      "database_id": "5b08dc50-f92b-4e50-a3ad-e322a640a4dd",
       "migrations_dir": "src/server/db/migrations"
     }
   ],
