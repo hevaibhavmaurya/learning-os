@@ -1,6 +1,6 @@
 # Architecture audit
 
-Generated: 2026-10-15T20:25:34.867Z
+Generated: 2026-10-15T21:07:45.298Z
 
 Confirms IMPLEMENTATION_PLAN §3 invariants:
 

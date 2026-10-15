@@ -21,8 +21,8 @@
     "audit:architecture": "tsx scripts/architecture-audit.ts",
     "content:build": "tsx scripts/content-build.ts",
     "content:check": "tsx scripts/content-check.ts",
-    "cf-typegen": "wrangler types --config wrangler.dev.jsonc",
-    "db:migrate:local": "wrangler d1 migrations apply learning-os --local --config wrangler.dev.jsonc",
+    "cf-typegen": "wrangler types --config wrangler.jsonc",
+    "db:migrate:local": "wrangler d1 migrations apply learning-os --local --config wrangler.jsonc",
     "deploy": "node scripts/deploy.mjs",
     "check": "pnpm content:check && pnpm typecheck && pnpm lint && pnpm test:unit && pnpm audit:architecture && pnpm build"
   },

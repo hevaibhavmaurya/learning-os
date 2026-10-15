@@ -15,7 +15,30 @@ export default defineConfig({
     react(),
     tailwindcss(),
     cloudflare({
-      configPath: process.env.LOS_WRANGLER_CONFIG ?? "./wrangler.dev.jsonc",
+      configPath: process.env.LOS_WRANGLER_CONFIG ?? "./wrangler.jsonc",
+      config: (config) => {
+        if (process.env.LOS_E2E_PERSIST_PATH) {
+          return {
+            vars: {
+              ...config.vars,
+              OWNER_EMAIL: "vaibhav@example.com",
+              APP_ORIGIN: "http://127.0.0.1:43124",
+              SESSION_PEPPER: "e2e-session-pepper",
+              ENVIRONMENT: "development",
+              E2E_AUTH_FIXTURE: "true",
+            },
+          };
+        }
+        return {
+          vars: {
+            ...config.vars,
+            OWNER_EMAIL: "vaibhav@example.com",
+            APP_ORIGIN: "http://127.0.0.1:43123",
+            SESSION_PEPPER: "local-dev-session-pepper-change-me",
+            ENVIRONMENT: "development",
+          },
+        };
+      },
       persistState: process.env.LOS_E2E_PERSIST_PATH
         ? { path: process.env.LOS_E2E_PERSIST_PATH }
         : true,

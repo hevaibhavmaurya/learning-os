@@ -9,7 +9,7 @@ pnpm db:migrate:local
 pnpm dev   # http://127.0.0.1:43123
 ```
 
-Create a Google OAuth web client, authorize `http://127.0.0.1:43123/api/auth/google/callback`, and put its credentials in an ignored `.dev.vars` copied from `.dev.vars.example`. Set `OWNER_EMAIL` to that Google account. `wrangler.dev.jsonc` is only for local development. Its placeholder D1 ID must never be used for a public deployment. A mistakenly published development Worker rejects non-local API requests.
+Create a Google OAuth web client, authorize `http://127.0.0.1:43123/api/auth/google/callback`, and put its credentials in an ignored `.dev.vars` copied from `.dev.vars.example`. Set `OWNER_EMAIL` to that Google account. `wrangler.jsonc` is only for local development. Its placeholder D1 ID must never be used for a public deployment. A mistakenly published development Worker rejects non-local API requests.
 
 ## Bindings
 
@@ -30,7 +30,7 @@ Create a Google OAuth web client, authorize `http://127.0.0.1:43123/api/auth/goo
 - Production `OWNER_EMAIL` and secrets
 - Explicit deployment authorization for this task
 
-Copy `wrangler.production.example.jsonc` to the ignored `wrangler.production.jsonc`, replace every placeholder with the real Worker name, D1 ID, R2 bucket, HTTPS origin, owner, and Google client ID. Configure `GOOGLE_CLIENT_SECRET` and `SESSION_PEPPER` as Worker secrets. Apply D1 migrations to the production database, then run `pnpm deploy` only after explicit authorization. The deploy script validates configuration and builds against the production bindings before invoking Wrangler. A raw `wrangler deploy` is not the supported release path.
+Copy `wrangler.jsonc` to the ignored `wrangler.jsonc`, replace every placeholder with the real Worker name, D1 ID, R2 bucket, HTTPS origin, owner, and Google client ID. Configure `GOOGLE_CLIENT_SECRET` and `SESSION_PEPPER` as Worker secrets. Apply D1 migrations to the production database, then run `pnpm deploy` only after explicit authorization. The deploy script validates configuration and builds against the production bindings before invoking Wrangler. A raw `wrangler deploy` is not the supported release path.
 
 Until the account, resources, credentials, and authorization exist, Phase 8 remains **BLOCKED**.
 

@@ -12,7 +12,7 @@ function cleanup() {
 }
 
 const migrations = spawnSync(executable("wrangler"), [
-  "d1", "migrations", "apply", "learning-os", "--local", "--config", "wrangler.e2e.jsonc", "--persist-to", statePath,
+  "d1", "migrations", "apply", "learning-os", "--local", "--config", "wrangler.jsonc", "--persist-to", statePath,
 ], { cwd: root, stdio: "inherit", env: { ...process.env, CI: "true" } });
 
 if (migrations.status !== 0) {
@@ -24,7 +24,7 @@ if (migrations.status !== 0) {
 const server = spawn(executable("vite"), ["--port", "43124", "--strictPort"], {
   cwd: root,
   stdio: "inherit",
-  env: { ...process.env, LOS_E2E_PERSIST_PATH: statePath, LOS_WRANGLER_CONFIG: "./wrangler.e2e.jsonc" },
+  env: { ...process.env, LOS_E2E_PERSIST_PATH: statePath, LOS_WRANGLER_CONFIG: "./wrangler.jsonc" },
 });
 
 let stopping = false;

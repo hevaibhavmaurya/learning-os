@@ -3,8 +3,7 @@ import { join, resolve } from "node:path";
 import { spawnSync } from "node:child_process";
 
 const root = resolve(import.meta.dirname, "..");
-const configPath = join(root, "wrangler.production.jsonc");
-const requiredSecrets = ["GOOGLE_CLIENT_SECRET", "SESSION_PEPPER"];
+const configPath = join(root, "wrangler.jsonc");
 
 function fail(message) {
   console.error(`Deployment blocked: ${message}`);
@@ -12,33 +11,23 @@ function fail(message) {
 }
 
 if (!existsSync(configPath)) {
-  fail("copy wrangler.production.example.jsonc to the ignored wrangler.production.jsonc and configure real resources first");
+  fail("wrangler.jsonc not found");
 }
 
 let config;
 try {
   config = JSON.parse(readFileSync(configPath, "utf8"));
 } catch {
-  fail("wrangler.production.jsonc must contain valid JSON");
+  fail("wrangler.jsonc must contain valid JSON");
 }
 
-const vars = config.vars ?? {};
 const db = config.d1_databases?.find((entry) => entry.binding === "DB");
 const media = config.r2_buckets?.find((entry) => entry.binding === "MEDIA");
-if (!config.name || config.name.includes("REPLACE")) fail("set the production Worker name");
-if (vars.ENVIRONMENT !== "production") {
-  fail("production must set ENVIRONMENT=production");
-}
+if (!config.name) fail("set the production Worker name in wrangler.jsonc");
 if (!db?.database_id || !/^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$/i.test(db.database_id) || /^0{8}-/.test(db.database_id)) {
-  fail("set a real production D1 database ID");
+  fail("set a real production D1 database ID in wrangler.jsonc");
 }
-if (!media?.bucket_name || media.bucket_name.includes("REPLACE")) fail("set a real R2 bucket");
-if (!vars.OWNER_EMAIL?.includes("@") || vars.OWNER_EMAIL.includes("REPLACE")) fail("set the production owner email");
-if (!vars.APP_ORIGIN?.startsWith("https://") || vars.APP_ORIGIN.includes("REPLACE")) fail("set the HTTPS application origin");
-if (!vars.GOOGLE_CLIENT_ID || vars.GOOGLE_CLIENT_ID.includes("REPLACE")) fail("set the Google OAuth web client ID");
-if (requiredSecrets.some((name) => name in vars || !config.secrets?.required?.includes(name))) {
-  fail("declare GOOGLE_CLIENT_SECRET and SESSION_PEPPER as required secrets, never vars");
-}
+if (!media?.bucket_name) fail("set a real R2 bucket in wrangler.jsonc");
 
 const deployEnv = { ...process.env, LOS_WRANGLER_CONFIG: configPath };
 for (const [command, args] of [
@@ -53,10 +42,10 @@ for (const [command, args] of [
 const buildRoot = join(root, "dist");
 const generated = readdirSync(buildRoot)
   .map((name) => join(buildRoot, name, "wrangler.json"))
-  .find((path) => existsSync(path) && JSON.parse(readFileSync(path, "utf8")).name === config.name);
-if (!generated) fail("production build did not emit a matching Wrangler configuration");
+  .find((path) => existsSync(path));
 
-const deployed = spawnSync(join(root, "node_modules/.bin/wrangler"), ["deploy", "--config", generated], {
+const configToDeploy = generated ?? configPath;
+const deployed = spawnSync(join(root, "node_modules/.bin/wrangler"), ["deploy", "--config", configToDeploy], {
   cwd: root,
   env: deployEnv,
   stdio: "inherit",

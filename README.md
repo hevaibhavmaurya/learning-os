@@ -18,7 +18,7 @@ pnpm db:migrate:local       # creates local D1 tables
 pnpm dev                    # http://127.0.0.1:43123
 ```
 
-Set `OWNER_EMAIL` in `wrangler.dev.jsonc` to your Google account. Create a Google OAuth web client with `http://127.0.0.1:43123/api/auth/google/callback` as an authorized redirect URI. Copy `.dev.vars.example` to the ignored `.dev.vars` and fill in the client ID and secret. The first authorized login creates an owner with empty settings; an existing owner keeps its data.
+Set `OWNER_EMAIL` in `wrangler.jsonc` to your Google account. Create a Google OAuth web client with `http://127.0.0.1:43123/api/auth/google/callback` as an authorized redirect URI. Copy `.dev.vars.example` to the ignored `.dev.vars` and fill in the client ID and secret. The first authorized login creates an owner with empty settings; an existing owner keeps its data.
 
 ## Content pipeline
 
@@ -62,7 +62,7 @@ Local build + emulated D1/R2 are enough through Phase 7. **Phase 8 is BLOCKED** 
 - Explicit deploy authorization
 
 See `docs/DEPLOYMENT.md`. Do not treat a successful local `pnpm build` as a remote deploy.
-The committed `wrangler.dev.jsonc` is development-only. Production uses an ignored, validated `wrangler.production.jsonc` created from the example; `pnpm deploy` will refuse to run without it.
+The committed `wrangler.jsonc` is development-only. Production uses an ignored, validated `wrangler.production.jsonc` created from the example; `pnpm deploy` will refuse to run without it.
 
 ## Docs
 

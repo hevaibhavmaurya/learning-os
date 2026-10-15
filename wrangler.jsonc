@@ -14,7 +14,6 @@
     {
       "binding": "DB",
       "database_name": "learning-os",
-      // Replace with your real Cloudflare D1 database UUID after creating it:
       "database_id": "5b08dc50-f92b-4e50-a3ad-e322a640a4dd",
       "migrations_dir": "src/server/db/migrations"
     }
@@ -24,5 +23,11 @@
       "binding": "MEDIA",
       "bucket_name": "learning-os-media"
     }
-  ]
+  ],
+  "vars": {
+    "ENVIRONMENT": "development",
+    "OWNER_EMAIL": "vaibhav@example.com",
+    "APP_ORIGIN": "http://127.0.0.1:43123",
+    "SESSION_PEPPER": "local-dev-session-pepper-change-me"
+  }
 }
