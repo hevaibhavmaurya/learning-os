@@ -17,6 +17,7 @@ import { ApiRequestError } from "@/shared/lib/api";
 import { GateChart } from "../components/GateChart";
 import { JourneyChart } from "../components/JourneyChart";
 import { useProgressQuery } from "../queries";
+import { TOTAL_WEEKS } from "@/shared/domain/curriculum-shape";
 
 function Stat({
   label,
@@ -151,10 +152,10 @@ export function ProgressScreen() {
           value={
             <>
               {v}
-              <span className="text-base muted font-normal"> / 91</span>
+              <span className="text-base muted font-normal"> / {TOTAL_WEEKS}</span>
             </>
           }
-          sub={`${Math.round((v / 91) * 100)}% of the journey`}
+          sub={`${Math.round((v / TOTAL_WEEKS) * 100)}% of the journey`}
         />
         <Stat
           label="Now"

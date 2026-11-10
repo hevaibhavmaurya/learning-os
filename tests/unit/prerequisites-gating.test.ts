@@ -21,52 +21,52 @@ const passed = (id: PrerequisiteState["prerequisiteId"]): PrerequisiteState => (
   confirmedAt: "2026-01-01T00:00:00.000Z",
 });
 
-describe("python gating W24/W25", () => {
-  it("blocks W24 verify without python checkpoint", () => {
-    const blockers = prerequisiteBlockersForWeek(24, []);
+describe("python gating W19/W20", () => {
+  it("blocks W19 verify without python checkpoint", () => {
+    const blockers = prerequisiteBlockersForWeek(19, []);
     expect(blockers.some((b) => b.prerequisiteId === "python_w24")).toBe(true);
   });
 
-  it("keeps W25 locked until python passes", () => {
+  it("keeps W20 locked until python passes", () => {
     expect(pythonUnlocksWeek25([])).toBe(false);
     expect(pythonUnlocksWeek25([passed("python_w24")])).toBe(true);
 
     const next = expectedNextWritableWeek(
-      [{ weekNumber: 24, status: "VERIFIED", overrideActive: false }],
+      [{ weekNumber: 19, status: "VERIFIED", overrideActive: false }],
       { pythonCheckpointPassed: false },
     );
-    expect(next).toBe(24);
+    expect(next).toBe(19);
 
     const unlocked = expectedNextWritableWeek(
-      [{ weekNumber: 24, status: "VERIFIED", overrideActive: false }],
+      [{ weekNumber: 19, status: "VERIFIED", overrideActive: false }],
       { pythonCheckpointPassed: true },
     );
-    expect(unlocked).toBe(25);
+    expect(unlocked).toBe(20);
   });
 });
 
-describe("systems gating before W48", () => {
+describe("systems gating before W39", () => {
   it("blocks Stage 2 verification without systems checkpoint", () => {
     expect(systemsAllowsStage2Verification([])).toBe(false);
-    const blockers = prerequisiteBlockersForWeek(48, []);
+    const blockers = prerequisiteBlockersForWeek(39, []);
     expect(blockers.some((b) => b.prerequisiteId === "systems_w48")).toBe(true);
     expect(
-      prerequisiteBlockersForWeek(48, [passed("systems_w48")]).length,
+      prerequisiteBlockersForWeek(39, [passed("systems_w48")]).length,
     ).toBe(0);
   });
 });
 
-describe("W76 hardware", () => {
+describe("W67 hardware", () => {
   it("blocks measured GPU verification without hardware prerequisite", () => {
-    const blockers = prerequisiteBlockersForWeek(76, [], {
+    const blockers = prerequisiteBlockersForWeek(67, [], {
       requiresMeasuredGpu: true,
     });
     expect(blockers.some((b) => b.prerequisiteId === "gpu_w76")).toBe(true);
   });
 
-  it("eligibility flags hardware_blocked for W76 without evidence", () => {
+  it("eligibility flags hardware_blocked for W67 without evidence", () => {
     const result = evaluateVerificationEligibility({
-      weekNumber: 76,
+      weekNumber: 67,
       status: "DONE",
       latestAttempt: {
         recall: 3,
@@ -166,10 +166,10 @@ describe("overrides never bypass learning requirements", () => {
   });
 });
 
-describe("W83/84 modeled hardware alternatives", () => {
+describe("W74/75 modeled hardware alternatives", () => {
   it("allows labeled modeled evidence without gpu_w76 prerequisite", () => {
     const result = evaluateVerificationEligibility({
-      weekNumber: 83,
+      weekNumber: 74,
       status: "DONE",
       latestAttempt: {
         recall: 3,

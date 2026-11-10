@@ -41,6 +41,7 @@ import {
   loadLockingContext,
   loadWeekDetail,
 } from "./queries";
+import { allowsModeledHardwareEvidence } from "@/shared/domain/curriculum-shape";
 
 async function assertWeekWrite(
   env: AppBindings,
@@ -574,7 +575,7 @@ export async function verifyWeek(
     expectedRevision: input.expectedRevision,
     overrideActive: progress.overrideActive,
     allowsModeledHardwareEvidence:
-      input.weekNumber === 83 || input.weekNumber === 84,
+      allowsModeledHardwareEvidence(input.weekNumber),
   });
 
   if (!eligibility.eligible) {

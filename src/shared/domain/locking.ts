@@ -1,4 +1,9 @@
 import type { Clock } from "./clock";
+import {
+  PYTHON_CHECKPOINT_WEEK,
+  PYTHON_UNLOCKS_WEEK,
+  TOTAL_WEEKS,
+} from "./curriculum-shape";
 
 export type WeekStatus = "PLANNED" | "ATTEMPTED" | "DONE" | "VERIFIED";
 
@@ -53,7 +58,7 @@ export interface OutOfOrderAuditEvent {
 
 /**
  * Highest week number that is "open" under sequential locking:
- * next after last verified, with Python W25 unlock respected.
+ * next after last verified, with Python W20 unlock respected.
  */
 export function expectedNextWritableWeek(
   weeks: readonly WeekLockState[],
@@ -63,18 +68,18 @@ export function expectedNextWritableWeek(
     .filter((w) => w.status === "VERIFIED")
     .map((w) => w.weekNumber);
   const maxVerified = verified.length > 0 ? Math.max(...verified) : 0;
-  let next = Math.min(91, maxVerified + 1);
+  let next = Math.min(TOTAL_WEEKS, maxVerified + 1);
 
-  // Python checkpoint: remain on W24 until passed; do not unlock W25.
+  // Python checkpoint: remain on W19 until passed; do not unlock W20.
   if (
-    next >= 25 &&
+    next >= PYTHON_UNLOCKS_WEEK &&
     options?.pythonCheckpointPassed === false &&
-    !verified.includes(24)
+    !verified.includes(PYTHON_CHECKPOINT_WEEK)
   ) {
-    next = 24;
+    next = PYTHON_CHECKPOINT_WEEK;
   }
-  if (next === 25 && options?.pythonCheckpointPassed === false) {
-    return 24;
+  if (next === PYTHON_UNLOCKS_WEEK && options?.pythonCheckpointPassed === false) {
+    return PYTHON_CHECKPOINT_WEEK;
   }
 
   return next === 0 ? 1 : next;
@@ -166,7 +171,7 @@ export function evaluateWeekWriteAccess(input: {
 
   if (inSequence || targetWeek === expected) {
     if (
-      targetWeek === 25 &&
+      targetWeek === PYTHON_UNLOCKS_WEEK &&
       input.pythonCheckpointPassed === false &&
       writeKind !== "note"
     ) {
@@ -176,7 +181,7 @@ export function evaluateWeekWriteAccess(input: {
         viaOverride: false,
         requiresOutOfOrderAudit: false,
         code: "python_unlock_blocked",
-        reason: "Week 25 unlocks only after the Python checkpoint passes",
+        reason: `Week ${PYTHON_UNLOCKS_WEEK} unlocks only after the Python checkpoint passes`,
       };
     }
     return {

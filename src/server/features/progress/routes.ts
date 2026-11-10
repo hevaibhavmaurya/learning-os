@@ -17,6 +17,7 @@ import {
 import type { AppEnv } from "../../env";
 import { requireAuthMiddleware, requireOwner } from "../../middleware/auth";
 import { curriculum } from "../../lib/curriculum";
+import { TOTAL_WEEKS } from "@/shared/domain/curriculum-shape";
 
 const GATE_LABELS: Record<(typeof GATE_NAMES)[number], string> = {
   recall: "Recall",
@@ -222,7 +223,7 @@ progressRoutes.get("/", async (c) => {
   const payload = {
     asOf: new Date().toISOString(),
     weeksTracked: weeks.length,
-    weeksTotal: 91,
+    weeksTotal: TOTAL_WEEKS,
     byStatus,
     verifiedCount,
     openGaps: Number(openGaps?.n ?? 0),
@@ -230,12 +231,12 @@ progressRoutes.get("/", async (c) => {
     projectsVerified,
     projectsSkipped,
     projectsComplete: projectsVerified + Number(personalDone?.n ?? 0),
-    programmeComplete: verifiedCount >= 91,
+    programmeComplete: verifiedCount >= TOTAL_WEEKS,
     currentWeek,
     planStartDate: sett?.planStartDate ?? null,
     hoursInvested: Math.round(Number(hoursRow?.minutes ?? 0) / 60),
     plannedHours:
-      (curriculum.meta as { plannedHours?: number }).plannedHours ?? 1183,
+      (curriculum.meta as { plannedHours?: number }).plannedHours ?? 1066,
     reviewsCompleted,
     reviewRetentionPct,
     verifiedTimeline,

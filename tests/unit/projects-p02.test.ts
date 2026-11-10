@@ -70,7 +70,7 @@ describe("project P02 optional", () => {
   });
 });
 
-describe("week 91 contribution honesty", () => {
+describe("week 82 contribution honesty", () => {
   it("rejects merge claims without a submitted label", () => {
     expect(week91ContributionHonest("PR merged upstream")).toBe(false);
   });

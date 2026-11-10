@@ -31,6 +31,7 @@ import { PractiseTab } from "../components/tabs/PractiseTab";
 import { BuildTab } from "../components/tabs/BuildTab";
 import { VerifyTab } from "../components/tabs/VerifyTab";
 import { NotesTab } from "../components/tabs/NotesTab";
+import { TOTAL_WEEKS } from "@/shared/domain/curriculum-shape";
 
 const TAB_LABEL: Record<WeekTab, string> = {
   overview: "Overview",
@@ -213,7 +214,7 @@ export function WeekScreen({ weekNumber: rawWeek, tab: rawTab }: WeekScreenProps
               <Icon name="chevron-left" />
             </span>
           )}
-          {weekNumber < 91 ? (
+          {weekNumber < TOTAL_WEEKS ? (
             <Link
               to="/weeks/$weekNumber/$tab"
               params={{

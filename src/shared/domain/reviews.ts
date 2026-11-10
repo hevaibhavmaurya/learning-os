@@ -1,4 +1,5 @@
 import { addDaysIso, type Clock } from "./clock";
+import { TOTAL_WEEKS } from "./curriculum-shape";
 
 /** Retention offsets from verification (source elapsed 7-day intervals). */
 export const REVIEW_OFFSETS_DAYS = [7, 28, 56, 112] as const;
@@ -71,10 +72,10 @@ export function selectDueReviews(
   });
 }
 
-/** Post-course reviews (after week 91 programme) stay classifiable; never invent Week 92. */
+/** Post-course reviews (after week 82 programme) stay classifiable; never invent Week 83. */
 export function isPostCourseReview(
   weekNumber: number,
-  programmeEndWeek = 91,
+  programmeEndWeek = TOTAL_WEEKS,
 ): boolean {
   return weekNumber >= 1 && weekNumber <= programmeEndWeek;
 }

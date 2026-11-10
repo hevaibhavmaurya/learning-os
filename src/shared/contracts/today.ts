@@ -1,6 +1,7 @@
 import { z } from "zod";
 import { weekStatusSchema } from "./common";
 import { weekNumberSchema } from "./weeks";
+import { TOTAL_WEEKS } from "@/shared/domain/curriculum-shape";
 
 export const todayNextStepSchema = z.object({
   label: z.string(),
@@ -44,7 +45,7 @@ export const todayResponseSchema = z.object({
   currentWeek: weekNumberSchema,
   weekStatus: weekStatusSchema,
   locked: z.boolean(),
-  verifiedCount: z.number().int().min(0).max(91),
+  verifiedCount: z.number().int().min(0).max(TOTAL_WEEKS),
   nextStep: todayNextStepSchema,
   reviewsDue: z.array(todayReviewDueSchema),
   nextReviewDueAt: z.string().nullable(),

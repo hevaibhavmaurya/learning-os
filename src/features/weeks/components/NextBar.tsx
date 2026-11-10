@@ -5,6 +5,7 @@ import { Icon } from "@/components/ui/Icon";
 import type { WeekTab } from "@/app/shell/nav";
 import type { WeekDetailResponse } from "@/shared/contracts/weeks";
 import { fmtDate } from "@/shared/lib/format";
+import { TOTAL_WEEKS } from "@/shared/domain/curriculum-shape";
 
 const TAB_FLOW: Record<
   Exclude<WeekTab, "verify">,
@@ -61,7 +62,7 @@ export function NextBar({
       nextReview ? fmtDate(nextReview.dueAt) : "complete"
     }.`;
     btn =
-      weekNumber < 91 ? (
+      weekNumber < TOTAL_WEEKS ? (
         <Link
           to="/weeks/$weekNumber/$tab"
           params={{ weekNumber: String(weekNumber + 1), tab: "overview" }}

@@ -15,6 +15,7 @@ import { useCreateTimeEntryMutation } from "../../mutations";
 import { LogTimeDialog } from "../LogTimeDialog";
 import { PilotPanel } from "../PilotPanel";
 import { Section } from "../Section";
+import { isPilotWeek } from "@/shared/domain/curriculum-shape";
 
 export function BuildTab({
   week,
@@ -82,7 +83,7 @@ export function BuildTab({
         </Section>
       ) : null}
 
-      {n >= 43 && n <= 46 ? (
+      {isPilotWeek(n) ? (
         <PilotPanel
           pilot={detail.pilot ?? null}
           locked={locked}

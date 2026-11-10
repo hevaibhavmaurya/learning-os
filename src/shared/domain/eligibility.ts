@@ -16,10 +16,11 @@ import {
   prerequisiteBlockersForWeek,
   type PrerequisiteState,
 } from "./prerequisites";
+import { allowsModeledHardwareEvidence, MEASURED_GPU_WEEK } from "./curriculum-shape";
 
 /** Bounded-core weeks from content/roadmap.json policies.boundedCoreWeeks */
 export const BOUNDED_CORE_WEEKS = [
-  26, 28, 31, 63, 64, 65, 73, 76, 77, 78, 79, 83, 84, 87, 88, 89,
+  20, 35, 37, 54, 55, 56, 64, 67, 68, 69, 70, 74, 75, 78, 79, 80,
 ] as const;
 
 export type BoundedCoreWeek = (typeof BOUNDED_CORE_WEEKS)[number];
@@ -67,9 +68,9 @@ export interface EligibilityInput {
   revision: number;
   expectedRevision: number;
   overrideActive?: boolean;
-  /** Weeks 83–84 may use modeled/referenced evidence labels. */
+  /** Weeks 74–75 may use modeled/referenced evidence labels. */
   allowsModeledHardwareEvidence?: boolean;
-  /** Pilot mode ready when relevant to W43. */
+  /** Pilot mode ready when relevant to W31. */
   pilotModeReady?: boolean;
 }
 
@@ -224,21 +225,21 @@ export function evaluateEvidenceCompleteness(
     });
   }
 
-  if (weekNumber === 76) {
+  if (weekNumber === MEASURED_GPU_WEEK) {
     const modeledOk = options?.allowsModeledHardwareEvidence === true;
     if (!modeledOk && !nonempty(evidence.hardwareEvidence)) {
       issues.push({
         code: "hardware_blocked",
         message:
-          "Week 76 measured GPU work requires hardware evidence (simulation alternatives are not accepted here)",
+          `Week ${MEASURED_GPU_WEEK} measured GPU work requires hardware evidence (simulation alternatives are not accepted here)`,
         field: "hardwareEvidence",
       });
     }
   }
 
-  // Weeks 83–84: modeled/referenced evidence allowed when labeled.
+  // Weeks 74–75: modeled/referenced evidence allowed when labeled.
   if (
-    (weekNumber === 83 || weekNumber === 84) &&
+    allowsModeledHardwareEvidence(weekNumber) &&
     options?.allowsModeledHardwareEvidence &&
     nonempty(evidence.hardwareEvidence) === false &&
     nonempty(evidence.limitation) === false
@@ -328,7 +329,7 @@ export function evaluateVerificationEligibility(
       ...evaluateEvidenceCompleteness(input.evidence, input.weekNumber, {
         allowsModeledHardwareEvidence:
           input.allowsModeledHardwareEvidence ??
-          (input.weekNumber === 83 || input.weekNumber === 84),
+          allowsModeledHardwareEvidence(input.weekNumber),
       }),
     );
   }
@@ -346,7 +347,7 @@ export function evaluateVerificationEligibility(
     input.weekNumber,
     input.prerequisites,
     {
-      requiresMeasuredGpu: input.weekNumber === 76,
+      requiresMeasuredGpu: input.weekNumber === MEASURED_GPU_WEEK,
       pilotModeReady: input.pilotModeReady,
     },
   );

@@ -1,7 +1,7 @@
 import type { Clock } from "./clock";
 
 export const PILOT_CLOCK_DAYS = 28;
-export const PILOT_ACTIVATION_WEEK = 43;
+export const PILOT_ACTIVATION_WEEK = 31;
 
 export type PilotMode = "REAL" | "SIMULATED";
 
@@ -9,7 +9,7 @@ export interface PilotActivationInput {
   mode: PilotMode;
   consentDocumented: boolean;
   dataUseScope?: string | null;
-  /** Week 43 must be unlocked before activation. */
+  /** Week 31 must be unlocked before activation. */
   week43Unlocked: boolean;
 }
 
@@ -20,7 +20,7 @@ export interface PilotActivationDecision {
 }
 
 /**
- * Pilot activation is a separate manual action when Week 43 is unlocked.
+ * Pilot activation is a separate manual action when Week 31 is unlocked.
  * REAL requires documented consent/data boundaries; otherwise use SIMULATED.
  */
 export function evaluatePilotActivation(
@@ -29,7 +29,7 @@ export function evaluatePilotActivation(
   const blockers: string[] = [];
 
   if (!input.week43Unlocked) {
-    blockers.push("Week 43 must be unlocked before pilot activation");
+    blockers.push("Week 31 must be unlocked before pilot activation");
   }
 
   if (input.mode === "REAL") {

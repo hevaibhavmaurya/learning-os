@@ -10,6 +10,7 @@ import { gaps, reviews, settings, weekProgress } from "../../db/schema";
 import type { AppEnv } from "../../env";
 import { requireAuthMiddleware, requireOwner } from "../../middleware/auth";
 import { loadLockingContext } from "../weeks/queries";
+import { TOTAL_WEEKS } from "@/shared/domain/curriculum-shape";
 
 export const roadmapRoutes = new Hono<AppEnv>();
 roadmapRoutes.use("*", requireAuthMiddleware());
@@ -65,7 +66,7 @@ roadmapRoutes.get("/", async (c) => {
     const start = Date.parse(`${sett.planStartDate}T00:00:00.000Z`);
     if (Number.isFinite(start)) {
       plannedWeek = Math.min(
-        91,
+        TOTAL_WEEKS,
         Math.max(1, Math.floor((Date.now() - start) / (7 * 86_400_000)) + 1),
       );
     }
@@ -82,7 +83,7 @@ roadmapRoutes.get("/", async (c) => {
     message = `The plan pencilled in Week ${plannedWeek} for this week. You are on Week ${currentWeek}, ${diffWeeks} week${diffWeeks > 1 ? "s" : ""} later than the guide. Depth over speed is the point.`;
   }
 
-  const weeks = Array.from({ length: 91 }, (_, i) => {
+  const weeks = Array.from({ length: TOTAL_WEEKS }, (_, i) => {
     const weekNumber = i + 1;
     const row = byWeek.get(weekNumber);
     const status = (row?.status ?? "PLANNED") as

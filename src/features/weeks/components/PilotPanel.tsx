@@ -3,6 +3,7 @@ import { Chip } from "@/components/ui/Chip";
 import { Icon } from "@/components/ui/Icon";
 import { fmtDate } from "@/shared/lib/format";
 import { Section } from "./Section";
+import { PILOT_FIRST_WEEK } from "@/shared/domain/curriculum-shape";
 
 type Pilot = {
   activatedAt: string | null;
@@ -34,7 +35,7 @@ export function PilotPanel({
           </Link>
           {locked ? (
             <p className="text-xs muted mt-2">
-              Available once Week 43 is unlocked.
+              Available once Week {PILOT_FIRST_WEEK} is unlocked.
             </p>
           ) : null}
         </div>

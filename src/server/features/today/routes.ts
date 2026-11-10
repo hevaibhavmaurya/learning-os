@@ -13,6 +13,7 @@ import { requireAuthMiddleware, requireOwner } from "../../middleware/auth";
 import { AppError, parseJson } from "../../middleware/errors";
 import { z } from "zod";
 import { loadLockingContext, loadWeekDetail } from "../weeks/queries";
+import { TOTAL_WEEKS } from "@/shared/domain/curriculum-shape";
 
 export const todayRoutes = new Hono<AppEnv>();
 todayRoutes.use("*", requireAuthMiddleware());
@@ -129,7 +130,7 @@ todayRoutes.get("/", async (c) => {
       (p) =>
         !p.optional &&
         (p.weekStart ?? 1) <= currentWeek &&
-        (p.weekEnd ?? 91) >= currentWeek,
+        (p.weekEnd ?? TOTAL_WEEKS) >= currentWeek,
     ) ?? curriculum.projects[0];
 
   let milestoneText = "See project contract";
@@ -205,7 +206,7 @@ todayRoutes.post("/capture", async (c) => {
     c,
     z.object({
       text: z.string().min(1).max(8000),
-      weekNumber: z.number().int().min(1).max(91).optional(),
+      weekNumber: z.number().int().min(1).max(TOTAL_WEEKS).optional(),
     }),
   );
   const text = body.text.trim();

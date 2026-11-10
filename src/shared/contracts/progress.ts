@@ -1,5 +1,6 @@
 import { z } from "zod";
 import { weekStatusSchema } from "./common";
+import { TOTAL_WEEKS } from "@/shared/domain/curriculum-shape";
 
 const gateKeySchema = z.enum(["recall", "build", "debug", "transfer"]);
 
@@ -20,7 +21,7 @@ export const progressResponseSchema = z.object({
   projectsSkipped: z.number().int().nonnegative(),
   projectsComplete: z.number().int().nonnegative(),
   programmeComplete: z.boolean(),
-  currentWeek: z.number().int().min(1).max(91),
+  currentWeek: z.number().int().min(1).max(TOTAL_WEEKS),
   planStartDate: z.string().nullable(),
   hoursInvested: z.number().nonnegative(),
   plannedHours: z.number().nonnegative(),

@@ -26,6 +26,7 @@ import {
 import type { PostDetailResponse, PostStatus, StudioPlatform } from "@/shared/contracts/posts";
 import { toDateInputValue } from "@/shared/lib/time";
 import { cx } from "@/shared/lib/cx";
+import { TOTAL_WEEKS } from "@/shared/domain/curriculum-shape";
 
 const PST: Array<[PostStatus, string]> = [
   ["idea", "Idea"],
@@ -438,7 +439,7 @@ export function StudioItemScreen({ itemId }: { itemId: string }) {
                 id="pw"
                 type="number"
                 min={1}
-                max={91}
+                max={TOTAL_WEEKS}
                 className="mt-1.5"
                 value={draft.weekNumber ?? ""}
                 disabled={inTrash}

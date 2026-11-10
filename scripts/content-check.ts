@@ -14,7 +14,7 @@ function sha256(s: string) {
 
 function main() {
   const source = readFileSync(resolve(ROOT, "reference/roadmap.md"), "utf8");
-  const expectedSource = "91f6581cfe57d985881617bd7cba43da8bd8d8dee852e909d4b9d789fcf9e595";
+  const expectedSource = "9c3756e589d7153a9f56cb5fb131c95fa4db9dcafde290fa6d06b402673a7af6";
   const actualSource = sha256(source);
   if (actualSource !== expectedSource) {
     console.error(`roadmap.md checksum mismatch:\n expected ${expectedSource}\n got      ${actualSource}`);
@@ -94,7 +94,7 @@ function main() {
     milestones: unknown[];
     policies: { boundedCoreWeeks: number[] };
   };
-  if (doc.weeks.length !== 91 || doc.blocks.length !== 14 || doc.projects.length !== 10 || doc.milestones.length !== 11) {
+  if (doc.weeks.length !== 82 || doc.blocks.length !== 15 || doc.projects.length !== 10 || doc.milestones.length !== 11) {
     console.error("count validation failed in committed content");
     process.exit(1);
   }

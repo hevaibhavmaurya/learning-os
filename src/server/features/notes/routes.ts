@@ -13,6 +13,7 @@ import type { AppEnv } from "../../env";
 import { createId } from "../../lib/ids";
 import { requireAuthMiddleware, requireOwner } from "../../middleware/auth";
 import { AppError, parseJson } from "../../middleware/errors";
+import { TOTAL_WEEKS } from "@/shared/domain/curriculum-shape";
 
 export const notesRoutes = new Hono<AppEnv>();
 notesRoutes.use("*", requireAuthMiddleware());
@@ -151,7 +152,7 @@ notesRoutes.post("/", async (c) => {
       editorState: z.unknown().optional(),
       url: z.string().max(2000).nullable().optional(),
       tags: z.array(z.string().max(64)).max(50).optional(),
-      weekNumber: z.number().int().min(1).max(91).nullable().optional(),
+      weekNumber: z.number().int().min(1).max(TOTAL_WEEKS).nullable().optional(),
       projectId: z.string().nullable().optional(),
       schemaVersion: z.number().int().positive().optional(),
       templateId: z.string().optional(),

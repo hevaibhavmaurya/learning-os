@@ -31,6 +31,7 @@ import {
 import { getWeek } from "../../lib/curriculum";
 import type { AppBindings } from "../../env";
 import { AppError } from "../../middleware/errors";
+import { allowsModeledHardwareEvidence, isPilotWeek, TOTAL_WEEKS } from "@/shared/domain/curriculum-shape";
 
 function mapAttempt(row: {
   id: string;
@@ -115,7 +116,7 @@ export async function loadWeekDetail(
   ownerId: string,
   weekNumber: number,
 ) {
-  if (weekNumber < 1 || weekNumber > 91) {
+  if (weekNumber < 1 || weekNumber > TOTAL_WEEKS) {
     throw new AppError("not_found", `Week ${weekNumber} not found`, 404);
   }
 
@@ -306,10 +307,10 @@ export async function loadWeekDetail(
     revision: progress.revision,
     expectedRevision: progress.revision,
     overrideActive: progress.overrideActive,
-    allowsModeledHardwareEvidence: weekNumber === 83 || weekNumber === 84,
+    allowsModeledHardwareEvidence: allowsModeledHardwareEvidence(weekNumber),
   });
 
-  const pilotRecord = weekNumber >= 43 && weekNumber <= 46
+  const pilotRecord = isPilotWeek(weekNumber)
     ? await db.select().from(pilotRecords).where(eq(pilotRecords.ownerId, ownerId)).get()
     : null;
   const pilotPauses = pilotRecord

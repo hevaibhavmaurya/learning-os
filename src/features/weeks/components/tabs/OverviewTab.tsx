@@ -10,6 +10,7 @@ import type { WeekDetailResponse } from "@/shared/contracts/weeks";
 import { fmtDate, fmtDateYear } from "@/shared/lib/format";
 import { Section } from "../Section";
 import { PilotPanel } from "../PilotPanel";
+import { BACKEND_BLOCK_FIRST_WEEK, isPilotWeek, MEASURED_GPU_WEEK, OS_INTERNALS_FINAL_WEEK, PYTHON_CHECKPOINT_WEEK, SYSTEMS_CHECKPOINT_WEEK } from "@/shared/domain/curriculum-shape";
 
 function defaultPrerequisites(
   weekNumber: number,
@@ -36,20 +37,20 @@ function defaultPrerequisites(
       ok: detail.status === "VERIFIED" || !detail.locked,
     });
   }
-  if (weekNumber >= 17 && weekNumber <= 24) {
+  if (weekNumber >= BACKEND_BLOCK_FIRST_WEEK && weekNumber <= PYTHON_CHECKPOINT_WEEK) {
     rows.push({
       label:
-        "Python checkpoint by Week 24: exceptions, typing, packaging, pytest, async",
+        `Python checkpoint by Week ${PYTHON_CHECKPOINT_WEEK}: exceptions, typing, packaging, pytest, async`,
       ok: false,
     });
   }
-  if (weekNumber >= 48 && weekNumber <= 53) {
+  if (weekNumber >= SYSTEMS_CHECKPOINT_WEEK && weekNumber <= OS_INTERNALS_FINAL_WEEK) {
     rows.push({
-      label: "Systems-language mini-check passed before Week 48",
+      label: `Systems-language mini-check passed before Week ${SYSTEMS_CHECKPOINT_WEEK}`,
       ok: false,
     });
   }
-  if (weekNumber >= 43 && weekNumber <= 46) {
+  if (isPilotWeek(weekNumber)) {
     rows.push({
       label: "Data-use consent recorded, or project labelled SIMULATED",
       ok: Boolean(
@@ -57,16 +58,16 @@ function defaultPrerequisites(
       ),
     });
   }
-  if (weekNumber >= 74 && weekNumber <= 79) {
+  if (weekNumber >= 65 && weekNumber <= 70) {
     rows.push({
       label: "GPU access within budget, or work labelled SIMULATION",
       ok: false,
     });
   }
-  if (weekNumber === 76) {
+  if (weekNumber === MEASURED_GPU_WEEK) {
     rows.push({
       label:
-        "Week 76 measured GPU evidence required (simulation alternatives not accepted here)",
+        `Week ${MEASURED_GPU_WEEK} measured GPU evidence required (simulation alternatives not accepted here)`,
       ok: false,
     });
   }
@@ -130,7 +131,7 @@ export function OverviewTab({
           </ul>
         </Section>
 
-        {n >= 43 && n <= 46 ? (
+        {isPilotWeek(n) ? (
           <PilotPanel pilot={detail.pilot ?? null} locked={detail.locked} />
         ) : null}
 

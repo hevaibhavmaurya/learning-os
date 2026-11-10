@@ -1,4 +1,5 @@
 import { fmtDate } from "@/shared/lib/format";
+import { TOTAL_WEEKS } from "@/shared/domain/curriculum-shape";
 
 const WEEK_MS = 7 * 24 * 60 * 60 * 1000;
 
@@ -25,7 +26,7 @@ export function JourneyChart({
     : now - 12 * WEEK_MS;
   const t1 = Math.max(now, t0 + 12 * WEEK_MS);
   const span = Math.max(1, t1 - t0);
-  const planned = Math.min(91, Math.floor((now - t0) / WEEK_MS) + 1);
+  const planned = Math.min(TOTAL_WEEKS, Math.floor((now - t0) / WEEK_MS) + 1);
   const maxY = Math.max(12, Math.ceil((planned + 2) / 4) * 4);
 
   const x = (t: number) => p + ((t - t0) / span) * (W - p * 1.5);
@@ -60,7 +61,7 @@ export function JourneyChart({
         `${i ? "L" : "M"}${x(q[0]).toFixed(1)},${y(q[1]).toFixed(1)}`,
     )
     .join("");
-  const plan = `M${x(t0)},${y(0)}L${x(t1)},${y(Math.min(91, span / WEEK_MS))}`;
+  const plan = `M${x(t0)},${y(0)}L${x(t1)},${y(Math.min(TOTAL_WEEKS, span / WEEK_MS))}`;
   const yTicks = [0, maxY / 2, maxY];
 
   return (

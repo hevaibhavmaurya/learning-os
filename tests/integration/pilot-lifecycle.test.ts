@@ -42,7 +42,7 @@ it("starts, pauses, and resumes a simulated pilot without changing week progress
     method: "POST", headers,
   })).status).toBe(409);
 
-  const week = await (await SELF.fetch("http://localhost/api/weeks/43", { headers })).json() as {
+  const week = await (await SELF.fetch("http://localhost/api/weeks/31", { headers })).json() as {
     pilot: { simulated: boolean; interruptionCount: number } | null;
   };
   expect(week.pilot).toMatchObject({ simulated: true, interruptionCount: 1 });

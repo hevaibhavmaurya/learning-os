@@ -24,6 +24,7 @@ import {
 } from "../../mutations";
 import { EVIDENCE_UI, GATES_UI, SCORE_MEANING } from "../../lib/gates-ui";
 import { Section } from "../Section";
+import { allowsModeledHardwareEvidence, MEASURED_GPU_WEEK, TOTAL_WEEKS } from "@/shared/domain/curriculum-shape";
 
 type GateDraft = Record<GateName, number> & {
   assist: "independent" | "docs-only" | "assisted";
@@ -134,7 +135,7 @@ export function VerifyTab({
 
   const filledCount = useMemo(() => {
     let n = 0;
-    const total = EVIDENCE_UI.length + (week.isBoundedCore ? 1 : 0) + (week.number === 76 ? 1 : 0);
+    const total = EVIDENCE_UI.length + (week.isBoundedCore ? 1 : 0) + (week.number === MEASURED_GPU_WEEK ? 1 : 0);
     const checks: boolean[] = [
       Boolean(evidenceDraft.artifactRef.trim() || evidenceDraft.explanation.trim()),
       Boolean(evidenceDraft.reproducibleSteps.trim()),
@@ -155,7 +156,7 @@ export function VerifyTab({
     if (week.isBoundedCore) {
       checks.push(Boolean(evidenceDraft.boundedCoreEvidence.trim()));
     }
-    if (week.number === 76) {
+    if (week.number === MEASURED_GPU_WEEK) {
       checks.push(Boolean(evidenceDraft.hardwareEvidence.trim()));
     }
     n = checks.filter(Boolean).length;
@@ -528,7 +529,7 @@ export function VerifyTab({
                   />
                 </div>
               ) : null}
-              {week.number === 76 || week.number === 83 || week.number === 84 ? (
+              {week.number === MEASURED_GPU_WEEK || allowsModeledHardwareEvidence(week.number) ? (
                 <div>
                   <label
                     className="text-sm font-medium flex items-center gap-2"
@@ -541,9 +542,9 @@ export function VerifyTab({
                     ) : null}
                   </label>
                   <p className="text-xs muted mt-1">
-                    {week.number === 76
-                      ? "Week 76 measured GPU work requires hardware evidence; simulation alternatives are not accepted here."
-                      : "Weeks 83–84 may use modeled/referenced evidence when clearly labeled with limitations."}
+                    {week.number === MEASURED_GPU_WEEK
+                      ? `Week ${MEASURED_GPU_WEEK} measured GPU work requires hardware evidence; simulation alternatives are not accepted here.`
+                      : "Weeks 74–75 may use modeled/referenced evidence when clearly labeled with limitations."}
                   </p>
                   <Textarea
                     id="ev-hw"
@@ -644,7 +645,7 @@ export function VerifyTab({
           <p className="text-xs muted leading-relaxed px-1">
             Done means work and evidence are submitted. Verified means you
             reviewed passing evidence and approved it. Only Verified unlocks Week{" "}
-            {week.number + 1 > 91 ? "completion" : week.number + 1}.
+            {week.number + 1 > TOTAL_WEEKS ? "completion" : week.number + 1}.
           </p>
         </aside>
       </div>

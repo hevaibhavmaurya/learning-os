@@ -21,6 +21,7 @@ import {
 import { useIdeas, useProjectsList } from "@/features/projects/queries";
 import { CURRICULUM_PROJECTS } from "@/shared/content/curriculum";
 import { ago } from "@/shared/lib/time";
+import { PYTHON_CHECKPOINT_WEEK, TOTAL_WEEKS } from "@/shared/domain/curriculum-shape";
 
 type TabKey = "roadmap" | "mine" | "ideas";
 
@@ -138,7 +139,7 @@ function NewProjectForm({
             id="nw"
             type="number"
             min={1}
-            max={91}
+            max={TOTAL_WEEKS}
             className="mt-1.5"
             value={week}
             onChange={(e) => setWeek(e.target.value)}
@@ -256,7 +257,7 @@ export function ProjectsScreen() {
         {tab === "roadmap" ? (
           <>
             <p className="text-sm muted mb-4">
-              Built into the 91 weeks. Each has an acceptance contract;
+              Built into the {TOTAL_WEEKS} weeks. Each has an acceptance contract;
               milestones are verified inside the mapped weeks. Acceptance
               confirmation is separate from week counts.
             </p>
@@ -287,7 +288,7 @@ export function ProjectsScreen() {
                         </span>
                         {p.optional ? (
                           <span className="text-xs muted block mt-1">
-                            Optional — skip without blocking Week 24 or P01
+                            Optional — skip without blocking Week {PYTHON_CHECKPOINT_WEEK} or P01
                           </span>
                         ) : null}
                       </span>

@@ -69,20 +69,20 @@ function main() {
     internalVersionLabel: versionMatch?.[1] ?? "unknown",
     date: versionMatch?.[2]?.trim() ?? "",
     claim: versionMatch?.[3]?.trim() ?? "",
-    plannedWeeks: 91 as const,
+    plannedWeeks: 82 as const,
     hoursPerWeek: 13 as const,
-    plannedHours: 1183 as const,
+    plannedHours: 1066 as const,
     sourcePath: "reference/roadmap.md",
     sourceFilename: "roadmap.md",
     sourceSha256: hash,
     schemaVersion: SCHEMA_VERSION,
     importVersion: IMPORT_VERSION,
-    filenameVersionHint: "v5_1",
+    filenameVersionHint: "v6_0",
   };
 
   const stages = [
-    { id: 1, weekStart: 1, weekEnd: 47, label: "Stage 1 — Foundations through FDE delivery" },
-    { id: 2, weekStart: 48, weekEnd: 91, label: "Stage 2 — Deep specialization (optional)" },
+    { id: 1, weekStart: 1, weekEnd: 33, label: "Stage 1 — Foundations through FDE delivery" },
+    { id: 2, weekStart: 34, weekEnd: 82, label: "Stage 2 — Deep specialization (optional)" },
   ];
 
   const blocks: Array<Record<string, unknown>> = [];
@@ -255,7 +255,7 @@ function main() {
       return got.value;
     };
     const weeksScope = take("Curriculum weeks");
-    // "1–47. **Scope:** Core ..."
+    // "1–33. **Scope:** Core ..."
     const ws = weeksScope.match(/^(\d+)[–-](\d+)\.\s*\*\*Scope:\*\*\s*(.+)$/);
     const weekStart = ws ? Number(ws[1]) : 0;
     const weekEnd = ws ? Number(ws[2]) : 0;
@@ -317,7 +317,7 @@ function main() {
 
   // Resource routing table
   const resourceRouting: Array<Record<string, unknown>> = [];
-  const rrIdx = lines.findIndex((l) => l.startsWith("## At-a-glance 91-week resource"));
+  const rrIdx = lines.findIndex((l) => l.startsWith("## At-a-glance 82-week resource"));
   if (rrIdx >= 0) {
     for (let m = rrIdx; m < lines.length && !lines[m].startsWith("## Milestones"); m++) {
       const row = lines[m].match(/^\|\s*([^|]+)\|\s*([^|]+)\|\s*([^|]+)\|\s*([^|]+)\|/);
@@ -378,34 +378,34 @@ function main() {
       },
       {
         id: "python_w24",
-        label: "Python checkpoint before Week 24 verification",
-        gatesWeek: 24,
-        unlocksWeek: 25,
+        label: "Python checkpoint before Week 19 verification",
+        gatesWeek: 19,
+        unlocksWeek: 20,
         kind: "python",
       },
       {
         id: "systems_w48",
-        label: "Systems-language checkpoint before Stage 2 assessed work",
-        gatesWeek: 48,
+        label: "Systems-language checkpoint before Week 39 (OS internals)",
+        gatesWeek: 39,
         kind: "systems",
       },
       {
         id: "gpu_w76",
-        label: "Measured GPU evidence for Week 76",
-        gatesWeek: 76,
+        label: "Measured GPU evidence for Week 67",
+        gatesWeek: 67,
         kind: "hardware_gpu",
       },
       {
         id: "pilot_consent",
         label: "Real-data consent or SIMULATED pilot mode",
-        gatesWeek: 43,
+        gatesWeek: 31,
         kind: "consent",
       },
     ],
     templates,
-    examinationProtocolSourceLines: [1136, 1145],
-    pilotSourceLines: [1236, 1242],
-    boundedCoreWeeks: [26, 28, 31, 63, 64, 65, 73, 76, 77, 78, 79, 83, 84, 87, 88, 89],
+    examinationProtocolSourceLines: [1083, 1092],
+    pilotSourceLines: [1184, 1190],
+    boundedCoreWeeks: [20, 35, 37, 54, 55, 56, 64, 67, 68, 69, 70, 74, 75, 78, 79, 80],
   };
 
   const doc = {
@@ -421,12 +421,12 @@ function main() {
 
   // Validations
   const errors: string[] = [];
-  if (weeks.length !== 91) errors.push(`expected 91 weeks, got ${weeks.length}`);
-  if (blocks.length !== 14) errors.push(`expected 14 blocks, got ${blocks.length}`);
+  if (weeks.length !== 82) errors.push(`expected 82 weeks, got ${weeks.length}`);
+  if (blocks.length !== 15) errors.push(`expected 15 blocks, got ${blocks.length}`);
   if (projects.length !== 10) errors.push(`expected 10 projects, got ${projects.length}`);
   if (milestones.length !== 11) errors.push(`expected 11 milestones, got ${milestones.length}`);
   const nums = weeks.map((w) => w.number as number).sort((a, b) => a - b);
-  for (let n = 1; n <= 91; n++) {
+  for (let n = 1; n <= 82; n++) {
     if (nums[n - 1] !== n) errors.push(`missing or duplicate week ${n}`);
   }
   const mtpWeeks = weeks.filter((w) => w.minimumToPass).map((w) => w.number as number);

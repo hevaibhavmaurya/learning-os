@@ -25,6 +25,7 @@ import { createId } from "../../lib/ids";
 import { requireAuthMiddleware, requireOwner } from "../../middleware/auth";
 import { AppError, parseJson } from "../../middleware/errors";
 import { loadLockingContext } from "../weeks/queries";
+import { TOTAL_WEEKS } from "@/shared/domain/curriculum-shape";
 
 export const settingsRoutes = new Hono<AppEnv>();
 settingsRoutes.use("*", requireAuthMiddleware());
@@ -115,7 +116,7 @@ settingsRoutes.post("/overrides", async (c) => {
   const body = await parseJson(
     c,
     z.object({
-      weekNumber: z.number().int().min(1).max(91),
+      weekNumber: z.number().int().min(1).max(TOTAL_WEEKS),
       reason: z.string().min(1).max(2000),
     }),
   );
