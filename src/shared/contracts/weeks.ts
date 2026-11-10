@@ -1,7 +1,8 @@
 import { z } from "zod";
 import { gateScoresSchema, weekStatusSchema } from "./common";
+import { TOTAL_WEEKS } from "@/shared/domain/curriculum-shape";
 
-export const weekNumberSchema = z.number().int().min(1).max(91);
+export const weekNumberSchema = z.number().int().min(1).max(TOTAL_WEEKS);
 
 export const weekTabSchema = z.enum([
   "overview",
@@ -178,7 +179,7 @@ export const weekDetailResponseSchema = z.object({
   weekNumber: weekNumberSchema,
   status: weekStatusSchema,
   locked: z.boolean(),
-  /** First week that may accept writes under current locking (1–91). */
+  /** First week that may accept writes under current locking (1–82). */
   expectedWritableWeek: weekNumberSchema.optional(),
   lockReason: z.string().nullable().optional(),
   revision: z.number().int().nonnegative(),

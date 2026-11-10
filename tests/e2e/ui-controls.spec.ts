@@ -33,7 +33,7 @@ test("menus stay anchored and command results scroll within the viewport", async
   expect(bounds!.y).toBeGreaterThanOrEqual(0);
   expect(bounds!.y + bounds!.height).toBeLessThanOrEqual(720);
   const input = dialog.getByRole("combobox");
-  await input.fill("Week 91");
+  await input.fill("Week 82");
   await expect(dialog.getByRole("option").first()).toBeVisible();
   await page.keyboard.press("Escape");
   await expect(dialog).not.toBeVisible();

@@ -1,3 +1,4 @@
+import { TOTAL_WEEKS } from "@/shared/domain/curriculum-shape";
 /**
  * Maps legacy `/?view=` query routes and reference hash routes to canonical paths.
  * Reference hashes: `#/today`, `#/week/9/overview`, `#/library/:id`, etc.
@@ -26,7 +27,7 @@ const WEEK_TABS = new Set([
 ]);
 
 function weekPath(week: string | null | undefined, tab?: string | null): string {
-  const n = Math.min(91, Math.max(1, Number(week) || 1));
+  const n = Math.min(TOTAL_WEEKS, Math.max(1, Number(week) || 1));
   const t = tab && WEEK_TABS.has(tab) ? tab : "overview";
   return `/weeks/${n}/${t}`;
 }

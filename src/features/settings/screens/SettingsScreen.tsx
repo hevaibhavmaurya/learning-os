@@ -34,6 +34,7 @@ import {
   usePilotQuery,
   useSettingsQuery,
 } from "../queries";
+import { TOTAL_WEEKS } from "@/shared/domain/curriculum-shape";
 
 export function SettingsScreen() {
   const { toast } = useToast();
@@ -129,8 +130,8 @@ export function SettingsScreen() {
     e.preventDefault();
     const n = Number(ovWeek);
     const r = ovReason.trim();
-    if (!(n >= 2 && n <= 91)) {
-      toast("Pick a week from 2 to 91", { tone: "warn" });
+    if (!(n >= 2 && n <= TOTAL_WEEKS)) {
+      toast(`Pick a week from 2 to ${TOTAL_WEEKS}`, { tone: "warn" });
       return;
     }
     if (!r) {
@@ -268,7 +269,7 @@ export function SettingsScreen() {
                   id="ovw"
                   type="number"
                   min={2}
-                  max={91}
+                  max={TOTAL_WEEKS}
                   className="!w-28"
                   placeholder="Week"
                   value={ovWeek}

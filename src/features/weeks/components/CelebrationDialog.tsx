@@ -5,6 +5,7 @@ import { Icon } from "@/components/ui/Icon";
 import { useLayer } from "@/components/ui/layer-context";
 import { getWeek } from "@/shared/content/curriculum";
 import { fmtDate } from "@/shared/lib/format";
+import { TOTAL_WEEKS } from "@/shared/domain/curriculum-shape";
 
 export function CelebrationDialog({
   weekNumber,
@@ -33,7 +34,7 @@ export function CelebrationDialog({
       layerId={layerId}
       onClose={close}
       actions={
-        weekNumber < 91 ? (
+        weekNumber < TOTAL_WEEKS ? (
           <>
             <Button data-close="" onClick={close}>
               Stay here
@@ -60,7 +61,7 @@ export function CelebrationDialog({
         </div>
         <div className="serif text-3xl mt-4">{title}</div>
         <p className="text-sm muted mt-2">
-          {verifiedCount} of 91 verified. First review on {reviewLabel}.
+          {verifiedCount} of {TOTAL_WEEKS} verified. First review on {reviewLabel}.
         </p>
       </div>
     </Dialog>

@@ -21,6 +21,7 @@ import {
 } from "../mutations";
 import { useTodayQuery } from "../queries";
 import { ReviewDialog } from "../components/ReviewDialog";
+import { TOTAL_WEEKS } from "@/shared/domain/curriculum-shape";
 
 export function TodayScreen() {
   const { data, isLoading, isError, error, refetch } = useTodayQuery();
@@ -127,7 +128,7 @@ export function TodayScreen() {
   };
 
   const gap = data.openGaps[0];
-  const progressPct = Math.max(0.6, (data.verifiedCount / 91) * 100);
+  const progressPct = Math.max(0.6, (data.verifiedCount / TOTAL_WEEKS) * 100);
 
   return (
     <div className="fade">
@@ -348,7 +349,7 @@ export function TodayScreen() {
           />
         </span>
         <span className="muted group-hover:underline whitespace-nowrap">
-          <b className="forest font-semibold">{data.verifiedCount}</b> of 91
+          <b className="forest font-semibold">{data.verifiedCount}</b> of {TOTAL_WEEKS}
           weeks verified
         </span>
       </Link>

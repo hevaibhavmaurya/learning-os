@@ -33,6 +33,7 @@ import {
   looksLikeMarkdown,
   markdownToEditorState,
 } from "@/shared/lib/markdown-to-lexical";
+import { TOTAL_WEEKS } from "@/shared/domain/curriculum-shape";
 
 type MetaDraft = {
   title: string;
@@ -317,7 +318,7 @@ export function NoteEditorScreen({ noteId }: { noteId: string }) {
           <Input
             type="number"
             min={1}
-            max={91}
+            max={TOTAL_WEEKS}
             className="!h-8 !w-16 text-xs"
             value={meta.weekNumber ?? ""}
             disabled={inTrash}

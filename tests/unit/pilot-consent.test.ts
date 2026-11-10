@@ -42,7 +42,7 @@ describe("pilot consent", () => {
     expect(decision.mode).toBe("SIMULATED");
   });
 
-  it("requires Week 43 unlocked before activation", () => {
+  it("requires Week 31 unlocked before activation", () => {
     const decision = evaluatePilotActivation({
       mode: "SIMULATED",
       consentDocumented: false,
@@ -55,7 +55,7 @@ describe("pilot consent", () => {
   });
 
   it("surfaces pilot_consent prerequisite when mode is not ready", () => {
-    const blockers = prerequisiteBlockersForWeek(43, [], {
+    const blockers = prerequisiteBlockersForWeek(31, [], {
       pilotModeReady: false,
     });
     expect(blockers.some((b) => b.prerequisiteId === "pilot_consent")).toBe(

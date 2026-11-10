@@ -2,6 +2,7 @@ import { lazy, Suspense } from "react";
 import { createFileRoute, redirect } from "@tanstack/react-router";
 import { Skeleton } from "@/components/ui/Skeleton";
 import { WEEK_TABS, type WeekTab } from "@/app/shell/nav";
+import { TOTAL_WEEKS } from "@/shared/domain/curriculum-shape";
 
 const WeekScreen = lazy(() =>
   import("@/features/weeks/screens/WeekScreen").then((m) => ({
@@ -12,7 +13,7 @@ const WeekScreen = lazy(() =>
 function parseWeek(raw: string): number {
   const n = Number(raw);
   if (!Number.isFinite(n)) return 1;
-  return Math.min(91, Math.max(1, Math.trunc(n)));
+  return Math.min(TOTAL_WEEKS, Math.max(1, Math.trunc(n)));
 }
 
 function parseTab(raw: string): WeekTab {

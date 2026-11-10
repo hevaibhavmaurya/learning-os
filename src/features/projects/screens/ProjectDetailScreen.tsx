@@ -48,6 +48,7 @@ import {
 } from "@/shared/domain/projects";
 import { fmtDate } from "@/shared/lib/time";
 import { cx } from "@/shared/lib/cx";
+import { PYTHON_CHECKPOINT_WEEK } from "@/shared/domain/curriculum-shape";
 
 function Section({
   title,
@@ -443,7 +444,7 @@ function RoadmapProjectDetail({ projectId }: { projectId: string }) {
                           expectedRevision: detail?.revision ?? 0,
                           skipped: true,
                         });
-                        toast("P02 marked skipped (does not block Week 24)");
+                        toast(`P02 marked skipped (does not block Week ${PYTHON_CHECKPOINT_WEEK})`);
                       } catch {
                         toast("Could not skip P02", { tone: "warn" });
                       }

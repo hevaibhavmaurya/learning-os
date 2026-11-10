@@ -1,12 +1,12 @@
 {
-  "sourceSha256": "91f6581cfe57d985881617bd7cba43da8bd8d8dee852e909d4b9d789fcf9e595",
-  "contentSha256": "970525e3ee224de22a5b464cf151814c11adcbca9acd9b3a554c798f814812e3",
-  "generatedAt": "2026-10-15T20:57:44.793Z",
+  "sourceSha256": "9c3756e589d7153a9f56cb5fb131c95fa4db9dcafde290fa6d06b402673a7af6",
+  "contentSha256": "4d0ce0c43572692443396cf32bbf3493a0f96b5886450c8cd25f6c028e805b17",
+  "generatedAt": "2026-11-10T08:53:13.050Z",
   "schemaVersion": 1,
   "importVersion": 1,
   "counts": {
-    "weeks": 91,
-    "blocks": 14,
+    "weeks": 82,
+    "blocks": 15,
     "projects": 10,
     "milestones": 11,
     "boundedCore": 16

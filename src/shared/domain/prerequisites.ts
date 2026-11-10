@@ -3,6 +3,14 @@
  * Source: content/roadmap.json policies.prerequisites
  */
 
+import {
+  MEASURED_GPU_WEEK,
+  PILOT_FIRST_WEEK,
+  PYTHON_CHECKPOINT_WEEK,
+  PYTHON_UNLOCKS_WEEK,
+  SYSTEMS_CHECKPOINT_WEEK,
+} from "./curriculum-shape";
+
 export const PREREQUISITE_IDS = [
   "diagnostic_w1",
   "python_w24",
@@ -26,7 +34,7 @@ export interface PrerequisiteDefinition {
   kind: PrerequisiteKind;
   /** Week that cannot be verified until this passes (when applicable). */
   gatesWeek: number;
-  /** Week unlocked only after pass (Python → W25). */
+  /** Week unlocked only after pass (Python → W20). */
   unlocksWeek?: number;
 }
 
@@ -39,28 +47,28 @@ export const PREREQUISITE_DEFINITIONS: readonly PrerequisiteDefinition[] = [
   },
   {
     id: "python_w24",
-    label: "Python checkpoint before Week 24 verification",
+    label: "Python checkpoint before Week 19 verification",
     kind: "python",
-    gatesWeek: 24,
-    unlocksWeek: 25,
+    gatesWeek: PYTHON_CHECKPOINT_WEEK,
+    unlocksWeek: PYTHON_UNLOCKS_WEEK,
   },
   {
     id: "systems_w48",
-    label: "Systems-language checkpoint before Stage 2 assessed work",
+    label: "Systems-language checkpoint before Week 39 (OS internals)",
     kind: "systems",
-    gatesWeek: 48,
+    gatesWeek: SYSTEMS_CHECKPOINT_WEEK,
   },
   {
     id: "gpu_w76",
-    label: "Measured GPU evidence for Week 76",
+    label: "Measured GPU evidence for Week 67",
     kind: "hardware_gpu",
-    gatesWeek: 76,
+    gatesWeek: MEASURED_GPU_WEEK,
   },
   {
     id: "pilot_consent",
     label: "Real-data consent or SIMULATED pilot mode",
     kind: "consent",
-    gatesWeek: 43,
+    gatesWeek: PILOT_FIRST_WEEK,
   },
 ] as const;
 
@@ -111,9 +119,9 @@ export function prerequisiteBlockersForWeek(
   weekNumber: number,
   states: readonly PrerequisiteState[],
   options?: {
-    /** Week 76 measured-GPU path; false when modeled/referenced N/A is not this week. */
+    /** Week 67 measured-GPU path; false when modeled/referenced N/A is not this week. */
     requiresMeasuredGpu?: boolean;
-    /** Pilot activation consent handled separately; when verifying W43 week work. */
+    /** Pilot activation consent handled separately; when verifying W31 week work. */
     pilotModeReady?: boolean;
   },
 ): PrerequisiteBlocker[] {
@@ -128,37 +136,37 @@ export function prerequisiteBlockersForWeek(
     });
   }
 
-  if (weekNumber === 24 && !isPassed(states, "python_w24")) {
+  if (weekNumber === PYTHON_CHECKPOINT_WEEK && !isPassed(states, "python_w24")) {
     blockers.push({
       prerequisiteId: "python_w24",
       code: "python_checkpoint_required",
       message:
-        "Python checkpoint must pass before Week 24 can be verified",
+        `Python checkpoint must pass before Week ${PYTHON_CHECKPOINT_WEEK} can be verified`,
     });
   }
 
-  if (weekNumber >= 48 && !isPassed(states, "systems_w48")) {
+  if (weekNumber >= SYSTEMS_CHECKPOINT_WEEK && !isPassed(states, "systems_w48")) {
     blockers.push({
       prerequisiteId: "systems_w48",
       code: "systems_checkpoint_required",
       message:
-        "Systems-language checkpoint must pass before Stage 2 assessed verification",
+        `Systems-language checkpoint must pass before Week ${SYSTEMS_CHECKPOINT_WEEK}+ verification`,
     });
   }
 
   const requiresGpu =
-    options?.requiresMeasuredGpu ?? weekNumber === 76;
-  if (requiresGpu && weekNumber === 76 && !isPassed(states, "gpu_w76")) {
+    options?.requiresMeasuredGpu ?? weekNumber === MEASURED_GPU_WEEK;
+  if (requiresGpu && weekNumber === MEASURED_GPU_WEEK && !isPassed(states, "gpu_w76")) {
     blockers.push({
       prerequisiteId: "gpu_w76",
       code: "gpu_hardware_required",
       message:
-        "Week 76 cannot be verified as measured GPU work without required GPU evidence",
+        `Week ${MEASURED_GPU_WEEK} cannot be verified as measured GPU work without required GPU evidence`,
     });
   }
 
   if (
-    weekNumber === 43 &&
+    weekNumber === PILOT_FIRST_WEEK &&
     options?.pilotModeReady === false &&
     !isPassed(states, "pilot_consent")
   ) {
@@ -174,8 +182,8 @@ export function prerequisiteBlockersForWeek(
 }
 
 /**
- * Whether Week 25 (and subsequent unlock under locking) is unlocked by Python checkpoint.
- * Missing checkpoint keeps the learner on Week 24; do not add a numbered week.
+ * Whether Week 20 (and subsequent unlock under locking) is unlocked by Python checkpoint.
+ * Missing checkpoint keeps the learner on Week 19; do not add a numbered week.
  */
 export function pythonUnlocksWeek25(
   states: readonly PrerequisiteState[],

@@ -15,7 +15,7 @@ export const ROADMAP_PROJECT_IDS = [
 
 export type RoadmapProjectId = (typeof ROADMAP_PROJECT_IDS)[number];
 
-/** Optional P02 does not block Week 24 or P01. */
+/** Optional P02 does not block Week 19 or P01. */
 export const OPTIONAL_PROJECT_IDS: readonly RoadmapProjectId[] = ["P02"];
 
 export interface ProjectProgressInput {
@@ -105,7 +105,7 @@ export function skippingP02BlocksCurriculum(skippedP02: boolean): boolean {
 }
 
 /**
- * Week 91 requires a defensible submitted contribution label — not a guaranteed merge.
+ * The final week (82) requires a defensible submitted contribution label — not a guaranteed merge.
  */
 export function week91ContributionHonest(label: string | null | undefined): boolean {
   const t = (label ?? "").trim().toLowerCase();

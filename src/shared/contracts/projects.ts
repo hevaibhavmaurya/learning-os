@@ -1,5 +1,6 @@
 import { z } from "zod";
 import { weekStatusSchema } from "./common";
+import { TOTAL_WEEKS } from "@/shared/domain/curriculum-shape";
 
 export const roadmapProjectIdSchema = z.enum([
   "P01",
@@ -92,7 +93,7 @@ export const projectSkipSchema = z.object({
 export const personalProjectCreateSchema = z.object({
   title: z.string().min(1).max(200),
   summary: z.string().max(2000).optional(),
-  weekNumber: z.number().int().min(1).max(91).nullable().optional(),
+  weekNumber: z.number().int().min(1).max(TOTAL_WEEKS).nullable().optional(),
   repoUrl: z.string().max(500).optional(),
   demoUrl: z.string().max(500).optional(),
   notesPlainText: z.string().max(500_000).optional(),
@@ -111,8 +112,8 @@ export const personalProjectUpdateSchema = z.object({
   notesPlainText: z.string().max(500_000).optional(),
   notesEditorState: z.unknown().nullable().optional(),
   notesSchemaVersion: z.number().int().positive().optional(),
-  weekNumber: z.number().int().min(1).max(91).nullable().optional(),
-  weekNumbers: z.array(z.number().int().min(1).max(91)).optional(),
+  weekNumber: z.number().int().min(1).max(TOTAL_WEEKS).nullable().optional(),
+  weekNumbers: z.array(z.number().int().min(1).max(TOTAL_WEEKS)).optional(),
 });
 
 export const personalProjectDetailResponseSchema = z.object({

@@ -14,7 +14,7 @@
 | File | Bytes | Lines | SHA-256 |
 | --- | ---: | ---: | --- |
 | `reference/index7.html` | 276818 | 697 | `830210fa34f3b6f8de6b246238ed98bcbee45df6fc1a86ee0eb2cf41a5578743` |
-| `reference/roadmap.md` | 188098 | 1253 | `91f6581cfe57d985881617bd7cba43da8bd8d8dee852e909d4b9d789fcf9e595` |
+| `reference/roadmap.md` | 183536 | 1201 | `9c3756e589d7153a9f56cb5fb131c95fa4db9dcafde290fa6d06b402673a7af6` |
 
 ## Prototype SRC vs full roadmap
 

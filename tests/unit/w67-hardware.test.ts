@@ -35,16 +35,16 @@ const passed = (id: PrerequisiteState["prerequisiteId"]): PrerequisiteState => (
   confirmedAt: "2026-01-01T00:00:00.000Z",
 });
 
-describe("W76 hardware", () => {
+describe("W67 hardware", () => {
   it("requires gpu_w76 prerequisite for measured GPU work", () => {
-    const blockers = prerequisiteBlockersForWeek(76, [], {
+    const blockers = prerequisiteBlockersForWeek(67, [], {
       requiresMeasuredGpu: true,
     });
     expect(blockers.some((b) => b.prerequisiteId === "gpu_w76")).toBe(true);
 
     // Stage 2 also requires systems_w48; both must pass to clear blockers.
     const remaining = prerequisiteBlockersForWeek(
-      76,
+      67,
       [passed("gpu_w76"), passed("systems_w48")],
       { requiresMeasuredGpu: true },
     );
@@ -54,7 +54,7 @@ describe("W76 hardware", () => {
 
   it("blocks eligibility without hardware evidence", () => {
     const result = evaluateVerificationEligibility({
-      weekNumber: 76,
+      weekNumber: 67,
       status: "DONE",
       latestAttempt: { ...baseAttempt },
       evidence: { ...baseEvidence, hardwareEvidence: null },
@@ -71,7 +71,7 @@ describe("W76 hardware", () => {
 
   it("does not accept unlabeled simulation as measured evidence", () => {
     const result = evaluateVerificationEligibility({
-      weekNumber: 76,
+      weekNumber: 67,
       status: "DONE",
       latestAttempt: { ...baseAttempt },
       evidence: {
@@ -92,7 +92,7 @@ describe("W76 hardware", () => {
 
   it("passes hardware check when measured evidence is present", () => {
     const result = evaluateVerificationEligibility({
-      weekNumber: 76,
+      weekNumber: 67,
       status: "DONE",
       latestAttempt: { ...baseAttempt },
       evidence: {
@@ -109,9 +109,9 @@ describe("W76 hardware", () => {
     );
   });
 
-  it("allows labeled modeled alternatives on W83 (not W76)", () => {
+  it("allows labeled modeled alternatives on W74 (not W67)", () => {
     const w83 = evaluateVerificationEligibility({
-      weekNumber: 83,
+      weekNumber: 74,
       status: "DONE",
       latestAttempt: { ...baseAttempt },
       evidence: {

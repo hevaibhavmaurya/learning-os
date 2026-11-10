@@ -6,3 +6,4 @@ export * from "./reviews";
 export * from "./projects";
 export * from "./pilot";
 export * from "./eligibility";
+export * from "./curriculum-shape";

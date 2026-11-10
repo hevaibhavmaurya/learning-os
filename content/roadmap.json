@@ -1,30 +1,30 @@
 {
   "meta": {
-    "title": "Forward Deployed Engineer + Deep Engineering Fundamentals  -  University-Inspired, Execution-Ready 91-Week Roadmap",
-    "internalVersionLabel": "5.0",
-    "date": "13 October 2026",
-    "claim": "Exactly 91 planned teaching weeks, no additional mandatory weeks.",
-    "plannedWeeks": 91,
+    "title": "Forward Deployed Engineer + Deep Engineering Fundamentals  -  University-Inspired, Execution-Ready 82-Week Roadmap",
+    "internalVersionLabel": "6.0",
+    "date": "10 November 2026",
+    "claim": "Exactly 82 planned teaching weeks (33-week FDE Stage 1 + 49-week Stage 2), no additional mandatory weeks.",
+    "plannedWeeks": 82,
     "hoursPerWeek": 13,
-    "plannedHours": 1183,
+    "plannedHours": 1066,
     "sourcePath": "reference/roadmap.md",
     "sourceFilename": "roadmap.md",
-    "sourceSha256": "91f6581cfe57d985881617bd7cba43da8bd8d8dee852e909d4b9d789fcf9e595",
+    "sourceSha256": "9c3756e589d7153a9f56cb5fb131c95fa4db9dcafde290fa6d06b402673a7af6",
     "schemaVersion": 1,
     "importVersion": 1,
-    "filenameVersionHint": "v5_1"
+    "filenameVersionHint": "v6_0"
   },
   "stages": [
     {
       "id": 1,
       "weekStart": 1,
-      "weekEnd": 47,
+      "weekEnd": 33,
       "label": "Stage 1 — Foundations through FDE delivery"
     },
     {
       "id": 2,
-      "weekStart": 48,
-      "weekEnd": 91,
+      "weekStart": 34,
+      "weekEnd": 82,
       "label": "Stage 2 — Deep specialization (optional)"
     }
   ],
@@ -33,7 +33,7 @@
       "id": 1,
       "title": "OS, Linux and networking",
       "weekStart": 1,
-      "weekEnd": 5,
+      "weekEnd": 3,
       "stage": 1,
       "referenceShelf": [
         {
@@ -66,10 +66,10 @@
           "url": "https://beej.us/guide/bgnet/"
         }
       ],
-      "blockEndGate": "Re-run one cumulative independent task, test a fault case, update the skills-gap register, and write a 1-page trade-off summary. Failed/unfinished stretch work is recorded and can be pursued after the 91-week core; if foundational, borrow time by reducing optional tasks in the next week.",
+      "blockEndGate": "Re-run one cumulative independent task, test a fault case, update the skills-gap register, and write a 1-page trade-off summary. Failed/unfinished stretch work is recorded and can be pursued after the 82-week core; if foundational, borrow time by reducing optional tasks in the next week.",
       "sourceLines": {
-        "start": 89,
-        "end": 139
+        "start": 97,
+        "end": 131
       },
       "furtherSources": [
         {
@@ -85,8 +85,8 @@
     {
       "id": 2,
       "title": "PostgreSQL",
-      "weekStart": 6,
-      "weekEnd": 11,
+      "weekStart": 4,
+      "weekEnd": 8,
       "stage": 1,
       "referenceShelf": [
         {
@@ -100,7 +100,7 @@
           "note": "syllabi and lectures"
         }
       ],
-      "goalCheckpoint": "You can read a query plan, reproduce and fix a race condition, and restore from a backup. JSONB and full-text search wait until Week 35.",
+      "goalCheckpoint": "You can read a query plan, reproduce and fix a race condition, and restore from a backup. JSONB and full-text search wait until Week 24.",
       "primaryResources": [
         {
           "title": "PostgreSQL tutorial",
@@ -119,10 +119,10 @@
           "url": "https://www.postgresql.org/docs/current/backup.html"
         }
       ],
-      "blockEndGate": "Re-run one cumulative independent task, test a fault case, update the skills-gap register, and write a 1-page trade-off summary. Failed/unfinished stretch work is recorded and can be pursued after the 91-week core; if foundational, borrow time by reducing optional tasks in the next week.",
+      "blockEndGate": "Re-run one cumulative independent task, test a fault case, update the skills-gap register, and write a 1-page trade-off summary. Failed/unfinished stretch work is recorded and can be pursued after the 82-week core; if foundational, borrow time by reducing optional tasks in the next week.",
       "sourceLines": {
-        "start": 140,
-        "end": 198
+        "start": 132,
+        "end": 182
       },
       "furtherSources": [
         {
@@ -138,8 +138,8 @@
     {
       "id": 3,
       "title": "DevOps and testing",
-      "weekStart": 12,
-      "weekEnd": 16,
+      "weekStart": 9,
+      "weekEnd": 12,
       "stage": 1,
       "referenceShelf": [
         {
@@ -172,10 +172,10 @@
           "url": "https://opentelemetry.io/docs/"
         }
       ],
-      "blockEndGate": "Re-run one cumulative independent task, test a fault case, update the skills-gap register, and write a 1-page trade-off summary. Failed/unfinished stretch work is recorded and can be pursued after the 91-week core; if foundational, borrow time by reducing optional tasks in the next week.",
+      "blockEndGate": "Re-run one cumulative independent task, test a fault case, update the skills-gap register, and write a 1-page trade-off summary. Failed/unfinished stretch work is recorded and can be pursued after the 82-week core; if foundational, borrow time by reducing optional tasks in the next week.",
       "sourceLines": {
-        "start": 199,
-        "end": 249
+        "start": 183,
+        "end": 225
       },
       "furtherSources": [
         {
@@ -191,8 +191,8 @@
     {
       "id": 4,
       "title": "Backend and system design",
-      "weekStart": 17,
-      "weekEnd": 24,
+      "weekStart": 13,
+      "weekEnd": 19,
       "stage": 1,
       "referenceShelf": [
         {
@@ -206,7 +206,7 @@
           "note": "adapt a test case"
         }
       ],
-      "goalCheckpoint": "You can design a system on a whiteboard in 45 minutes and defend each trade-off. Python checkpoint (before Week 25), without AI help: build a small Python API with validation, write pytest tests for it, use async code where it fits, and debug with logs and pdb. NumPy and pandas are taught in Weeks 25-27, so they are not part of this checkpoint. To prepare, write the project's background worker (queue consumer, ingestion, parsing) in Python from Week 21. If you miss the checkpoint, remain on Week 24 until the prerequisite is independently passed; do not add a numbered week.",
+      "goalCheckpoint": "You can design a system on a whiteboard in 45 minutes and defend each trade-off. Python checkpoint (before Week 20), without AI help: build a small Python API with validation, write pytest tests for it, use async code where it fits, and debug with logs and pdb. NumPy and pandas are taught at the start of Stage 2 (Weeks 34-36), so they are not part of this checkpoint. To prepare, write the project's background worker (queue consumer, ingestion, parsing) in Python from Week 17. If you miss the checkpoint, remain on Week 19 until the prerequisite is independently passed; do not add a numbered week.",
       "primaryResources": [
         {
           "title": "MDN HTTP",
@@ -225,10 +225,10 @@
           "url": "https://docs.stripe.com/api/idempotent_requests"
         }
       ],
-      "blockEndGate": "Re-run one cumulative independent task, test a fault case, update the skills-gap register, and write a 1-page trade-off summary. Failed/unfinished stretch work is recorded and can be pursued after the 91-week core; if foundational, borrow time by reducing optional tasks in the next week.",
+      "blockEndGate": "Re-run one cumulative independent task, test a fault case, update the skills-gap register, and write a 1-page trade-off summary. Failed/unfinished stretch work is recorded and can be pursued after the 82-week core; if foundational, borrow time by reducing optional tasks in the next week.",
       "sourceLines": {
-        "start": 250,
-        "end": 324
+        "start": 226,
+        "end": 292
       },
       "furtherSources": [
         {
@@ -260,8 +260,8 @@
     {
       "id": 5,
       "title": "AI foundations",
-      "weekStart": 25,
-      "weekEnd": 32,
+      "weekStart": 20,
+      "weekEnd": 21,
       "stage": 1,
       "referenceShelf": [
         {
@@ -280,7 +280,7 @@
           "note": "transformers; selectively"
         }
       ],
-      "goalCheckpoint": "You can explain backprop and attention on a whiteboard, and you have written a small transformer yourself. Eight weeks gives understanding of small models, not deep-learning mastery. Block 11 goes further. Tight weeks (26, 28, 31) may require additional calendar time while retaining the same week number; remove optional/stretch scope before extending time. This block's Thu-Fri work lives in the lab/ folder and connects to the project in Weeks 25, 30 and 32.",
+      "goalCheckpoint": "You can explain tokenization, embeddings and attention on a whiteboard, and how pretraining, instruction tuning and LoRA-style fine-tuning change a model. Two weeks gives a working mental model for LLM engineering, not deep-learning mastery. The math, classical ML, backprop and PyTorch weeks moved to Block 8 at the start of Stage 2, where deep learning needs them; Block 12 goes further. Week 20 is tight (bounded core) and may require additional calendar time while retaining the same week number; remove optional/stretch scope before extending time.",
       "primaryResources": [
         {
           "title": "3Blue1Brown Essence of Linear Algebra",
@@ -299,10 +299,10 @@
           "url": "https://karpathy.ai/zero-to-hero.html"
         }
       ],
-      "blockEndGate": "Re-run one cumulative independent task, test a fault case, update the skills-gap register, and write a 1-page trade-off summary. Failed/unfinished stretch work is recorded and can be pursued after the 91-week core; if foundational, borrow time by reducing optional tasks in the next week.",
+      "blockEndGate": "Re-run one cumulative independent task, test a fault case, update the skills-gap register, and write a 1-page trade-off summary. Failed/unfinished stretch work is recorded and can be pursued after the 82-week core; if foundational, borrow time by reducing optional tasks in the next week.",
       "sourceLines": {
-        "start": 325,
-        "end": 405
+        "start": 293,
+        "end": 321
       },
       "furtherSources": [
         {
@@ -326,8 +326,8 @@
     {
       "id": 6,
       "title": "LLM engineering and agents",
-      "weekStart": 33,
-      "weekEnd": 40,
+      "weekStart": 22,
+      "weekEnd": 28,
       "stage": 1,
       "referenceShelf": [
         {
@@ -346,7 +346,7 @@
           "note": "safety tests"
         }
       ],
-      "goalCheckpoint": "You can answer \"how do you know it works?\" with data: accuracy, latency and cost, before and after each improvement. Outreach starts around Week 36. Begin applications when evaluation evidence and job fit are sufficient; use existing Week 40 or career-practice time, not an extra flex week.",
+      "goalCheckpoint": "You can answer \"how do you know it works?\" with data: accuracy, latency and cost, before and after each improvement. Outreach starts around Week 25. Begin applications when evaluation evidence and job fit are sufficient; use existing Week 28 or career-practice time, not an extra flex week.",
       "primaryResources": [
         {
           "title": "OpenAI text generation and structured outputs documentation",
@@ -365,10 +365,10 @@
           "url": "https://www.anthropic.com/engineering/building-effective-agents"
         }
       ],
-      "blockEndGate": "Re-run one cumulative independent task, test a fault case, update the skills-gap register, and write a 1-page trade-off summary. Failed/unfinished stretch work is recorded and can be pursued after the 91-week core; if foundational, borrow time by reducing optional tasks in the next week.",
+      "blockEndGate": "Re-run one cumulative independent task, test a fault case, update the skills-gap register, and write a 1-page trade-off summary. Failed/unfinished stretch work is recorded and can be pursued after the 82-week core; if foundational, borrow time by reducing optional tasks in the next week.",
       "sourceLines": {
-        "start": 406,
-        "end": 480
+        "start": 322,
+        "end": 388
       },
       "furtherSources": [
         {
@@ -396,8 +396,8 @@
     {
       "id": 7,
       "title": "FDE delivery and launch",
-      "weekStart": 41,
-      "weekEnd": 47,
+      "weekStart": 29,
+      "weekEnd": 33,
       "stage": 1,
       "referenceShelf": [
         {
@@ -411,7 +411,7 @@
           "note": "discovery/interview techniques"
         }
       ],
-      "goalCheckpoint": "A published case study with real numbers (Week 46) and a runbook someone else could follow. The live pilot runs 4 weeks, Weeks 43-46. Label every number small-sample.",
+      "goalCheckpoint": "A published case study with real numbers (Week 32) and a runbook someone else could follow. The live pilot runs on its own four-calendar-week clock across Weeks 31-32; those units may take extra calendar time while keeping their week numbers. Label every number small-sample.",
       "primaryResources": [
         {
           "title": "OWASP Application Security Verification Standard",
@@ -430,10 +430,10 @@
           "url": "https://developers.google.com/tech-writing"
         }
       ],
-      "blockEndGate": "Re-run one cumulative independent task, test a fault case, update the skills-gap register, and write a 1-page trade-off summary. Failed/unfinished stretch work is recorded and can be pursued after the 91-week core; if foundational, borrow time by reducing optional tasks in the next week.",
+      "blockEndGate": "Re-run one cumulative independent task, test a fault case, update the skills-gap register, and write a 1-page trade-off summary. Failed/unfinished stretch work is recorded and can be pursued after the 82-week core; if foundational, borrow time by reducing optional tasks in the next week.",
       "sourceLines": {
-        "start": 481,
-        "end": 547
+        "start": 389,
+        "end": 439
       },
       "furtherSources": [
         {
@@ -448,9 +448,75 @@
     },
     {
       "id": 8,
+      "title": "Math and ML foundations",
+      "weekStart": 34,
+      "weekEnd": 38,
+      "stage": 2,
+      "referenceShelf": [
+        {
+          "title": "Stanford CS229",
+          "url": "https://cs229.stanford.edu/",
+          "note": "prerequisite-level exercises"
+        },
+        {
+          "title": "Karpathy Neural Networks: Zero to Hero",
+          "url": "https://karpathy.ai/zero-to-hero.html",
+          "note": "guided implementations"
+        },
+        {
+          "title": "Stanford CS336",
+          "url": "https://cs336.stanford.edu/",
+          "note": "transformers; selectively"
+        }
+      ],
+      "goalCheckpoint": "You can explain backprop on a whiteboard, have trained small models in PyTorch, and (with P03) have written a small transformer yourself on top of the Stage 1 attention work. These five weeks moved here from Stage 1 because deep learning (Block 12) needs them and FDE delivery does not. Tight weeks (35, 37) may require additional calendar time while retaining the same week number; remove optional/stretch scope before extending time.",
+      "primaryResources": [
+        {
+          "title": "3Blue1Brown Essence of Linear Algebra",
+          "url": "https://www.3blue1brown.com/topics/linear-algebra"
+        },
+        {
+          "title": "Mathematics for Machine Learning (free book)",
+          "url": "https://mml-book.github.io/"
+        },
+        {
+          "title": "NumPy quickstart",
+          "url": "https://numpy.org/doc/stable/user/quickstart.html"
+        },
+        {
+          "title": "Andrej Karpathy Zero to Hero",
+          "url": "https://karpathy.ai/zero-to-hero.html"
+        }
+      ],
+      "blockEndGate": "Re-run one cumulative independent task, test a fault case, update the skills-gap register, and write a 1-page trade-off summary. Failed/unfinished stretch work is recorded and can be pursued after the 82-week core; if foundational, borrow time by reducing optional tasks in the next week.",
+      "sourceLines": {
+        "start": 440,
+        "end": 494
+      },
+      "furtherSources": [
+        {
+          "title": "PyTorch tutorials",
+          "url": "https://docs.pytorch.org/tutorials/"
+        },
+        {
+          "title": "Hugging Face NLP course",
+          "url": "https://huggingface.co/learn/llm-course/chapter1/1"
+        },
+        {
+          "title": "Attention Is All You Need",
+          "url": "https://arxiv.org/abs/1706.03762"
+        },
+        {
+          "title": "Hugging Face PEFT",
+          "url": "https://huggingface.co/docs/peft/index"
+        }
+      ]
+    },
+    {
+      "id": 9,
       "title": "OS internals",
-      "weekStart": 48,
-      "weekEnd": 53,
+      "weekStart": 39,
+      "weekEnd": 44,
       "stage": 2,
       "referenceShelf": [
         {
@@ -464,7 +530,7 @@
           "note": "practice problems"
         }
       ],
-      "goalCheckpoint": "Stage 2 is for your own depth. Priority order: Blocks 11-14 first, then 8-10 as time allows.",
+      "goalCheckpoint": "Stage 2 is for your own depth. Priority order: Block 8 first (it gates deep learning), then Blocks 12-15, then 9-11 as time allows.",
       "primaryResources": [
         {
           "title": "OSTEP free text",
@@ -483,17 +549,17 @@
           "url": "https://man7.org/linux/man-pages/man7/cgroups.7.html"
         }
       ],
-      "blockEndGate": "Re-run one cumulative independent task, test a fault case, update the skills-gap register, and write a 1-page trade-off summary. Failed/unfinished stretch work is recorded and can be pursued after the 91-week core; if foundational, borrow time by reducing optional tasks in the next week.",
+      "blockEndGate": "Re-run one cumulative independent task, test a fault case, update the skills-gap register, and write a 1-page trade-off summary. Failed/unfinished stretch work is recorded and can be pursued after the 82-week core; if foundational, borrow time by reducing optional tasks in the next week.",
       "sourceLines": {
-        "start": 548,
-        "end": 606
+        "start": 495,
+        "end": 553
       }
     },
     {
-      "id": 9,
+      "id": 10,
       "title": "Database internals",
-      "weekStart": 54,
-      "weekEnd": 59,
+      "weekStart": 45,
+      "weekEnd": 50,
       "stage": 2,
       "referenceShelf": [
         {
@@ -525,17 +591,17 @@
           "url": "https://www.postgresql.org/docs/current/wal-intro.html"
         }
       ],
-      "blockEndGate": "Re-run one cumulative independent task, test a fault case, update the skills-gap register, and write a 1-page trade-off summary. Failed/unfinished stretch work is recorded and can be pursued after the 91-week core; if foundational, borrow time by reducing optional tasks in the next week.",
+      "blockEndGate": "Re-run one cumulative independent task, test a fault case, update the skills-gap register, and write a 1-page trade-off summary. Failed/unfinished stretch work is recorded and can be pursued after the 82-week core; if foundational, borrow time by reducing optional tasks in the next week.",
       "sourceLines": {
-        "start": 607,
-        "end": 665
+        "start": 554,
+        "end": 612
       }
     },
     {
-      "id": 10,
+      "id": 11,
       "title": "Distributed systems",
-      "weekStart": 60,
-      "weekEnd": 65,
+      "weekStart": 51,
+      "weekEnd": 56,
       "stage": 2,
       "referenceShelf": [
         {
@@ -567,17 +633,17 @@
           "url": "https://dataintensive.net/"
         }
       ],
-      "blockEndGate": "Re-run one cumulative independent task, test a fault case, update the skills-gap register, and write a 1-page trade-off summary. Failed/unfinished stretch work is recorded and can be pursued after the 91-week core; if foundational, borrow time by reducing optional tasks in the next week.",
+      "blockEndGate": "Re-run one cumulative independent task, test a fault case, update the skills-gap register, and write a 1-page trade-off summary. Failed/unfinished stretch work is recorded and can be pursued after the 82-week core; if foundational, borrow time by reducing optional tasks in the next week.",
       "sourceLines": {
-        "start": 666,
-        "end": 730
+        "start": 613,
+        "end": 677
       }
     },
     {
-      "id": 11,
+      "id": 12,
       "title": "Deep learning in depth",
-      "weekStart": 66,
-      "weekEnd": 73,
+      "weekStart": 57,
+      "weekEnd": 64,
       "stage": 2,
       "referenceShelf": [
         {
@@ -610,10 +676,10 @@
           "url": "https://huggingface.co/docs/datasets/index"
         }
       ],
-      "blockEndGate": "Re-run one cumulative independent task, test a fault case, update the skills-gap register, and write a 1-page trade-off summary. Failed/unfinished stretch work is recorded and can be pursued after the 91-week core; if foundational, borrow time by reducing optional tasks in the next week.",
+      "blockEndGate": "Re-run one cumulative independent task, test a fault case, update the skills-gap register, and write a 1-page trade-off summary. Failed/unfinished stretch work is recorded and can be pursued after the 82-week core; if foundational, borrow time by reducing optional tasks in the next week.",
       "sourceLines": {
-        "start": 731,
-        "end": 807
+        "start": 678,
+        "end": 754
       },
       "furtherSources": [
         {
@@ -623,10 +689,10 @@
       ]
     },
     {
-      "id": 12,
+      "id": 13,
       "title": "Hardware and accelerators",
-      "weekStart": 74,
-      "weekEnd": 81,
+      "weekStart": 65,
+      "weekEnd": 72,
       "stage": 2,
       "referenceShelf": [
         {
@@ -644,7 +710,7 @@
           "url": "https://arxiv.org/abs/2205.14135"
         }
       ],
-      "goalCheckpoint": "Roofline for your own model and CUDA kernels you wrote and profiled. Weeks 74-79 need a GPU.",
+      "goalCheckpoint": "Roofline for your own model and CUDA kernels you wrote and profiled. Weeks 65-70 need a GPU.",
       "primaryResources": [
         {
           "title": "NVIDIA CUDA Programming Guide",
@@ -663,10 +729,10 @@
           "url": "https://arxiv.org/abs/2205.14135"
         }
       ],
-      "blockEndGate": "Re-run one cumulative independent task, test a fault case, update the skills-gap register, and write a 1-page trade-off summary. Failed/unfinished stretch work is recorded and can be pursued after the 91-week core; if foundational, borrow time by reducing optional tasks in the next week.",
+      "blockEndGate": "Re-run one cumulative independent task, test a fault case, update the skills-gap register, and write a 1-page trade-off summary. Failed/unfinished stretch work is recorded and can be pursued after the 82-week core; if foundational, borrow time by reducing optional tasks in the next week.",
       "sourceLines": {
-        "start": 808,
-        "end": 890
+        "start": 755,
+        "end": 837
       },
       "furtherSources": [
         {
@@ -680,10 +746,10 @@
       ]
     },
     {
-      "id": 13,
+      "id": 14,
       "title": "Energy and scale",
-      "weekStart": 82,
-      "weekEnd": 85,
+      "weekStart": 73,
+      "weekEnd": 76,
       "stage": 2,
       "referenceShelf": [
         {
@@ -701,7 +767,7 @@
           "url": "https://research.google/pubs/"
         }
       ],
-      "goalCheckpoint": "Joules per token measured across batch sizes and precisions. Weeks 83-84 need a GPU whose power counters you can read.",
+      "goalCheckpoint": "Joules per token measured across batch sizes and precisions. Weeks 74-75 need a GPU whose power counters you can read.",
       "primaryResources": [
         {
           "title": "Energy and computing paper by Horowitz",
@@ -720,17 +786,17 @@
           "url": "https://greensoftware.foundation/"
         }
       ],
-      "blockEndGate": "Re-run one cumulative independent task, test a fault case, update the skills-gap register, and write a 1-page trade-off summary. Failed/unfinished stretch work is recorded and can be pursued after the 91-week core; if foundational, borrow time by reducing optional tasks in the next week.",
+      "blockEndGate": "Re-run one cumulative independent task, test a fault case, update the skills-gap register, and write a 1-page trade-off summary. Failed/unfinished stretch work is recorded and can be pursued after the 82-week core; if foundational, borrow time by reducing optional tasks in the next week.",
       "sourceLines": {
-        "start": 891,
-        "end": 937
+        "start": 838,
+        "end": 884
       }
     },
     {
-      "id": 14,
+      "id": 15,
       "title": "Inference systems",
-      "weekStart": 86,
-      "weekEnd": 91,
+      "weekStart": 77,
+      "weekEnd": 82,
       "stage": 2,
       "referenceShelf": [
         {
@@ -767,10 +833,10 @@
           "url": "https://huggingface.co/docs/transformers/main/en/quantization/overview"
         }
       ],
-      "blockEndGate": "Re-run one cumulative independent task, test a fault case, update the skills-gap register, and write a 1-page trade-off summary. Failed/unfinished stretch work is recorded and can be pursued after the 91-week core; if foundational, borrow time by reducing optional tasks in the next week.",
+      "blockEndGate": "Re-run one cumulative independent task, test a fault case, update the skills-gap register, and write a 1-page trade-off summary. Failed/unfinished stretch work is recorded and can be pursued after the 82-week core; if foundational, borrow time by reducing optional tasks in the next week.",
       "sourceLines": {
-        "start": 938,
-        "end": 1003
+        "start": 885,
+        "end": 950
       },
       "furtherSources": [
         {
@@ -805,51 +871,26 @@
       "educationalDemoOnly": false,
       "minimumToPass": null,
       "isBoundedCore": false,
-      "sourceLine": 96,
-      "projectIds": [
-        "P01"
-      ]
-    },
-    {
-      "number": 2,
-      "title": "Processes",
-      "blockId": 1,
-      "learn": "Processes, signals, fork/exec, threads vs processes, systemd, cron, journalctl.",
-      "build": "Run a tiny API as a systemd service with auto-restart. Finish the discovery calls and pick the pilot (weekday).",
-      "assignment": "Create a service-unit test harness that starts a trivial process, kills it and records restart behavior. Work without a walkthrough or generated core solution; write 2-4 acceptance checks first. Preserve your original Build / experiment task as the week's project milestone.",
-      "assessment": "On a fresh fixture, replace the program with one exiting successfully; show when Restart policies differ. Test the result and document why it passes or fails. For 30-45 minutes, use no tutorials or AI-generated solutions; documentation may be consulted. Record separate Recall, Build, Debug and Transfer scores (0-4), assistance and reproducible evidence. For block-ending weeks, include a cumulative checkpoint within the same study slot.",
-      "beginWith": {
-        "title": "MIT Missing Semester",
-        "url": "https://missing.csail.mit.edu/"
-      },
-      "nextReference": {
-        "title": "OSTEP: Operating Systems Three Easy Pieces",
-        "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/"
-      },
-      "evidence": "runnable artifact (or trace/explanation for conceptual weeks), tests or experiment output, one failure or trade-off, five-minute explanation, four-dimension score.",
-      "educationalDemoOnly": false,
-      "minimumToPass": null,
-      "isBoundedCore": false,
       "sourceLine": 104,
       "projectIds": [
         "P01"
       ]
     },
     {
-      "number": 3,
-      "title": "Memory",
+      "number": 2,
+      "title": "Debugging a server: processes, memory, filesystems",
       "blockId": 1,
-      "learn": "Virtual memory, stack vs heap, swap, page cache, OOM killer, free, top, vmstat.",
-      "build": "Cause a memory leak on purpose and watch the OOM killer.",
-      "assignment": "Build a bounded-memory process and collect RSS and OOM evidence at two limits. Work without a walkthrough or generated core solution; write 2-4 acceptance checks first. Preserve your original Build / experiment task as the week's project milestone.",
-      "assessment": "On a fresh fixture, distinguish a userspace allocation failure from a kernel OOM termination using logs. Test the result and document why it passes or fails. For 30-45 minutes, use no tutorials or AI-generated solutions; documentation may be consulted. Record separate Recall, Build, Debug and Transfer scores (0-4), assistance and reproducible evidence. For block-ending weeks, include a cumulative checkpoint within the same study slot.",
+      "learn": "(1) Processes: Processes, signals, fork/exec, threads vs processes, systemd, cron, journalctl. (2) Memory: Virtual memory, stack vs heap, swap, page cache, OOM killer, free, top, vmstat. (3) Filesystems and I/O: Inodes, file descriptors, blocking vs async I/O, strace, lsof.",
+      "build": "(1) Processes: Run a tiny API as a systemd service with auto-restart. Finish the discovery calls and pick the pilot (weekday). (2) Memory: Cause a memory leak on purpose and watch the OOM killer. (3) Filesystems and I/O: Trace the API with strace; set up log rotation.",
+      "assignment": "Merged unit: keep each part to one small fixture. (1) Processes: Create a service-unit test harness that starts a trivial process, kills it and records restart behavior. (2) Memory: Build a bounded-memory process and collect RSS and OOM evidence at two limits. (3) Filesystems and I/O: Trace file opens in a tiny program and match descriptors to paths and close events. Work without a walkthrough or generated core solution; write 2-4 acceptance checks first. Preserve your original Build / experiment task as the week's project milestone.",
+      "assessment": "On a fresh fixture, pick one part at random and complete it: (1) replace the program with one exiting successfully; show when Restart policies differ. (2) distinguish a userspace allocation failure from a kernel OOM termination using logs. (3) diagnose a deliberately leaked descriptor using lsof and strace. Test the result and document why it passes or fails. For 30-45 minutes, use no tutorials or AI-generated solutions; documentation may be consulted. Record separate Recall, Build, Debug and Transfer scores (0-4), assistance and reproducible evidence. For block-ending weeks, include a cumulative checkpoint within the same study slot.",
       "beginWith": {
-        "title": "OSTEP: Operating Systems Three Easy Pieces",
-        "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/"
+        "title": "MIT Missing Semester",
+        "url": "https://missing.csail.mit.edu/"
       },
       "nextReference": {
-        "title": "Linux man-pages project",
-        "url": "https://man7.org/linux/man-pages/"
+        "title": "Beej Guide to Network Programming",
+        "url": "https://beej.us/guide/bgnet/"
       },
       "evidence": "runnable artifact (or trace/explanation for conceptual weeks), tests or experiment output, one failure or trade-off, five-minute explanation, four-dimension score.",
       "educationalDemoOnly": false,
@@ -861,32 +902,7 @@
       ]
     },
     {
-      "number": 4,
-      "title": "Filesystems and I/O",
-      "blockId": 1,
-      "learn": "Inodes, file descriptors, blocking vs async I/O, strace, lsof.",
-      "build": "Trace the API with strace; set up log rotation.",
-      "assignment": "Trace file opens in a tiny program and match descriptors to paths and close events. Work without a walkthrough or generated core solution; write 2-4 acceptance checks first. Preserve your original Build / experiment task as the week's project milestone.",
-      "assessment": "On a fresh fixture, diagnose a deliberately leaked descriptor using lsof and strace. Test the result and document why it passes or fails. For 30-45 minutes, use no tutorials or AI-generated solutions; documentation may be consulted. Record separate Recall, Build, Debug and Transfer scores (0-4), assistance and reproducible evidence. For block-ending weeks, include a cumulative checkpoint within the same study slot.",
-      "beginWith": {
-        "title": "Linux man-pages project",
-        "url": "https://man7.org/linux/man-pages/"
-      },
-      "nextReference": {
-        "title": "Beej Guide to Network Programming",
-        "url": "https://beej.us/guide/bgnet/"
-      },
-      "evidence": "runnable artifact (or trace/explanation for conceptual weeks), tests or experiment output, one failure or trade-off, five-minute explanation, four-dimension score.",
-      "educationalDemoOnly": false,
-      "minimumToPass": null,
-      "isBoundedCore": false,
-      "sourceLine": 120,
-      "projectIds": [
-        "P01"
-      ]
-    },
-    {
-      "number": 5,
+      "number": 3,
       "title": "Networking",
       "blockId": 1,
       "learn": "TCP/IP, DNS, HTTP, TLS and certificates, SSH, firewalls, curl, ss, dig, tcpdump.",
@@ -905,13 +921,13 @@
       "educationalDemoOnly": false,
       "minimumToPass": null,
       "isBoundedCore": false,
-      "sourceLine": 128,
+      "sourceLine": 120,
       "projectIds": [
         "P01"
       ]
     },
     {
-      "number": 6,
+      "number": 4,
       "title": "Modelling and SQL",
       "blockId": 2,
       "learn": "Relational modelling, joins, CTEs, window functions.",
@@ -930,38 +946,38 @@
       "educationalDemoOnly": false,
       "minimumToPass": null,
       "isBoundedCore": false,
+      "sourceLine": 139,
+      "projectIds": [
+        "P01"
+      ]
+    },
+    {
+      "number": 5,
+      "title": "Constraints, migrations, multi-tenancy and RLS",
+      "blockId": 2,
+      "learn": "(1) Constraints and migrations: Constraints, migration tools, rollback, multi-tenant design options. (2) Multi-tenant row-level security: Roles, grants, row-level security policies for tenants.",
+      "build": "(1) Constraints and migrations: Add migrations and test a rollback. (2) Multi-tenant row-level security: Enable RLS for tenants and prove cross-tenant reads fail.",
+      "assignment": "Merged unit: keep each part to one small fixture. (1) Constraints and migrations: Write forward and reversible schema migrations with constraints and failing invalid-row tests. (2) Multi-tenant row-level security: Add tenant-specific RLS policies and negative tests for cross-tenant SELECT and UPDATE. Work without a walkthrough or generated core solution; write 2-4 acceptance checks first. Preserve your original Build / experiment task as the week's project milestone.",
+      "assessment": "On a fresh fixture, pick one part at random and complete it: (1) recover when a migration fails after an earlier step on a populated database. (2) test the policy under a connection with a missing or incorrect tenant context. Test the result and document why it passes or fails. For 30-45 minutes, use no tutorials or AI-generated solutions; documentation may be consulted. Record separate Recall, Build, Debug and Transfer scores (0-4), assistance and reproducible evidence. For block-ending weeks, include a cumulative checkpoint within the same study slot.",
+      "beginWith": {
+        "title": "PostgreSQL tutorial",
+        "url": "https://www.postgresql.org/docs/current/tutorial.html"
+      },
+      "nextReference": {
+        "title": "Use The Index, Luke",
+        "url": "https://use-the-index-luke.com/"
+      },
+      "evidence": "runnable artifact (or trace/explanation for conceptual weeks), tests or experiment output, one failure or trade-off, five-minute explanation, four-dimension score.",
+      "educationalDemoOnly": false,
+      "minimumToPass": null,
+      "isBoundedCore": false,
       "sourceLine": 147,
       "projectIds": [
         "P01"
       ]
     },
     {
-      "number": 7,
-      "title": "Constraints and migrations",
-      "blockId": 2,
-      "learn": "Constraints, migration tools, rollback, multi-tenant design options.",
-      "build": "Add migrations and test a rollback.",
-      "assignment": "Write forward and reversible schema migrations with constraints and failing invalid-row tests. Work without a walkthrough or generated core solution; write 2-4 acceptance checks first. Preserve your original Build / experiment task as the week's project milestone.",
-      "assessment": "On a fresh fixture, recover when a migration fails after an earlier step on a populated database. Test the result and document why it passes or fails. For 30-45 minutes, use no tutorials or AI-generated solutions; documentation may be consulted. Record separate Recall, Build, Debug and Transfer scores (0-4), assistance and reproducible evidence. For block-ending weeks, include a cumulative checkpoint within the same study slot.",
-      "beginWith": {
-        "title": "PostgreSQL tutorial",
-        "url": "https://www.postgresql.org/docs/current/tutorial.html"
-      },
-      "nextReference": {
-        "title": "PostgreSQL EXPLAIN",
-        "url": "https://www.postgresql.org/docs/current/using-explain.html"
-      },
-      "evidence": "runnable artifact (or trace/explanation for conceptual weeks), tests or experiment output, one failure or trade-off, five-minute explanation, four-dimension score.",
-      "educationalDemoOnly": false,
-      "minimumToPass": null,
-      "isBoundedCore": false,
-      "sourceLine": 155,
-      "projectIds": [
-        "P01"
-      ]
-    },
-    {
-      "number": 8,
+      "number": 6,
       "title": "Indexes",
       "blockId": 2,
       "learn": "B-tree, composite, partial, GIN, EXPLAIN ANALYZE.",
@@ -977,13 +993,13 @@
       "educationalDemoOnly": false,
       "minimumToPass": null,
       "isBoundedCore": false,
-      "sourceLine": 163,
+      "sourceLine": 155,
       "projectIds": [
         "P01"
       ]
     },
     {
-      "number": 9,
+      "number": 7,
       "title": "Transactions and concurrency",
       "blockId": 2,
       "learn": "ACID, MVCC, isolation levels, locks, deadlocks.",
@@ -1002,13 +1018,13 @@
       "educationalDemoOnly": false,
       "minimumToPass": null,
       "isBoundedCore": false,
-      "sourceLine": 171,
+      "sourceLine": 163,
       "projectIds": [
         "P01"
       ]
     },
     {
-      "number": 10,
+      "number": 8,
       "title": "Operations",
       "blockId": 2,
       "learn": "Backups, WAL-based recovery, point-in-time restore, VACUUM and autovacuum basics, PgBouncer (connection pooling) concepts.",
@@ -1027,38 +1043,13 @@
       "educationalDemoOnly": false,
       "minimumToPass": null,
       "isBoundedCore": false,
-      "sourceLine": 179,
+      "sourceLine": 171,
       "projectIds": [
         "P01"
       ]
     },
     {
-      "number": 11,
-      "title": "Row-level security",
-      "blockId": 2,
-      "learn": "Roles, grants, row-level security policies for tenants.",
-      "build": "Enable RLS for tenants and prove cross-tenant reads fail.",
-      "assignment": "Add tenant-specific RLS policies and negative tests for cross-tenant SELECT and UPDATE. Work without a walkthrough or generated core solution; write 2-4 acceptance checks first. Preserve your original Build / experiment task as the week's project milestone.",
-      "assessment": "On a fresh fixture, test the policy under a connection with a missing or incorrect tenant context. Test the result and document why it passes or fails. For 30-45 minutes, use no tutorials or AI-generated solutions; documentation may be consulted. Record separate Recall, Build, Debug and Transfer scores (0-4), assistance and reproducible evidence. For block-ending weeks, include a cumulative checkpoint within the same study slot.",
-      "beginWith": {
-        "title": "PostgreSQL row security",
-        "url": "https://www.postgresql.org/docs/current/ddl-rowsecurity.html"
-      },
-      "nextReference": {
-        "title": "Use The Index, Luke",
-        "url": "https://use-the-index-luke.com/"
-      },
-      "evidence": "runnable artifact (or trace/explanation for conceptual weeks), tests or experiment output, one failure or trade-off, five-minute explanation, four-dimension score.",
-      "educationalDemoOnly": false,
-      "minimumToPass": null,
-      "isBoundedCore": false,
-      "sourceLine": 187,
-      "projectIds": [
-        "P01"
-      ]
-    },
-    {
-      "number": 12,
+      "number": 9,
       "title": "Docker",
       "blockId": 3,
       "learn": "Images, layers, volumes, networking, Compose.",
@@ -1077,47 +1068,22 @@
       "educationalDemoOnly": false,
       "minimumToPass": null,
       "isBoundedCore": false,
-      "sourceLine": 206,
+      "sourceLine": 190,
       "projectIds": [
         "P01"
       ]
     },
     {
-      "number": 13,
-      "title": "CI and testing",
+      "number": 10,
+      "title": "CI/CD and release safety",
       "blockId": 3,
-      "learn": "Git branch and pull-request workflow (it is what triggers CI), GitHub Actions, testing pyramid: unit, integration, migration tests.",
-      "build": "Pipeline that runs tests on every push and PR.",
-      "assignment": "Create one unit test, one database integration test and a CI job that fails on regression. Work without a walkthrough or generated core solution; write 2-4 acceptance checks first. Preserve your original Build / experiment task as the week's project milestone.",
-      "assessment": "On a fresh fixture, introduce a broken migration and prove CI stops deployment. Test the result and document why it passes or fails. For 30-45 minutes, use no tutorials or AI-generated solutions; documentation may be consulted. Record separate Recall, Build, Debug and Transfer scores (0-4), assistance and reproducible evidence. For block-ending weeks, include a cumulative checkpoint within the same study slot.",
+      "learn": "(1) CI and testing: Git branch and pull-request workflow (it is what triggers CI), GitHub Actions, testing pyramid: unit, integration, migration tests. (2) CD and release safety: Staging, secrets, dependency scanning, automated rollback.",
+      "build": "(1) CI and testing: Pipeline that runs tests on every push and PR. (2) CD and release safety: Auto-deploy to staging then production, with rollback.",
+      "assignment": "Merged unit: keep each part to one small fixture. (1) CI and testing: Create one unit test, one database integration test and a CI job that fails on regression. (2) CD and release safety: Implement a staging release with health check and a documented rollback command. Work without a walkthrough or generated core solution; write 2-4 acceptance checks first. Preserve your original Build / experiment task as the week's project milestone.",
+      "assessment": "On a fresh fixture, pick one part at random and complete it: (1) introduce a broken migration and prove CI stops deployment. (2) inject a failed health check and verify traffic remains on the last healthy build. Test the result and document why it passes or fails. For 30-45 minutes, use no tutorials or AI-generated solutions; documentation may be consulted. Record separate Recall, Build, Debug and Transfer scores (0-4), assistance and reproducible evidence. For block-ending weeks, include a cumulative checkpoint within the same study slot.",
       "beginWith": {
         "title": "GitHub Actions documentation",
         "url": "https://docs.github.com/en/actions"
-      },
-      "nextReference": {
-        "title": "OWASP Cheat Sheet Series",
-        "url": "https://cheatsheetseries.owasp.org/"
-      },
-      "evidence": "runnable artifact (or trace/explanation for conceptual weeks), tests or experiment output, one failure or trade-off, five-minute explanation, four-dimension score.",
-      "educationalDemoOnly": false,
-      "minimumToPass": null,
-      "isBoundedCore": false,
-      "sourceLine": 214,
-      "projectIds": [
-        "P01"
-      ]
-    },
-    {
-      "number": 14,
-      "title": "CD and release safety",
-      "blockId": 3,
-      "learn": "Staging, secrets, dependency scanning, automated rollback.",
-      "build": "Auto-deploy to staging then production, with rollback.",
-      "assignment": "Implement a staging release with health check and a documented rollback command. Work without a walkthrough or generated core solution; write 2-4 acceptance checks first. Preserve your original Build / experiment task as the week's project milestone.",
-      "assessment": "On a fresh fixture, inject a failed health check and verify traffic remains on the last healthy build. Test the result and document why it passes or fails. For 30-45 minutes, use no tutorials or AI-generated solutions; documentation may be consulted. Record separate Recall, Build, Debug and Transfer scores (0-4), assistance and reproducible evidence. For block-ending weeks, include a cumulative checkpoint within the same study slot.",
-      "beginWith": {
-        "title": "OWASP Cheat Sheet Series",
-        "url": "https://cheatsheetseries.owasp.org/"
       },
       "nextReference": {
         "title": "OpenTelemetry documentation",
@@ -1127,13 +1093,13 @@
       "educationalDemoOnly": false,
       "minimumToPass": null,
       "isBoundedCore": false,
-      "sourceLine": 222,
+      "sourceLine": 198,
       "projectIds": [
         "P01"
       ]
     },
     {
-      "number": 15,
+      "number": 11,
       "title": "Cloud and infrastructure",
       "blockId": 3,
       "learn": "One cloud provider, DNS and HTTPS. Terraform only if the rebuild needs it. Kubernetes: 1 hour of concepts reading, no hands-on.",
@@ -1152,13 +1118,13 @@
       "educationalDemoOnly": false,
       "minimumToPass": null,
       "isBoundedCore": false,
-      "sourceLine": 230,
+      "sourceLine": 206,
       "projectIds": [
         "P01"
       ]
     },
     {
-      "number": 16,
+      "number": 12,
       "title": "Observability",
       "blockId": 3,
       "learn": "Logs, metrics, traces, OpenTelemetry, Prometheus/Grafana, alerts, SLOs.",
@@ -1177,13 +1143,13 @@
       "educationalDemoOnly": false,
       "minimumToPass": null,
       "isBoundedCore": false,
-      "sourceLine": 238,
+      "sourceLine": 214,
       "projectIds": [
         "P01"
       ]
     },
     {
-      "number": 17,
+      "number": 13,
       "title": "API design",
       "blockId": 4,
       "learn": "REST conventions, validation, pagination, versioning, error formats, idempotency keys.",
@@ -1202,13 +1168,13 @@
       "educationalDemoOnly": false,
       "minimumToPass": null,
       "isBoundedCore": false,
-      "sourceLine": 257,
+      "sourceLine": 233,
       "projectIds": [
         "P01"
       ]
     },
     {
-      "number": 18,
+      "number": 14,
       "title": "Identity and access",
       "blockId": 4,
       "learn": "Sessions, JWT, OAuth 2.0, RBAC, tenant isolation, least privilege, audit logs.",
@@ -1227,13 +1193,13 @@
       "educationalDemoOnly": false,
       "minimumToPass": null,
       "isBoundedCore": false,
-      "sourceLine": 265,
+      "sourceLine": 241,
       "projectIds": [
         "P01"
       ]
     },
     {
-      "number": 19,
+      "number": 15,
       "title": "Third-party integrations",
       "blockId": 4,
       "learn": "Webhooks, signature checks, rate limits, retries against flaky APIs.",
@@ -1252,14 +1218,14 @@
       "educationalDemoOnly": false,
       "minimumToPass": null,
       "isBoundedCore": false,
-      "sourceLine": 273,
+      "sourceLine": 249,
       "projectIds": [
         "P01",
         "P02"
       ]
     },
     {
-      "number": 20,
+      "number": 16,
       "title": "Caching and traffic",
       "blockId": 4,
       "learn": "Redis, CDNs, rate limiting, load balancing.",
@@ -1278,14 +1244,14 @@
       "educationalDemoOnly": false,
       "minimumToPass": null,
       "isBoundedCore": false,
-      "sourceLine": 281,
+      "sourceLine": 257,
       "projectIds": [
         "P01",
         "P02"
       ]
     },
     {
-      "number": 21,
+      "number": 17,
       "title": "Queues and workflows",
       "blockId": 4,
       "learn": "Retries, backoff, idempotency, dead-letter queues, outbox pattern, replay.",
@@ -1304,14 +1270,14 @@
       "educationalDemoOnly": false,
       "minimumToPass": null,
       "isBoundedCore": false,
-      "sourceLine": 289,
+      "sourceLine": 265,
       "projectIds": [
         "P01",
         "P02"
       ]
     },
     {
-      "number": 22,
+      "number": 18,
       "title": "Data ingestion",
       "blockId": 4,
       "learn": "File uploads, document parsing, OCR basics, scheduled syncs, resumable jobs.",
@@ -1330,43 +1296,17 @@
       "educationalDemoOnly": false,
       "minimumToPass": null,
       "isBoundedCore": false,
-      "sourceLine": 297,
+      "sourceLine": 273,
       "projectIds": [
         "P01",
         "P02"
       ]
     },
     {
-      "number": 23,
-      "title": "Distributed data",
+      "number": 19,
+      "title": "Failure handling (+ distributed data reading)",
       "blockId": 4,
-      "learn": "Replication, partitioning, consistency, CAP, intro to consensus.",
-      "build": "Read-replica experiment with stale reads.",
-      "assignment": "Create a primary/read-replica demonstration and record a stale-read example. Work without a walkthrough or generated core solution; write 2-4 acceptance checks first. Preserve your original Build / experiment task as the week's project milestone.",
-      "assessment": "On a fresh fixture, route a read-after-write request and explain how consistency changes. Test the result and document why it passes or fails. For 30-45 minutes, use no tutorials or AI-generated solutions; documentation may be consulted. Record separate Recall, Build, Debug and Transfer scores (0-4), assistance and reproducible evidence. For block-ending weeks, include a cumulative checkpoint within the same study slot.",
-      "beginWith": {
-        "title": "Designing Data-Intensive Applications (publisher)",
-        "url": "https://dataintensive.net/"
-      },
-      "nextReference": {
-        "title": "Microsoft Azure Architecture: Circuit Breaker",
-        "url": "https://learn.microsoft.com/en-us/azure/architecture/patterns/circuit-breaker"
-      },
-      "evidence": "runnable artifact (or trace/explanation for conceptual weeks), tests or experiment output, one failure or trade-off, five-minute explanation, four-dimension score.",
-      "educationalDemoOnly": false,
-      "minimumToPass": null,
-      "isBoundedCore": false,
-      "sourceLine": 305,
-      "projectIds": [
-        "P01",
-        "P02"
-      ]
-    },
-    {
-      "number": 24,
-      "title": "Failure handling",
-      "blockId": 4,
-      "learn": "Timeouts, circuit breakers, backpressure, retry budgets.",
+      "learn": "Timeouts, circuit breakers, backpressure, retry budgets. Reading (not separately assessed; formerly its own week): Distributed data: Replication, partitioning, consistency, CAP, intro to consensus.",
       "build": "Add timeouts and a circuit breaker; write the design doc.",
       "assignment": "Add bounded timeouts and a circuit breaker to a flaky dependency simulation. Work without a walkthrough or generated core solution; write 2-4 acceptance checks first. Preserve your original Build / experiment task as the week's project milestone.",
       "assessment": "On a fresh fixture, test half-open recovery and prove the retry budget does not explode. Test the result and document why it passes or fails. For 30-45 minutes, use no tutorials or AI-generated solutions; documentation may be consulted. Record separate Recall, Build, Debug and Transfer scores (0-4), assistance and reproducible evidence. For block-ending weeks, include a cumulative checkpoint within the same study slot.",
@@ -1382,179 +1322,23 @@
       "educationalDemoOnly": false,
       "minimumToPass": null,
       "isBoundedCore": false,
-      "sourceLine": 313,
+      "sourceLine": 281,
       "projectIds": [
         "P01",
         "P02"
       ]
     },
     {
-      "number": 25,
-      "title": "Linear algebra",
+      "number": 20,
+      "title": "Tokens, embeddings and attention",
       "blockId": 5,
-      "learn": "Vectors, matrices, dot products, why embeddings work. Introduce NumPy this week.",
-      "build": "Compute similarity between the client's documents by hand in NumPy (project link).",
-      "assignment": "Compute and rank document cosine similarity in NumPy, validating known vectors by hand. Work without a walkthrough or generated core solution; write 2-4 acceptance checks first. Preserve your original Build / experiment task as the week's project milestone.",
-      "assessment": "On a fresh fixture, use zero vectors and unequal magnitudes; explain normalization behavior. Test the result and document why it passes or fails. For 30-45 minutes, use no tutorials or AI-generated solutions; documentation may be consulted. Record separate Recall, Build, Debug and Transfer scores (0-4), assistance and reproducible evidence. For block-ending weeks, include a cumulative checkpoint within the same study slot.",
-      "beginWith": {
-        "title": "3Blue1Brown Essence of Linear Algebra",
-        "url": "https://www.3blue1brown.com/topics/linear-algebra"
-      },
-      "nextReference": {
-        "title": "Mathematics for Machine Learning (free book)",
-        "url": "https://mml-book.github.io/"
-      },
-      "evidence": "runnable artifact (or trace/explanation for conceptual weeks), tests or experiment output, one failure or trade-off, five-minute explanation, four-dimension score.",
-      "educationalDemoOnly": false,
-      "minimumToPass": null,
-      "isBoundedCore": false,
-      "sourceLine": 332,
-      "projectIds": [
-        "P01",
-        "P03"
-      ]
-    },
-    {
-      "number": 26,
-      "title": "Calculus and probability",
-      "blockId": 5,
-      "learn": "Gradients, chain rule intuition, distributions, Bayes.",
-      "build": "Plot a loss curve and its gradient (lab).",
-      "assignment": "Differentiate a two-parameter loss by hand and check the derivatives numerically. Work without a walkthrough or generated core solution; write 2-4 acceptance checks first. Preserve your original Build / experiment task as the week's project milestone.",
-      "assessment": "On a fresh fixture, change the learning rate and explain a divergence using plotted loss. Test the result and document why it passes or fails. For 30-45 minutes, use no tutorials or AI-generated solutions; documentation may be consulted. Record separate Recall, Build, Debug and Transfer scores (0-4), assistance and reproducible evidence. For block-ending weeks, include a cumulative checkpoint within the same study slot.",
-      "beginWith": {
-        "title": "Mathematics for Machine Learning (free book)",
-        "url": "https://mml-book.github.io/"
-      },
-      "nextReference": {
-        "title": "NumPy quickstart",
-        "url": "https://numpy.org/doc/stable/user/quickstart.html"
-      },
-      "evidence": "runnable artifact (or trace/explanation for conceptual weeks), tests or experiment output, one failure or trade-off, five-minute explanation, four-dimension score.",
-      "educationalDemoOnly": false,
-      "minimumToPass": "Derive and numerically check gradients for one two-parameter function; no full calculus course. Passing still requires all four assessment gates and manual verification; optional extensions never substitute for the core.",
-      "isBoundedCore": true,
-      "sourceLine": 340,
-      "projectIds": [
-        "P01",
-        "P03"
-      ]
-    },
-    {
-      "number": 27,
-      "title": "Learning from data",
-      "blockId": 5,
-      "learn": "Regression, loss functions, gradient descent.",
-      "build": "Linear and logistic regression from scratch (lab).",
-      "assignment": "Implement logistic regression gradient updates on a tiny dataset without ML libraries. Work without a walkthrough or generated core solution; write 2-4 acceptance checks first. Preserve your original Build / experiment task as the week's project milestone.",
-      "assessment": "On a fresh fixture, rebalance labels and inspect changes in threshold-dependent precision. Test the result and document why it passes or fails. For 30-45 minutes, use no tutorials or AI-generated solutions; documentation may be consulted. Record separate Recall, Build, Debug and Transfer scores (0-4), assistance and reproducible evidence. For block-ending weeks, include a cumulative checkpoint within the same study slot.",
-      "beginWith": {
-        "title": "Mathematics for Machine Learning (free book)",
-        "url": "https://mml-book.github.io/"
-      },
-      "nextReference": {
-        "title": "NumPy quickstart",
-        "url": "https://numpy.org/doc/stable/user/quickstart.html"
-      },
-      "evidence": "runnable artifact (or trace/explanation for conceptual weeks), tests or experiment output, one failure or trade-off, five-minute explanation, four-dimension score.",
-      "educationalDemoOnly": false,
-      "minimumToPass": null,
-      "isBoundedCore": false,
-      "sourceLine": 350,
-      "projectIds": [
-        "P01",
-        "P03"
-      ]
-    },
-    {
-      "number": 28,
-      "title": "Neural nets",
-      "blockId": 5,
-      "learn": "Backpropagation, micrograd.",
-      "build": "Build micrograd yourself, no AI help on the core (lab).",
-      "assignment": "Build a minimal scalar autodiff engine supporting addition, multiplication and backward propagation. Work without a walkthrough or generated core solution; write 2-4 acceptance checks first. Preserve your original Build / experiment task as the week's project milestone.",
-      "assessment": "On a fresh fixture, test a shared subexpression and compare gradients to finite differences. Test the result and document why it passes or fails. For 30-45 minutes, use no tutorials or AI-generated solutions; documentation may be consulted. Record separate Recall, Build, Debug and Transfer scores (0-4), assistance and reproducible evidence. For block-ending weeks, include a cumulative checkpoint within the same study slot.",
-      "beginWith": {
-        "title": "Andrej Karpathy Zero to Hero",
-        "url": "https://karpathy.ai/zero-to-hero.html"
-      },
-      "nextReference": {
-        "title": "PyTorch tutorials",
-        "url": "https://docs.pytorch.org/tutorials/"
-      },
-      "evidence": "runnable artifact (or trace/explanation for conceptual weeks), tests or experiment output, one failure or trade-off, five-minute explanation, four-dimension score.",
-      "educationalDemoOnly": false,
-      "minimumToPass": "Correct autodiff for addition, multiplication, repeated variables and one finite-difference check; full micrograd is stretch. Passing still requires all four assessment gates and manual verification; optional extensions never substitute for the core.",
-      "isBoundedCore": true,
-      "sourceLine": 358,
-      "projectIds": [
-        "P01",
-        "P03"
-      ]
-    },
-    {
-      "number": 29,
-      "title": "PyTorch and training",
-      "blockId": 5,
-      "learn": "Optimizers, overfitting, regularization, train/val/test discipline.",
-      "build": "Train a small classifier, track train vs validation loss (lab).",
-      "assignment": "Train a tiny PyTorch classifier with separate train/validation splits and logged seeds. Work without a walkthrough or generated core solution; write 2-4 acceptance checks first. Preserve your original Build / experiment task as the week's project milestone.",
-      "assessment": "On a fresh fixture, inject label noise and show overfitting on the curves. Test the result and document why it passes or fails. For 30-45 minutes, use no tutorials or AI-generated solutions; documentation may be consulted. Record separate Recall, Build, Debug and Transfer scores (0-4), assistance and reproducible evidence. For block-ending weeks, include a cumulative checkpoint within the same study slot.",
-      "beginWith": {
-        "title": "PyTorch tutorials",
-        "url": "https://docs.pytorch.org/tutorials/"
-      },
-      "nextReference": {
-        "title": "Hugging Face NLP course",
-        "url": "https://huggingface.co/learn/llm-course/chapter1/1"
-      },
-      "evidence": "runnable artifact (or trace/explanation for conceptual weeks), tests or experiment output, one failure or trade-off, five-minute explanation, four-dimension score.",
-      "educationalDemoOnly": false,
-      "minimumToPass": null,
-      "isBoundedCore": false,
-      "sourceLine": 368,
-      "projectIds": [
-        "P01",
-        "P03"
-      ]
-    },
-    {
-      "number": 30,
-      "title": "Tokens and embeddings",
-      "blockId": 5,
-      "learn": "BPE tokenization, embeddings, makemore.",
-      "build": "Tokenize the client's documents and inspect token counts (project link).",
-      "assignment": "Implement simple token-frequency inspection and embedding lookup on project text. Work without a walkthrough or generated core solution; write 2-4 acceptance checks first. Preserve your original Build / experiment task as the week's project milestone.",
-      "assessment": "On a fresh fixture, compare token counts before and after altered whitespace or punctuation. Test the result and document why it passes or fails. For 30-45 minutes, use no tutorials or AI-generated solutions; documentation may be consulted. Record separate Recall, Build, Debug and Transfer scores (0-4), assistance and reproducible evidence. For block-ending weeks, include a cumulative checkpoint within the same study slot.",
+      "learn": "(1) Tokens and embeddings: BPE tokenization, embeddings, makemore. (2) Attention and transformers: Query-key-value, Let's build GPT, the Attention paper.",
+      "build": "(1) Tokens and embeddings: Tokenize the client's documents and inspect token counts (project link). (2) Attention and transformers: Build a tiny transformer (lab).",
+      "assignment": "Merged unit: keep each part to one small fixture. (1) Tokens and embeddings: Implement simple token-frequency inspection and embedding lookup on project text. (2) Attention and transformers: Implement single-head causal attention on a tiny sequence with a tested causal mask. Work without a walkthrough or generated core solution; write 2-4 acceptance checks first. Preserve your original Build / experiment task as the week's project milestone.",
+      "assessment": "On a fresh fixture, pick one part at random and complete it: (1) compare token counts before and after altered whitespace or punctuation. (2) alter sequence length and prove future-token information is blocked. Test the result and document why it passes or fails. For 30-45 minutes, use no tutorials or AI-generated solutions; documentation may be consulted. Record separate Recall, Build, Debug and Transfer scores (0-4), assistance and reproducible evidence. For block-ending weeks, include a cumulative checkpoint within the same study slot.",
       "beginWith": {
         "title": "Hugging Face NLP course",
         "url": "https://huggingface.co/learn/llm-course/chapter1/1"
-      },
-      "nextReference": {
-        "title": "Attention Is All You Need",
-        "url": "https://arxiv.org/abs/1706.03762"
-      },
-      "evidence": "runnable artifact (or trace/explanation for conceptual weeks), tests or experiment output, one failure or trade-off, five-minute explanation, four-dimension score.",
-      "educationalDemoOnly": false,
-      "minimumToPass": null,
-      "isBoundedCore": false,
-      "sourceLine": 376,
-      "projectIds": [
-        "P01",
-        "P03"
-      ]
-    },
-    {
-      "number": 31,
-      "title": "Attention and transformers",
-      "blockId": 5,
-      "learn": "Query-key-value, Let's build GPT, the Attention paper.",
-      "build": "Build a tiny transformer (lab).",
-      "assignment": "Implement single-head causal attention on a tiny sequence with a tested causal mask. Work without a walkthrough or generated core solution; write 2-4 acceptance checks first. Preserve your original Build / experiment task as the week's project milestone.",
-      "assessment": "On a fresh fixture, alter sequence length and prove future-token information is blocked. Test the result and document why it passes or fails. For 30-45 minutes, use no tutorials or AI-generated solutions; documentation may be consulted. Record separate Recall, Build, Debug and Transfer scores (0-4), assistance and reproducible evidence. For block-ending weeks, include a cumulative checkpoint within the same study slot.",
-      "beginWith": {
-        "title": "Attention Is All You Need",
-        "url": "https://arxiv.org/abs/1706.03762"
       },
       "nextReference": {
         "title": "Hugging Face PEFT",
@@ -1564,15 +1348,14 @@
       "educationalDemoOnly": false,
       "minimumToPass": "One-head masked scaled dot-product attention with shape/masking tests; end-to-end GPT training is stretch. Passing still requires all four assessment gates and manual verification; optional extensions never substitute for the core.",
       "isBoundedCore": true,
-      "sourceLine": 384,
+      "sourceLine": 300,
       "projectIds": [
-        "P01",
-        "P03"
+        "P01"
       ]
     },
     {
-      "number": 32,
-      "title": "Training stages",
+      "number": 21,
+      "title": "Training stages, fine-tuning and LoRA",
       "blockId": 5,
       "learn": "Pretraining vs fine-tuning, scaling laws, SFT, RLHF/DPO concepts, LoRA.",
       "build": "Small LoRA fine-tune on the client's support text (project link).",
@@ -1587,14 +1370,13 @@
       "educationalDemoOnly": false,
       "minimumToPass": null,
       "isBoundedCore": false,
-      "sourceLine": 394,
+      "sourceLine": 310,
       "projectIds": [
-        "P01",
-        "P03"
+        "P01"
       ]
     },
     {
-      "number": 33,
+      "number": 22,
       "title": "LLM APIs",
       "blockId": 6,
       "learn": "Context windows, sampling, structured outputs, streaming, cost and latency.",
@@ -1613,13 +1395,13 @@
       "educationalDemoOnly": false,
       "minimumToPass": null,
       "isBoundedCore": false,
-      "sourceLine": 413,
+      "sourceLine": 329,
       "projectIds": [
         "P01"
       ]
     },
     {
-      "number": 34,
+      "number": 23,
       "title": "Evals",
       "blockId": 6,
       "learn": "Golden sets, retrieval metrics, LLM-as-judge, regression tests.",
@@ -1638,17 +1420,17 @@
       "educationalDemoOnly": false,
       "minimumToPass": null,
       "isBoundedCore": false,
-      "sourceLine": 421,
+      "sourceLine": 337,
       "projectIds": [
         "P01"
       ]
     },
     {
-      "number": 35,
+      "number": 24,
       "title": "RAG",
       "blockId": 6,
       "learn": "Chunking, hybrid search (full-text and JSONB, moved here from Block 2), reranking, pgvector with HNSW, embedding vs keyword search.",
-      "build": "Build retrieval over the client's documents and score it against the Week 34 eval set.",
+      "build": "Build retrieval over the client's documents and score it against the Week 23 eval set.",
       "assignment": "Build keyword and vector retrieval baselines, comparing hit-at-k on held-out queries. Work without a walkthrough or generated core solution; write 2-4 acceptance checks first. Preserve your original Build / experiment task as the week's project milestone.",
       "assessment": "On a fresh fixture, ask a paraphrased and an exact-match query; report which retriever fails. Test the result and document why it passes or fails. For 30-45 minutes, use no tutorials or AI-generated solutions; documentation may be consulted. Record separate Recall, Build, Debug and Transfer scores (0-4), assistance and reproducible evidence. For block-ending weeks, include a cumulative checkpoint within the same study slot.",
       "beginWith": {
@@ -1663,13 +1445,13 @@
       "educationalDemoOnly": false,
       "minimumToPass": null,
       "isBoundedCore": false,
-      "sourceLine": 429,
+      "sourceLine": 345,
       "projectIds": [
         "P01"
       ]
     },
     {
-      "number": 36,
+      "number": 25,
       "title": "Tool calling and agents",
       "blockId": 6,
       "learn": "Tool calling, ReAct loop, MCP.",
@@ -1688,13 +1470,13 @@
       "educationalDemoOnly": false,
       "minimumToPass": null,
       "isBoundedCore": false,
-      "sourceLine": 437,
+      "sourceLine": 353,
       "projectIds": [
         "P01"
       ]
     },
     {
-      "number": 37,
+      "number": 26,
       "title": "Agent safety",
       "blockId": 6,
       "learn": "Prompt injection, tool permissions, human approval for sensitive actions, data leakage.",
@@ -1713,17 +1495,17 @@
       "educationalDemoOnly": false,
       "minimumToPass": null,
       "isBoundedCore": false,
-      "sourceLine": 445,
+      "sourceLine": 361,
       "projectIds": [
         "P01"
       ]
     },
     {
-      "number": 38,
+      "number": 27,
       "title": "Tracing and cost control",
       "blockId": 6,
       "learn": "Tracing, caching, model routing, token budgets.",
-      "build": "Add traces and a cost-per-conversation metric (builds on Week 33 logging). Start shadow mode: the agent drafts, a human sends.",
+      "build": "Add traces and a cost-per-conversation metric (builds on Week 22 logging). Start shadow mode: the agent drafts, a human sends.",
       "assignment": "Trace a complete model/tool interaction and compute cost per successful case. Work without a walkthrough or generated core solution; write 2-4 acceptance checks first. Preserve your original Build / experiment task as the week's project milestone.",
       "assessment": "On a fresh fixture, simulate two retries and show how cost and latency metrics change. Test the result and document why it passes or fails. For 30-45 minutes, use no tutorials or AI-generated solutions; documentation may be consulted. Record separate Recall, Build, Debug and Transfer scores (0-4), assistance and reproducible evidence. For block-ending weeks, include a cumulative checkpoint within the same study slot.",
       "beginWith": {
@@ -1738,16 +1520,16 @@
       "educationalDemoOnly": false,
       "minimumToPass": null,
       "isBoundedCore": false,
-      "sourceLine": 453,
+      "sourceLine": 369,
       "projectIds": [
         "P01"
       ]
     },
     {
-      "number": 39,
+      "number": 28,
       "title": "Interface",
       "blockId": 6,
-      "learn": "Streaming chat UI, file handling, an admin page to review conversations and failed jobs.",
+      "learn": "Streaming chat UI, file handling, an admin page to review conversations and failed jobs. Optional, not gated (formerly its own week; covered in depth by Block 15 inference systems): Serving open models: vLLM serving basics, measuring tokens/sec. Optional build: Serve an open model on a rented GPU; compare with the API on cost and latency.",
       "build": "Minimal chat UI plus admin review screen.",
       "assignment": "Build a keyboard-operable review interface showing sources, errors and approval state. Work without a walkthrough or generated core solution; write 2-4 acceptance checks first. Preserve your original Build / experiment task as the week's project milestone.",
       "assessment": "On a fresh fixture, test loading, empty, and failed-request states without a mouse. Test the result and document why it passes or fails. For 30-45 minutes, use no tutorials or AI-generated solutions; documentation may be consulted. Record separate Recall, Build, Debug and Transfer scores (0-4), assistance and reproducible evidence. For block-ending weeks, include a cumulative checkpoint within the same study slot.",
@@ -1763,35 +1545,13 @@
       "educationalDemoOnly": false,
       "minimumToPass": null,
       "isBoundedCore": false,
-      "sourceLine": 461,
+      "sourceLine": 377,
       "projectIds": [
         "P01"
       ]
     },
     {
-      "number": 40,
-      "title": "Serving open models",
-      "blockId": 6,
-      "learn": "vLLM serving basics, measuring tokens/sec.",
-      "build": "Serve an open model on a rented GPU; compare with the API on cost and latency.",
-      "assignment": "Serve one small open model and measure tokens per second and request latency under fixed conditions. Work without a walkthrough or generated core solution; write 2-4 acceptance checks first. Preserve your original Build / experiment task as the week's project milestone.",
-      "assessment": "On a fresh fixture, change sequence length, document hardware limits and compare to API baseline fairly. Test the result and document why it passes or fails. For 30-45 minutes, use no tutorials or AI-generated solutions; documentation may be consulted. Record separate Recall, Build, Debug and Transfer scores (0-4), assistance and reproducible evidence. For block-ending weeks, include a cumulative checkpoint within the same study slot.",
-      "beginWith": {
-        "title": "vLLM documentation",
-        "url": "https://docs.vllm.ai/"
-      },
-      "nextReference": null,
-      "evidence": "runnable artifact (or trace/explanation for conceptual weeks), tests or experiment output, one failure or trade-off, five-minute explanation, four-dimension score.",
-      "educationalDemoOnly": false,
-      "minimumToPass": null,
-      "isBoundedCore": false,
-      "sourceLine": 469,
-      "projectIds": [
-        "P01"
-      ]
-    },
-    {
-      "number": 41,
+      "number": 29,
       "title": "Hardening",
       "blockId": 7,
       "learn": "End-to-end and load tests, OWASP checklist, encryption at rest, data retention.",
@@ -1810,13 +1570,13 @@
       "educationalDemoOnly": false,
       "minimumToPass": null,
       "isBoundedCore": false,
-      "sourceLine": 488,
+      "sourceLine": 396,
       "projectIds": [
         "P01"
       ]
     },
     {
-      "number": 42,
+      "number": 30,
       "title": "Customer skills",
       "blockId": 7,
       "learn": "Scoping, acceptance criteria, status updates, demos, runbooks.",
@@ -1832,47 +1592,22 @@
       "educationalDemoOnly": false,
       "minimumToPass": null,
       "isBoundedCore": false,
-      "sourceLine": 496,
+      "sourceLine": 404,
       "projectIds": [
         "P01"
       ]
     },
     {
-      "number": 43,
-      "title": "Go-live",
+      "number": 31,
+      "title": "Go-live and incident response",
       "blockId": 7,
-      "learn": "Deployment and onboarding practice.",
-      "build": "Go live with the pilot business (pilot week 1 of 4). Daily monitoring.",
-      "assignment": "Deploy the pilot with consent or simulation labeling; record a baseline and first-day checklist. Work without a walkthrough or generated core solution; write 2-4 acceptance checks first. Preserve your original Build / experiment task as the week's project milestone.",
-      "assessment": "On a fresh fixture, trigger a rollback drill and show no private customer data in logs. Test the result and document why it passes or fails. For 30-45 minutes, use no tutorials or AI-generated solutions; documentation may be consulted. Record separate Recall, Build, Debug and Transfer scores (0-4), assistance and reproducible evidence. For block-ending weeks, include a cumulative checkpoint within the same study slot.",
+      "learn": "(1) Go-live: Deployment and onboarding practice. (2) Incident response: Incident response basics, post-incident reviews.",
+      "build": "(1) Go-live: Go live with the pilot business (pilot week 1 of 4). Daily monitoring. (2) Incident response: Fix issues from real usage, track metrics (pilot week 2 of 4).",
+      "assignment": "Merged unit: keep each part to one small fixture. (1) Go-live: Deploy the pilot with consent or simulation labeling; record a baseline and first-day checklist. (2) Incident response: Write an incident timeline for an injected outage and verify the documented recovery steps. Work without a walkthrough or generated core solution; write 2-4 acceptance checks first. Preserve your original Build / experiment task as the week's project milestone.",
+      "assessment": "On a fresh fixture, pick one part at random and complete it: (1) trigger a rollback drill and show no private customer data in logs. (2) repeat incident with a misleading symptom and revise the runbook. Test the result and document why it passes or fails. For 30-45 minutes, use no tutorials or AI-generated solutions; documentation may be consulted. Record separate Recall, Build, Debug and Transfer scores (0-4), assistance and reproducible evidence. For block-ending weeks, include a cumulative checkpoint within the same study slot.",
       "beginWith": {
         "title": "Google SRE Workbook",
         "url": "https://sre.google/workbook/table-of-contents/"
-      },
-      "nextReference": {
-        "title": "GitHub Docs: writing a good README",
-        "url": "https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes"
-      },
-      "evidence": "runnable artifact (or trace/explanation for conceptual weeks), tests or experiment output, one failure or trade-off, five-minute explanation, four-dimension score.",
-      "educationalDemoOnly": false,
-      "minimumToPass": null,
-      "isBoundedCore": false,
-      "sourceLine": 504,
-      "projectIds": [
-        "P01"
-      ]
-    },
-    {
-      "number": 44,
-      "title": "Incident response",
-      "blockId": 7,
-      "learn": "Incident response basics, post-incident reviews.",
-      "build": "Fix issues from real usage, track metrics (pilot week 2 of 4).",
-      "assignment": "Write an incident timeline for an injected outage and verify the documented recovery steps. Work without a walkthrough or generated core solution; write 2-4 acceptance checks first. Preserve your original Build / experiment task as the week's project milestone.",
-      "assessment": "On a fresh fixture, repeat incident with a misleading symptom and revise the runbook. Test the result and document why it passes or fails. For 30-45 minutes, use no tutorials or AI-generated solutions; documentation may be consulted. Record separate Recall, Build, Debug and Transfer scores (0-4), assistance and reproducible evidence. For block-ending weeks, include a cumulative checkpoint within the same study slot.",
-      "beginWith": {
-        "title": "Google SRE: Postmortem culture",
-        "url": "https://sre.google/sre-book/postmortem-culture/"
       },
       "nextReference": {
         "title": "Nielsen Norman Group: usability testing",
@@ -1882,47 +1617,22 @@
       "educationalDemoOnly": false,
       "minimumToPass": null,
       "isBoundedCore": false,
-      "sourceLine": 512,
+      "sourceLine": 412,
       "projectIds": [
         "P01"
       ]
     },
     {
-      "number": 45,
-      "title": "Handover",
+      "number": 32,
+      "title": "Handover, case study and portfolio",
       "blockId": 7,
-      "learn": "Post-launch review, handover checklist, finalising the runbook.",
-      "build": "Compare interim numbers with your Week 1-2 baseline (pilot week 3 of 4).",
-      "assignment": "Prepare a handover guide and have a fresh reader reproduce an operational task. Work without a walkthrough or generated core solution; write 2-4 acceptance checks first. Preserve your original Build / experiment task as the week's project milestone.",
-      "assessment": "On a fresh fixture, hide one necessary environment variable and observe handover failure. Test the result and document why it passes or fails. For 30-45 minutes, use no tutorials or AI-generated solutions; documentation may be consulted. Record separate Recall, Build, Debug and Transfer scores (0-4), assistance and reproducible evidence. For block-ending weeks, include a cumulative checkpoint within the same study slot.",
+      "learn": "(1) Handover: Post-launch review, handover checklist, finalising the runbook. (2) Case study and portfolio: Presenting technical work.",
+      "build": "(1) Handover: Compare interim numbers with your Week 1-2 baseline (pilot week 3 of 4). (2) Case study and portfolio: Pilot week 4 ends. Compare final results with the baseline. Demo video, README, resume, cleaned-up GitHub.",
+      "assignment": "Merged unit: keep each part to one small fixture. (1) Handover: Prepare a handover guide and have a fresh reader reproduce an operational task. (2) Case study and portfolio: Write a case study with baseline, sample size, observed result and limitations. Work without a walkthrough or generated core solution; write 2-4 acceptance checks first. Preserve your original Build / experiment task as the week's project milestone.",
+      "assessment": "On a fresh fixture, pick one part at random and complete it: (1) hide one necessary environment variable and observe handover failure. (2) remove one uncertain metric and revise the conclusion without exaggeration. Test the result and document why it passes or fails. For 30-45 minutes, use no tutorials or AI-generated solutions; documentation may be consulted. Record separate Recall, Build, Debug and Transfer scores (0-4), assistance and reproducible evidence. For block-ending weeks, include a cumulative checkpoint within the same study slot.",
       "beginWith": {
         "title": "Google SRE Workbook",
         "url": "https://sre.google/workbook/table-of-contents/"
-      },
-      "nextReference": {
-        "title": "GitHub Docs: writing a good README",
-        "url": "https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes"
-      },
-      "evidence": "runnable artifact (or trace/explanation for conceptual weeks), tests or experiment output, one failure or trade-off, five-minute explanation, four-dimension score.",
-      "educationalDemoOnly": false,
-      "minimumToPass": null,
-      "isBoundedCore": false,
-      "sourceLine": 520,
-      "projectIds": [
-        "P01"
-      ]
-    },
-    {
-      "number": 46,
-      "title": "Case study and portfolio",
-      "blockId": 7,
-      "learn": "Presenting technical work.",
-      "build": "Pilot week 4 ends. Compare final results with the baseline. Demo video, README, resume, cleaned-up GitHub.",
-      "assignment": "Write a case study with baseline, sample size, observed result and limitations. Work without a walkthrough or generated core solution; write 2-4 acceptance checks first. Preserve your original Build / experiment task as the week's project milestone.",
-      "assessment": "On a fresh fixture, remove one uncertain metric and revise the conclusion without exaggeration. Test the result and document why it passes or fails. For 30-45 minutes, use no tutorials or AI-generated solutions; documentation may be consulted. Record separate Recall, Build, Debug and Transfer scores (0-4), assistance and reproducible evidence. For block-ending weeks, include a cumulative checkpoint within the same study slot.",
-      "beginWith": {
-        "title": "Google Technical Writing",
-        "url": "https://developers.google.com/tech-writing"
       },
       "nextReference": {
         "title": "Google SRE: Postmortem culture",
@@ -1932,13 +1642,13 @@
       "educationalDemoOnly": false,
       "minimumToPass": null,
       "isBoundedCore": false,
-      "sourceLine": 528,
+      "sourceLine": 420,
       "projectIds": [
         "P01"
       ]
     },
     {
-      "number": 47,
+      "number": 33,
       "title": "Interview prep",
       "blockId": 7,
       "learn": "System design, live coding, AI engineering questions, mock customer calls (tailored to your chosen lane).",
@@ -1957,15 +1667,140 @@
       "educationalDemoOnly": false,
       "minimumToPass": null,
       "isBoundedCore": false,
-      "sourceLine": 536,
+      "sourceLine": 428,
       "projectIds": [
         "P01"
       ]
     },
     {
-      "number": 48,
-      "title": "Scheduling",
+      "number": 34,
+      "title": "Linear algebra",
       "blockId": 8,
+      "learn": "Vectors, matrices, dot products, why embeddings work. Introduce NumPy this week.",
+      "build": "Compute similarity between the client's documents by hand in NumPy (project link).",
+      "assignment": "Compute and rank document cosine similarity in NumPy, validating known vectors by hand. Work without a walkthrough or generated core solution; write 2-4 acceptance checks first. Preserve your original Build / experiment task as the week's project milestone.",
+      "assessment": "On a fresh fixture, use zero vectors and unequal magnitudes; explain normalization behavior. Test the result and document why it passes or fails. For 30-45 minutes, use no tutorials or AI-generated solutions; documentation may be consulted. Record separate Recall, Build, Debug and Transfer scores (0-4), assistance and reproducible evidence. For block-ending weeks, include a cumulative checkpoint within the same study slot.",
+      "beginWith": {
+        "title": "3Blue1Brown Essence of Linear Algebra",
+        "url": "https://www.3blue1brown.com/topics/linear-algebra"
+      },
+      "nextReference": {
+        "title": "Mathematics for Machine Learning (free book)",
+        "url": "https://mml-book.github.io/"
+      },
+      "evidence": "runnable artifact (or trace/explanation for conceptual weeks), tests or experiment output, one failure or trade-off, five-minute explanation, four-dimension score.",
+      "educationalDemoOnly": false,
+      "minimumToPass": null,
+      "isBoundedCore": false,
+      "sourceLine": 447,
+      "projectIds": [
+        "P03"
+      ]
+    },
+    {
+      "number": 35,
+      "title": "Calculus and probability",
+      "blockId": 8,
+      "learn": "Gradients, chain rule intuition, distributions, Bayes.",
+      "build": "Plot a loss curve and its gradient (lab).",
+      "assignment": "Differentiate a two-parameter loss by hand and check the derivatives numerically. Work without a walkthrough or generated core solution; write 2-4 acceptance checks first. Preserve your original Build / experiment task as the week's project milestone.",
+      "assessment": "On a fresh fixture, change the learning rate and explain a divergence using plotted loss. Test the result and document why it passes or fails. For 30-45 minutes, use no tutorials or AI-generated solutions; documentation may be consulted. Record separate Recall, Build, Debug and Transfer scores (0-4), assistance and reproducible evidence. For block-ending weeks, include a cumulative checkpoint within the same study slot.",
+      "beginWith": {
+        "title": "Mathematics for Machine Learning (free book)",
+        "url": "https://mml-book.github.io/"
+      },
+      "nextReference": {
+        "title": "NumPy quickstart",
+        "url": "https://numpy.org/doc/stable/user/quickstart.html"
+      },
+      "evidence": "runnable artifact (or trace/explanation for conceptual weeks), tests or experiment output, one failure or trade-off, five-minute explanation, four-dimension score.",
+      "educationalDemoOnly": false,
+      "minimumToPass": "Derive and numerically check gradients for one two-parameter function; no full calculus course. Passing still requires all four assessment gates and manual verification; optional extensions never substitute for the core.",
+      "isBoundedCore": true,
+      "sourceLine": 455,
+      "projectIds": [
+        "P03"
+      ]
+    },
+    {
+      "number": 36,
+      "title": "Learning from data",
+      "blockId": 8,
+      "learn": "Regression, loss functions, gradient descent.",
+      "build": "Linear and logistic regression from scratch (lab).",
+      "assignment": "Implement logistic regression gradient updates on a tiny dataset without ML libraries. Work without a walkthrough or generated core solution; write 2-4 acceptance checks first. Preserve your original Build / experiment task as the week's project milestone.",
+      "assessment": "On a fresh fixture, rebalance labels and inspect changes in threshold-dependent precision. Test the result and document why it passes or fails. For 30-45 minutes, use no tutorials or AI-generated solutions; documentation may be consulted. Record separate Recall, Build, Debug and Transfer scores (0-4), assistance and reproducible evidence. For block-ending weeks, include a cumulative checkpoint within the same study slot.",
+      "beginWith": {
+        "title": "Mathematics for Machine Learning (free book)",
+        "url": "https://mml-book.github.io/"
+      },
+      "nextReference": {
+        "title": "NumPy quickstart",
+        "url": "https://numpy.org/doc/stable/user/quickstart.html"
+      },
+      "evidence": "runnable artifact (or trace/explanation for conceptual weeks), tests or experiment output, one failure or trade-off, five-minute explanation, four-dimension score.",
+      "educationalDemoOnly": false,
+      "minimumToPass": null,
+      "isBoundedCore": false,
+      "sourceLine": 465,
+      "projectIds": [
+        "P03"
+      ]
+    },
+    {
+      "number": 37,
+      "title": "Neural nets",
+      "blockId": 8,
+      "learn": "Backpropagation, micrograd.",
+      "build": "Build micrograd yourself, no AI help on the core (lab).",
+      "assignment": "Build a minimal scalar autodiff engine supporting addition, multiplication and backward propagation. Work without a walkthrough or generated core solution; write 2-4 acceptance checks first. Preserve your original Build / experiment task as the week's project milestone.",
+      "assessment": "On a fresh fixture, test a shared subexpression and compare gradients to finite differences. Test the result and document why it passes or fails. For 30-45 minutes, use no tutorials or AI-generated solutions; documentation may be consulted. Record separate Recall, Build, Debug and Transfer scores (0-4), assistance and reproducible evidence. For block-ending weeks, include a cumulative checkpoint within the same study slot.",
+      "beginWith": {
+        "title": "Andrej Karpathy Zero to Hero",
+        "url": "https://karpathy.ai/zero-to-hero.html"
+      },
+      "nextReference": {
+        "title": "PyTorch tutorials",
+        "url": "https://docs.pytorch.org/tutorials/"
+      },
+      "evidence": "runnable artifact (or trace/explanation for conceptual weeks), tests or experiment output, one failure or trade-off, five-minute explanation, four-dimension score.",
+      "educationalDemoOnly": false,
+      "minimumToPass": "Correct autodiff for addition, multiplication, repeated variables and one finite-difference check; full micrograd is stretch. Passing still requires all four assessment gates and manual verification; optional extensions never substitute for the core.",
+      "isBoundedCore": true,
+      "sourceLine": 473,
+      "projectIds": [
+        "P03"
+      ]
+    },
+    {
+      "number": 38,
+      "title": "PyTorch and training",
+      "blockId": 8,
+      "learn": "Optimizers, overfitting, regularization, train/val/test discipline.",
+      "build": "Train a small classifier, track train vs validation loss (lab).",
+      "assignment": "Train a tiny PyTorch classifier with separate train/validation splits and logged seeds. Work without a walkthrough or generated core solution; write 2-4 acceptance checks first. Preserve your original Build / experiment task as the week's project milestone.",
+      "assessment": "On a fresh fixture, inject label noise and show overfitting on the curves. Test the result and document why it passes or fails. For 30-45 minutes, use no tutorials or AI-generated solutions; documentation may be consulted. Record separate Recall, Build, Debug and Transfer scores (0-4), assistance and reproducible evidence. For block-ending weeks, include a cumulative checkpoint within the same study slot.",
+      "beginWith": {
+        "title": "PyTorch tutorials",
+        "url": "https://docs.pytorch.org/tutorials/"
+      },
+      "nextReference": {
+        "title": "Hugging Face NLP course",
+        "url": "https://huggingface.co/learn/llm-course/chapter1/1"
+      },
+      "evidence": "runnable artifact (or trace/explanation for conceptual weeks), tests or experiment output, one failure or trade-off, five-minute explanation, four-dimension score.",
+      "educationalDemoOnly": false,
+      "minimumToPass": null,
+      "isBoundedCore": false,
+      "sourceLine": 483,
+      "projectIds": [
+        "P03"
+      ]
+    },
+    {
+      "number": 39,
+      "title": "Scheduling",
+      "blockId": 9,
       "learn": "CPU scheduling policies, context switches.",
       "build": "Simulate FCFS, SJF, round-robin and MLFQ in code.",
       "assignment": "Implement an FCFS and round-robin scheduler simulator and compare wait times. Work without a walkthrough or generated core solution; write 2-4 acceptance checks first. Preserve your original Build / experiment task as the week's project milestone.",
@@ -1982,15 +1817,15 @@
       "educationalDemoOnly": false,
       "minimumToPass": null,
       "isBoundedCore": false,
-      "sourceLine": 555,
+      "sourceLine": 502,
       "projectIds": [
         "P04"
       ]
     },
     {
-      "number": 49,
+      "number": 40,
       "title": "Concurrency",
-      "blockId": 8,
+      "blockId": 9,
       "learn": "Threads, locks, condition variables, deadlock.",
       "build": "Build a thread-safe queue.",
       "assignment": "Implement a bounded producer-consumer queue with condition variables and race tests. Work without a walkthrough or generated core solution; write 2-4 acceptance checks first. Preserve your original Build / experiment task as the week's project milestone.",
@@ -2007,15 +1842,15 @@
       "educationalDemoOnly": false,
       "minimumToPass": null,
       "isBoundedCore": false,
-      "sourceLine": 563,
+      "sourceLine": 510,
       "projectIds": [
         "P04"
       ]
     },
     {
-      "number": 50,
+      "number": 41,
       "title": "Virtual memory in depth",
-      "blockId": 8,
+      "blockId": 9,
       "learn": "Paging, TLBs, page replacement, malloc design.",
       "build": "Build a toy memory allocator and test it with a stress program.",
       "assignment": "Build a basic bump allocator with bounds checking and repeatable allocations. Work without a walkthrough or generated core solution; write 2-4 acceptance checks first. Preserve your original Build / experiment task as the week's project milestone.",
@@ -2032,15 +1867,15 @@
       "educationalDemoOnly": true,
       "minimumToPass": null,
       "isBoundedCore": false,
-      "sourceLine": 571,
+      "sourceLine": 518,
       "projectIds": [
         "P04"
       ]
     },
     {
-      "number": 51,
+      "number": 42,
       "title": "Filesystems",
-      "blockId": 8,
+      "blockId": 9,
       "learn": "Journaling, crash consistency.",
       "build": "Build a tiny append-only log store; crash-test it with kill -9.",
       "assignment": "Build an append-only file journal with replay after forced termination. Work without a walkthrough or generated core solution; write 2-4 acceptance checks first. Preserve your original Build / experiment task as the week's project milestone.",
@@ -2057,15 +1892,15 @@
       "educationalDemoOnly": false,
       "minimumToPass": null,
       "isBoundedCore": false,
-      "sourceLine": 579,
+      "sourceLine": 526,
       "projectIds": [
         "P04"
       ]
     },
     {
-      "number": 52,
+      "number": 43,
       "title": "Containers",
-      "blockId": 8,
+      "blockId": 9,
       "learn": "Namespaces, cgroups.",
       "build": "Build a container by hand with namespaces.",
       "assignment": "Run a process with selected Linux namespaces and inspect visible PID/network differences. Work without a walkthrough or generated core solution; write 2-4 acceptance checks first. Preserve your original Build / experiment task as the week's project milestone.",
@@ -2082,15 +1917,15 @@
       "educationalDemoOnly": false,
       "minimumToPass": null,
       "isBoundedCore": false,
-      "sourceLine": 587,
+      "sourceLine": 534,
       "projectIds": [
         "P04"
       ]
     },
     {
-      "number": 53,
+      "number": 44,
       "title": "System calls and the shell",
-      "blockId": 8,
+      "blockId": 9,
       "learn": "xv6 structure, how system calls work.",
       "build": "Read xv6 syscalls; build a toy shell (fork/exec, pipes, signals).",
       "assignment": "Implement a tiny shell that runs programs and handles a simple pipe. Work without a walkthrough or generated core solution; write 2-4 acceptance checks first. Preserve your original Build / experiment task as the week's project milestone.",
@@ -2107,15 +1942,15 @@
       "educationalDemoOnly": true,
       "minimumToPass": null,
       "isBoundedCore": false,
-      "sourceLine": 595,
+      "sourceLine": 542,
       "projectIds": [
         "P04"
       ]
     },
     {
-      "number": 54,
+      "number": 45,
       "title": "Storage and pages",
-      "blockId": 9,
+      "blockId": 10,
       "learn": "Heap files, slotted pages.",
       "build": "Page manager for a key-value store.",
       "assignment": "Implement a fixed-size slotted-page format that can insert and read small records. Work without a walkthrough or generated core solution; write 2-4 acceptance checks first. Preserve your original Build / experiment task as the week's project milestone.",
@@ -2132,15 +1967,15 @@
       "educationalDemoOnly": false,
       "minimumToPass": null,
       "isBoundedCore": false,
-      "sourceLine": 614,
+      "sourceLine": 561,
       "projectIds": [
         "P05"
       ]
     },
     {
-      "number": 55,
+      "number": 46,
       "title": "B-trees",
-      "blockId": 9,
+      "blockId": 10,
       "learn": "Insert, split, search.",
       "build": "B-tree implementation.",
       "assignment": "Implement search and insertion for a small B-tree with leaf splitting. Work without a walkthrough or generated core solution; write 2-4 acceptance checks first. Preserve your original Build / experiment task as the week's project milestone.",
@@ -2157,15 +1992,15 @@
       "educationalDemoOnly": false,
       "minimumToPass": null,
       "isBoundedCore": false,
-      "sourceLine": 622,
+      "sourceLine": 569,
       "projectIds": [
         "P05"
       ]
     },
     {
-      "number": 56,
+      "number": 47,
       "title": "Buffer manager",
-      "blockId": 9,
+      "blockId": 10,
       "learn": "Caching pages, eviction policies.",
       "build": "Add a buffer pool.",
       "assignment": "Build an LRU buffer-pool simulator with pin/unpin semantics and eviction tests. Work without a walkthrough or generated core solution; write 2-4 acceptance checks first. Preserve your original Build / experiment task as the week's project milestone.",
@@ -2182,15 +2017,15 @@
       "educationalDemoOnly": false,
       "minimumToPass": null,
       "isBoundedCore": false,
-      "sourceLine": 630,
+      "sourceLine": 577,
       "projectIds": [
         "P05"
       ]
     },
     {
-      "number": 57,
+      "number": 48,
       "title": "Query execution",
-      "blockId": 9,
+      "blockId": 10,
       "learn": "Planner, join algorithms, cost estimates.",
       "build": "Add a scan/filter operator to your store; compare join plans in Postgres on your 1M-row data.",
       "assignment": "Implement a scan/filter operator and compare its results with SQL reference output. Work without a walkthrough or generated core solution; write 2-4 acceptance checks first. Preserve your original Build / experiment task as the week's project milestone.",
@@ -2207,15 +2042,15 @@
       "educationalDemoOnly": false,
       "minimumToPass": null,
       "isBoundedCore": false,
-      "sourceLine": 638,
+      "sourceLine": 585,
       "projectIds": [
         "P05"
       ]
     },
     {
-      "number": 58,
+      "number": 49,
       "title": "WAL and recovery",
-      "blockId": 9,
+      "blockId": 10,
       "learn": "Logging, checkpoints, crash recovery.",
       "build": "Add a write-ahead log and a crash test.",
       "assignment": "Add write-ahead records to a toy store and replay a committed update after crash. Work without a walkthrough or generated core solution; write 2-4 acceptance checks first. Preserve your original Build / experiment task as the week's project milestone.",
@@ -2229,15 +2064,15 @@
       "educationalDemoOnly": true,
       "minimumToPass": null,
       "isBoundedCore": false,
-      "sourceLine": 646,
+      "sourceLine": 593,
       "projectIds": [
         "P05"
       ]
     },
     {
-      "number": 59,
+      "number": 50,
       "title": "Replication",
-      "blockId": 9,
+      "blockId": 10,
       "learn": "Streaming replication, failover.",
       "build": "Finish and benchmark the store.",
       "assignment": "Simulate primary/follower state replication with explicit version numbers. Work without a walkthrough or generated core solution; write 2-4 acceptance checks first. Preserve your original Build / experiment task as the week's project milestone.",
@@ -2251,15 +2086,15 @@
       "educationalDemoOnly": true,
       "minimumToPass": null,
       "isBoundedCore": false,
-      "sourceLine": 654,
+      "sourceLine": 601,
       "projectIds": [
         "P05"
       ]
     },
     {
-      "number": 60,
+      "number": 51,
       "title": "Time and ordering",
-      "blockId": 10,
+      "blockId": 11,
       "learn": "Clocks, logical time, happens-before.",
       "build": "Lamport clock simulation.",
       "assignment": "Implement Lamport clocks for a three-node message trace. Work without a walkthrough or generated core solution; write 2-4 acceptance checks first. Preserve your original Build / experiment task as the week's project milestone.",
@@ -2276,15 +2111,15 @@
       "educationalDemoOnly": false,
       "minimumToPass": null,
       "isBoundedCore": false,
-      "sourceLine": 673,
+      "sourceLine": 620,
       "projectIds": [
         "P06"
       ]
     },
     {
-      "number": 61,
+      "number": 52,
       "title": "Replication",
-      "blockId": 10,
+      "blockId": 11,
       "learn": "Leaders, followers, quorums.",
       "build": "Primary-backup key-value store.",
       "assignment": "Implement a simple primary-backup write log with acknowledgements. Work without a walkthrough or generated core solution; write 2-4 acceptance checks first. Preserve your original Build / experiment task as the week's project milestone.",
@@ -2298,15 +2133,15 @@
       "educationalDemoOnly": false,
       "minimumToPass": null,
       "isBoundedCore": false,
-      "sourceLine": 681,
+      "sourceLine": 628,
       "projectIds": [
         "P06"
       ]
     },
     {
-      "number": 62,
+      "number": 53,
       "title": "Paxos",
-      "blockId": 10,
+      "blockId": 11,
       "learn": "Consensus problem, Paxos basics.",
       "build": "Trace a Paxos run on paper.",
       "assignment": "Trace a fixed two-proposer Paxos execution on paper with promises and acceptances. Work without a walkthrough or generated core solution; write 2-4 acceptance checks first. Preserve your original Build / experiment task as the week's project milestone.",
@@ -2320,15 +2155,15 @@
       "educationalDemoOnly": true,
       "minimumToPass": null,
       "isBoundedCore": false,
-      "sourceLine": 689,
+      "sourceLine": 636,
       "projectIds": [
         "P06"
       ]
     },
     {
-      "number": 63,
+      "number": 54,
       "title": "Raft: leader election",
-      "blockId": 10,
+      "blockId": 11,
       "learn": "Terms, votes, election timeouts.",
       "build": "Implement leader election.",
       "assignment": "Implement a minimal Raft-style election state machine for three simulated nodes. Work without a walkthrough or generated core solution; write 2-4 acceptance checks first. Preserve your original Build / experiment task as the week's project milestone.",
@@ -2345,15 +2180,15 @@
       "educationalDemoOnly": true,
       "minimumToPass": "Election only in a deterministic three-node simulation with term and vote invariants; networked Raft is stretch. Passing still requires all four assessment gates and manual verification; optional extensions never substitute for the core.",
       "isBoundedCore": true,
-      "sourceLine": 697,
+      "sourceLine": 644,
       "projectIds": [
         "P06"
       ]
     },
     {
-      "number": 64,
+      "number": 55,
       "title": "Raft: log replication",
-      "blockId": 10,
+      "blockId": 11,
       "learn": "Log matching, commit rules.",
       "build": "Add log replication to your store.",
       "assignment": "Extend a simulated leader with a log-match check and majority-commit exercise. Work without a walkthrough or generated core solution; write 2-4 acceptance checks first. Preserve your original Build / experiment task as the week's project milestone.",
@@ -2370,15 +2205,15 @@
       "educationalDemoOnly": true,
       "minimumToPass": "Demonstrate log matching and majority commit in a deterministic simulation; production fault tolerance is stretch. Passing still requires all four assessment gates and manual verification; optional extensions never substitute for the core.",
       "isBoundedCore": true,
-      "sourceLine": 707,
+      "sourceLine": 654,
       "projectIds": [
         "P06"
       ]
     },
     {
-      "number": 65,
+      "number": 56,
       "title": "Consistency and fault injection",
-      "blockId": 10,
+      "blockId": 11,
       "learn": "Consistency models, two-phase commit.",
       "build": "Kill nodes and verify the store stays correct.",
       "assignment": "Run deterministic fault-injection cases on the replicated-store simulator. Work without a walkthrough or generated core solution; write 2-4 acceptance checks first. Preserve your original Build / experiment task as the week's project milestone.",
@@ -2392,15 +2227,15 @@
       "educationalDemoOnly": true,
       "minimumToPass": "Three documented fault cases checking safety properties in a toy simulation; no production consensus claim. Passing still requires all four assessment gates and manual verification; optional extensions never substitute for the core.",
       "isBoundedCore": true,
-      "sourceLine": 717,
+      "sourceLine": 664,
       "projectIds": [
         "P06"
       ]
     },
     {
-      "number": 66,
+      "number": 57,
       "title": "Training dynamics",
-      "blockId": 11,
+      "blockId": 12,
       "learn": "Optimizers, learning-rate schedules, initialization.",
       "build": "Compare optimizers on a small model.",
       "assignment": "Train a tiny model using two optimizers and compare validation trajectories at fixed seeds. Work without a walkthrough or generated core solution; write 2-4 acceptance checks first. Preserve your original Build / experiment task as the week's project milestone.",
@@ -2417,15 +2252,15 @@
       "educationalDemoOnly": false,
       "minimumToPass": null,
       "isBoundedCore": false,
-      "sourceLine": 738,
+      "sourceLine": 685,
       "projectIds": [
         "P07"
       ]
     },
     {
-      "number": 67,
+      "number": 58,
       "title": "Scaling laws",
-      "blockId": 11,
+      "blockId": 12,
       "learn": "Compute, data and parameter trade-offs.",
       "build": "Reproduce a small scaling curve.",
       "assignment": "Run a tiny model-size versus compute comparison with logged token counts. Work without a walkthrough or generated core solution; write 2-4 acceptance checks first. Preserve your original Build / experiment task as the week's project milestone.",
@@ -2442,15 +2277,15 @@
       "educationalDemoOnly": false,
       "minimumToPass": null,
       "isBoundedCore": false,
-      "sourceLine": 746,
+      "sourceLine": 693,
       "projectIds": [
         "P07"
       ]
     },
     {
-      "number": 68,
+      "number": 59,
       "title": "Modern architectures",
-      "blockId": 11,
+      "blockId": 12,
       "learn": "GQA, RoPE, MoE.",
       "build": "Add RoPE to your tiny transformer.",
       "assignment": "Implement rotary position embedding on a tiny attention tensor with shape tests. Work without a walkthrough or generated core solution; write 2-4 acceptance checks first. Preserve your original Build / experiment task as the week's project milestone.",
@@ -2467,15 +2302,15 @@
       "educationalDemoOnly": false,
       "minimumToPass": null,
       "isBoundedCore": false,
-      "sourceLine": 754,
+      "sourceLine": 701,
       "projectIds": [
         "P07"
       ]
     },
     {
-      "number": 69,
+      "number": 60,
       "title": "Data pipelines",
-      "blockId": 11,
+      "blockId": 12,
       "learn": "Dataset building, filtering, deduplication.",
       "build": "Build a cleaned training set.",
       "assignment": "Build a deduplication and filtering pipeline that reports retained data proportion. Work without a walkthrough or generated core solution; write 2-4 acceptance checks first. Preserve your original Build / experiment task as the week's project milestone.",
@@ -2492,15 +2327,15 @@
       "educationalDemoOnly": false,
       "minimumToPass": null,
       "isBoundedCore": false,
-      "sourceLine": 762,
+      "sourceLine": 709,
       "projectIds": [
         "P07"
       ]
     },
     {
-      "number": 70,
+      "number": 61,
       "title": "Mixed precision and memory",
-      "blockId": 11,
+      "blockId": 12,
       "learn": "FP16/BF16, activation memory, checkpointing.",
       "build": "Measure memory with and without mixed precision (GPU).",
       "assignment": "Measure training memory for one small model at two precision settings. Work without a walkthrough or generated core solution; write 2-4 acceptance checks first. Preserve your original Build / experiment task as the week's project milestone.",
@@ -2517,15 +2352,15 @@
       "educationalDemoOnly": true,
       "minimumToPass": null,
       "isBoundedCore": false,
-      "sourceLine": 770,
+      "sourceLine": 717,
       "projectIds": [
         "P07"
       ]
     },
     {
-      "number": 71,
+      "number": 62,
       "title": "Data parallel and FSDP",
-      "blockId": 11,
+      "blockId": 12,
       "learn": "Gradient sync, sharding.",
       "build": "Multi-GPU or simulated data-parallel run.",
       "assignment": "Demonstrate data-parallel gradient averaging on CPU with two synthetic workers. Work without a walkthrough or generated core solution; write 2-4 acceptance checks first. Preserve your original Build / experiment task as the week's project milestone.",
@@ -2542,15 +2377,15 @@
       "educationalDemoOnly": true,
       "minimumToPass": null,
       "isBoundedCore": false,
-      "sourceLine": 778,
+      "sourceLine": 725,
       "projectIds": [
         "P07"
       ]
     },
     {
-      "number": 72,
+      "number": 63,
       "title": "Tensor and pipeline parallelism",
-      "blockId": 11,
+      "blockId": 12,
       "learn": "Splitting models across devices.",
       "build": "Work out a parallelism plan for a larger model on paper.",
       "assignment": "Create a documented partition plan for a model with per-device memory estimates. Work without a walkthrough or generated core solution; write 2-4 acceptance checks first. Preserve your original Build / experiment task as the week's project milestone.",
@@ -2567,15 +2402,15 @@
       "educationalDemoOnly": true,
       "minimumToPass": null,
       "isBoundedCore": false,
-      "sourceLine": 786,
+      "sourceLine": 733,
       "projectIds": [
         "P07"
       ]
     },
     {
-      "number": 73,
+      "number": 64,
       "title": "Train a small LM",
-      "blockId": 11,
+      "blockId": 12,
       "learn": "Full training run.",
       "build": "Train; track loss and compute used.",
       "assignment": "Run a reproducible short small-LM training loop with checkpoints and loss log. Work without a walkthrough or generated core solution; write 2-4 acceptance checks first. Preserve your original Build / experiment task as the week's project milestone.",
@@ -2592,15 +2427,15 @@
       "educationalDemoOnly": true,
       "minimumToPass": "One reproducible tiny language-model training run, checkpoint/restart and train/validation curves; large model training is stretch. Passing still requires all four assessment gates and manual verification; optional extensions never substitute for the core.",
       "isBoundedCore": true,
-      "sourceLine": 794,
+      "sourceLine": 741,
       "projectIds": [
         "P07"
       ]
     },
     {
-      "number": 74,
+      "number": 65,
       "title": "CPU vs GPU and memory hierarchy",
-      "blockId": 12,
+      "blockId": 13,
       "learn": "Registers, SRAM, HBM, DRAM, why data movement dominates.",
       "build": "Measure memory bandwidth on a GPU.",
       "assignment": "Benchmark a CPU and GPU vector operation with data-transfer time separated. Work without a walkthrough or generated core solution; write 2-4 acceptance checks first. Preserve your original Build / experiment task as the week's project milestone.",
@@ -2617,15 +2452,15 @@
       "educationalDemoOnly": false,
       "minimumToPass": null,
       "isBoundedCore": false,
-      "sourceLine": 815,
+      "sourceLine": 762,
       "projectIds": [
         "P08"
       ]
     },
     {
-      "number": 75,
+      "number": 66,
       "title": "Roofline model",
-      "blockId": 12,
+      "blockId": 13,
       "learn": "Arithmetic intensity, compute vs memory bound.",
       "build": "Roofline for your own model.",
       "assignment": "Construct a roofline estimate for one measured matrix multiplication. Work without a walkthrough or generated core solution; write 2-4 acceptance checks first. Preserve your original Build / experiment task as the week's project milestone.",
@@ -2642,15 +2477,15 @@
       "educationalDemoOnly": false,
       "minimumToPass": null,
       "isBoundedCore": false,
-      "sourceLine": 823,
+      "sourceLine": 770,
       "projectIds": [
         "P08"
       ]
     },
     {
-      "number": 76,
+      "number": 67,
       "title": "CUDA basics",
-      "blockId": 12,
+      "blockId": 13,
       "learn": "Threads, blocks, warps, memory spaces.",
       "build": "Vector add and matrix multiply kernels.",
       "assignment": "Write and verify a basic CUDA vector-add kernel against a CPU reference. Work without a walkthrough or generated core solution; write 2-4 acceptance checks first. Preserve your original Build / experiment task as the week's project milestone.",
@@ -2667,15 +2502,15 @@
       "educationalDemoOnly": true,
       "minimumToPass": "One bounds-safe vector addition kernel and CPU comparison; GPU unavailable means record a blocked hardware prerequisite, not measured-GPU evidence. Passing still requires all four assessment gates and manual verification; optional extensions never substitute for the core.",
       "isBoundedCore": true,
-      "sourceLine": 831,
+      "sourceLine": 778,
       "projectIds": [
         "P08"
       ]
     },
     {
-      "number": 77,
+      "number": 68,
       "title": "Kernel optimization",
-      "blockId": 12,
+      "blockId": 13,
       "learn": "Tiling, coalescing, profiling with Nsight.",
       "build": "Speed up your matmul and report gains.",
       "assignment": "Optimize a simple CUDA matrix operation and report median runtime before/after. Work without a walkthrough or generated core solution; write 2-4 acceptance checks first. Preserve your original Build / experiment task as the week's project milestone.",
@@ -2692,15 +2527,15 @@
       "educationalDemoOnly": true,
       "minimumToPass": "One measurable kernel improvement with correctness checks and fixed hardware/input; optimized GEMM is stretch. Passing still requires all four assessment gates and manual verification; optional extensions never substitute for the core.",
       "isBoundedCore": true,
-      "sourceLine": 841,
+      "sourceLine": 788,
       "projectIds": [
         "P08"
       ]
     },
     {
-      "number": 78,
+      "number": 69,
       "title": "Tensor cores and precision",
-      "blockId": 12,
+      "blockId": 13,
       "learn": "FP16, BF16, FP8, INT8.",
       "build": "Compare speed and accuracy across precisions.",
       "assignment": "Compare two available numerical precisions on a fixed small workload. Work without a walkthrough or generated core solution; write 2-4 acceptance checks first. Preserve your original Build / experiment task as the week's project milestone.",
@@ -2717,15 +2552,15 @@
       "educationalDemoOnly": false,
       "minimumToPass": "Two supported precisions benchmarked for error and latency; FP8 hardware support is not required. Passing still requires all four assessment gates and manual verification; optional extensions never substitute for the core.",
       "isBoundedCore": true,
-      "sourceLine": 851,
+      "sourceLine": 798,
       "projectIds": [
         "P08"
       ]
     },
     {
-      "number": 79,
+      "number": 70,
       "title": "FlashAttention",
-      "blockId": 12,
+      "blockId": 13,
       "learn": "Why SRAM vs HBM matters for attention.",
       "build": "Benchmark attention and explain it in the write-up.",
       "assignment": "Benchmark standard versus memory-efficient attention where available. Work without a walkthrough or generated core solution; write 2-4 acceptance checks first. Preserve your original Build / experiment task as the week's project milestone.",
@@ -2742,15 +2577,15 @@
       "educationalDemoOnly": true,
       "minimumToPass": "Memory and timing comparison of an available efficient-attention implementation against baseline; writing FlashAttention from scratch is stretch. Passing still requires all four assessment gates and manual verification; optional extensions never substitute for the core.",
       "isBoundedCore": true,
-      "sourceLine": 861,
+      "sourceLine": 808,
       "projectIds": [
         "P08"
       ]
     },
     {
-      "number": 80,
+      "number": 71,
       "title": "TPUs",
-      "blockId": 12,
+      "blockId": 13,
       "learn": "Systolic arrays, TPU design.",
       "build": "Hand-trace a small matrix multiply on a systolic array.",
       "assignment": "Simulate a small systolic matrix multiply and verify the result by hand. Work without a walkthrough or generated core solution; write 2-4 acceptance checks first. Preserve your original Build / experiment task as the week's project milestone.",
@@ -2767,15 +2602,15 @@
       "educationalDemoOnly": false,
       "minimumToPass": null,
       "isBoundedCore": false,
-      "sourceLine": 871,
+      "sourceLine": 818,
       "projectIds": [
         "P08"
       ]
     },
     {
-      "number": 81,
+      "number": 72,
       "title": "NPUs and interconnects",
-      "blockId": 12,
+      "blockId": 13,
       "learn": "NPUs, NVLink, InfiniBand.",
       "build": "Compare accelerator types in a table with sources.",
       "assignment": "Produce a cited architecture comparison of GPU, TPU and NPU bandwidth/interconnect limits. Work without a walkthrough or generated core solution; write 2-4 acceptance checks first. Preserve your original Build / experiment task as the week's project milestone.",
@@ -2792,15 +2627,15 @@
       "educationalDemoOnly": false,
       "minimumToPass": null,
       "isBoundedCore": false,
-      "sourceLine": 879,
+      "sourceLine": 826,
       "projectIds": [
         "P08"
       ]
     },
     {
-      "number": 82,
+      "number": 73,
       "title": "Energy per operation",
-      "blockId": 13,
+      "blockId": 14,
       "learn": "Cost of arithmetic vs data movement.",
       "build": "Estimate energy for a matmul from published figures.",
       "assignment": "Estimate arithmetic and memory-access energy for one operation with sourced assumptions. Work without a walkthrough or generated core solution; write 2-4 acceptance checks first. Preserve your original Build / experiment task as the week's project milestone.",
@@ -2817,15 +2652,15 @@
       "educationalDemoOnly": false,
       "minimumToPass": null,
       "isBoundedCore": false,
-      "sourceLine": 898,
+      "sourceLine": 845,
       "projectIds": [
         "P09"
       ]
     },
     {
-      "number": 83,
+      "number": 74,
       "title": "Measuring power",
-      "blockId": 13,
+      "blockId": 14,
       "learn": "GPU power counters, idle vs load.",
       "build": "Log power draw during inference.",
       "assignment": "Log idle and active GPU power over a bounded inference workload on supported hardware. Work without a walkthrough or generated core solution; write 2-4 acceptance checks first. Preserve your original Build / experiment task as the week's project milestone.",
@@ -2842,15 +2677,15 @@
       "educationalDemoOnly": true,
       "minimumToPass": "Actual timestamped power samples if counters exist; otherwise complete a reproducible collection script and clearly label external data as modeled/referenced. Passing still requires all four assessment gates and manual verification; optional extensions never substitute for the core.",
       "isBoundedCore": true,
-      "sourceLine": 906,
+      "sourceLine": 853,
       "projectIds": [
         "P09"
       ]
     },
     {
-      "number": 84,
+      "number": 75,
       "title": "Joules per token",
-      "blockId": 13,
+      "blockId": 14,
       "learn": "Batch size and precision effects.",
       "build": "Measure joules per token across batch sizes and precisions.",
       "assignment": "Estimate or measure joules per token with explicit sampling interval and token count. Work without a walkthrough or generated core solution; write 2-4 acceptance checks first. Preserve your original Build / experiment task as the week's project milestone.",
@@ -2867,15 +2702,15 @@
       "educationalDemoOnly": true,
       "minimumToPass": "Calculate joules/token from actual watt-seconds and counted generated tokens, or provide an explicitly labeled estimate if hardware unavailable. Passing still requires all four assessment gates and manual verification; optional extensions never substitute for the core.",
       "isBoundedCore": true,
-      "sourceLine": 916,
+      "sourceLine": 863,
       "projectIds": [
         "P09"
       ]
     },
     {
-      "number": 85,
+      "number": 76,
       "title": "Data-centre scale",
-      "blockId": 13,
+      "blockId": 14,
       "learn": "Power, cooling, performance per watt.",
       "build": "Cost and energy model for serving at scale.",
       "assignment": "Build a simple total-cost/energy model for sustained inference at a named workload. Work without a walkthrough or generated core solution; write 2-4 acceptance checks first. Preserve your original Build / experiment task as the week's project milestone.",
@@ -2889,15 +2724,15 @@
       "educationalDemoOnly": true,
       "minimumToPass": null,
       "isBoundedCore": false,
-      "sourceLine": 926,
+      "sourceLine": 873,
       "projectIds": [
         "P09"
       ]
     },
     {
-      "number": 86,
+      "number": 77,
       "title": "KV cache",
-      "blockId": 14,
+      "blockId": 15,
       "learn": "Memory sizing: 2 x layers x KV heads x head dim x sequence x batch x bytes.",
       "build": "Calculate and verify KV memory for a real model.",
       "assignment": "Compute KV-cache memory for a chosen open model from dimensions and dtype. Work without a walkthrough or generated core solution; write 2-4 acceptance checks first. Preserve your original Build / experiment task as the week's project milestone.",
@@ -2914,15 +2749,15 @@
       "educationalDemoOnly": true,
       "minimumToPass": null,
       "isBoundedCore": false,
-      "sourceLine": 945,
+      "sourceLine": 892,
       "projectIds": [
         "P10"
       ]
     },
     {
-      "number": 87,
+      "number": 78,
       "title": "Batching and paged attention",
-      "blockId": 14,
+      "blockId": 15,
       "learn": "Continuous batching, paged KV cache.",
       "build": "Benchmark throughput under load.",
       "assignment": "Benchmark request throughput and latency for two batch sizes on one serving setup. Work without a walkthrough or generated core solution; write 2-4 acceptance checks first. Preserve your original Build / experiment task as the week's project milestone.",
@@ -2939,15 +2774,15 @@
       "educationalDemoOnly": true,
       "minimumToPass": "Compare p50/p95 latency and throughput under two tested batch sizes on a small serving setup. Passing still requires all four assessment gates and manual verification; optional extensions never substitute for the core.",
       "isBoundedCore": true,
-      "sourceLine": 953,
+      "sourceLine": 900,
       "projectIds": [
         "P10"
       ]
     },
     {
-      "number": 88,
+      "number": 79,
       "title": "Quantization",
-      "blockId": 14,
+      "blockId": 15,
       "learn": "Accuracy vs memory vs energy.",
       "build": "Compare quantized variants.",
       "assignment": "Compare two supported quantizations against a fixed held-out quality and latency sample. Work without a walkthrough or generated core solution; write 2-4 acceptance checks first. Preserve your original Build / experiment task as the week's project milestone.",
@@ -2964,15 +2799,15 @@
       "educationalDemoOnly": true,
       "minimumToPass": "Compare one quantized and one baseline model on a small fixed evaluation set, with quality and memory notes. Passing still requires all four assessment gates and manual verification; optional extensions never substitute for the core.",
       "isBoundedCore": true,
-      "sourceLine": 963,
+      "sourceLine": 910,
       "projectIds": [
         "P10"
       ]
     },
     {
-      "number": 89,
+      "number": 80,
       "title": "Speculative decoding",
-      "blockId": 14,
+      "blockId": 15,
       "learn": "Draft and verify.",
       "build": "Measure the speedup.",
       "assignment": "Implement a toy draft-and-verify speculative-decoding simulator. Work without a walkthrough or generated core solution; write 2-4 acceptance checks first. Preserve your original Build / experiment task as the week's project milestone.",
@@ -2989,15 +2824,15 @@
       "educationalDemoOnly": true,
       "minimumToPass": "A deterministic acceptance/rejection toy model with a verified cost/speedup equation; production decoding is stretch. Passing still requires all four assessment gates and manual verification; optional extensions never substitute for the core.",
       "isBoundedCore": true,
-      "sourceLine": 973,
+      "sourceLine": 920,
       "projectIds": [
         "P10"
       ]
     },
     {
-      "number": 90,
+      "number": 81,
       "title": "Scheduling and source reading",
-      "blockId": 14,
+      "blockId": 15,
       "learn": "The vLLM scheduler.",
       "build": "Trace a request through the code.",
       "assignment": "Trace a request path through a pinned inference-server source revision. Work without a walkthrough or generated core solution; write 2-4 acceptance checks first. Preserve your original Build / experiment task as the week's project milestone.",
@@ -3014,15 +2849,15 @@
       "educationalDemoOnly": true,
       "minimumToPass": null,
       "isBoundedCore": false,
-      "sourceLine": 983,
+      "sourceLine": 930,
       "projectIds": [
         "P10"
       ]
     },
     {
-      "number": 91,
+      "number": 82,
       "title": "Open-source contribution",
-      "blockId": 14,
+      "blockId": 15,
       "learn": "Issues, tests, review process.",
       "build": "Submit a fix or documentation improvement.",
       "assignment": "Reproduce a small open-source bug or documentation gap and submit a precise test or proposed patch. Work without a walkthrough or generated core solution; write 2-4 acceptance checks first. Preserve your original Build / experiment task as the week's project milestone.",
@@ -3036,7 +2871,7 @@
       "educationalDemoOnly": true,
       "minimumToPass": null,
       "isBoundedCore": false,
-      "sourceLine": 991,
+      "sourceLine": 938,
       "projectIds": [
         "P10"
       ]
@@ -3047,12 +2882,12 @@
       "id": "P01",
       "title": "Flagship support and knowledge workflow",
       "weekStart": 1,
-      "weekEnd": 47,
+      "weekEnd": 33,
       "scope": "Core.",
       "optional": false,
       "purpose": "A consent-based small-business support workflow, or an explicitly marked simulation. Gradually extend one codebase rather than starting a new app for each unit.",
       "functionalRequirements": "A user/admin can submit and triage cases, manage knowledge sources, search answers with citations, inspect logs, approve sensitive actions, and recover from failures. Multi-tenant isolation where relevant.",
-      "milestones": "W1–5 service and TLS; W6–11 schema, indexing, isolation and restore; W12–16 CI/CD and observability; W17–24 auth, integrations and reliable ingestion; W33–40 retrieval, evals, safe tools and review UI; W41–47 deployment/pilot and case study.",
+      "milestones": "W1–3 service and TLS; W4–8 schema, indexing, isolation and restore; W9–12 CI/CD and observability; W13–19 auth, integrations and reliable ingestion; W22–28 retrieval, evals, safe tools and review UI; W29–33 deployment/pilot and case study.",
       "acceptanceTests": "Cross-tenant access denied, duplicate webhook idempotent, backups restore cleanly, prompt injection cannot perform unauthorized actions, wrong answers can be flagged, rollback rehearsal succeeds. Record p50/p95 latency, held-out answer quality, cost/request and a clearly labeled sample size.",
       "requiredEvidence": "Demo + README, architecture and threat model, migration and restore scripts, reproducible evaluation runner, consent record or simulation flag, user-visible runbook, and before/after results with limitations.",
       "learningReferences": [
@@ -3070,18 +2905,18 @@
         }
       ],
       "exitCondition": "Demonstrate the bounded milestone in its mapped week, pass the four gates, attach evidence and **manually verify**; otherwise keep the relevant week locked. Any project-wide completion claim must pass all core acceptance checks.",
-      "sourceLine": 1010
+      "sourceLine": 957
     },
     {
       "id": "P02",
       "title": "Webhook reliability and replay service",
-      "weekStart": 19,
-      "weekEnd": 24,
+      "weekStart": 15,
+      "weekEnd": 19,
       "scope": "Optional independent service; skip if flagship slips.",
       "optional": true,
       "purpose": "A small standalone intake and replay service rather than a commercial webhook platform.",
       "functionalRequirements": "Authenticated intake with signature verification, durable event storage, retries with bounded backoff, idempotency key handling, dead-letter state, operator-only replay and traceable audit events.",
-      "milestones": "W19 verify signatures and persist; W20 rate-limit; W21 queue, deduplicate and replay; W22–24 fault injection, observability and design review.",
+      "milestones": "W15 verify signatures and persist; W16 rate-limit; W17 queue, deduplicate and replay; W18–19 fault injection, observability and design review.",
       "acceptanceTests": "Reject invalid signature, do not double-apply on duplicates, survive worker restart and replay without data loss, bound retry attempts, audit each manual replay; measure recovery time and duplicate-effect count.",
       "requiredEvidence": "Minimal API contract, tested worker, fault-injection script, replay command, README, design trade-offs and benchmark logs.",
       "learningReferences": [
@@ -3095,18 +2930,18 @@
         }
       ],
       "exitCondition": "Demonstrate the bounded milestone in its mapped week, pass the four gates, attach evidence and **manually verify**; otherwise keep the relevant week locked. Any project-wide completion claim must pass all core acceptance checks.",
-      "sourceLine": 1020
+      "sourceLine": 967
     },
     {
       "id": "P03",
       "title": "Neural network and tiny transformer laboratory",
-      "weekStart": 25,
-      "weekEnd": 32,
-      "scope": "Core laboratory.",
+      "weekStart": 34,
+      "weekEnd": 38,
+      "scope": "Core laboratory (opens Stage 2; builds on the Week 20 attention work).",
       "optional": false,
       "purpose": "Small CPU-friendly experiments to explain math and training, not a claim to build a production LLM.",
       "functionalRequirements": "NumPy similarity and gradients, from-scratch regression, micrograd-style autograd, small PyTorch model, tokenizer, tiny attention-based model and scoped adaptation experiment.",
-      "milestones": "W25–27 numerical basics; W28 autodiff; W29 PyTorch validation; W30 tokenization; W31 attention/model; W32 adaptation and limitations.",
+      "milestones": "W34–36 numerical basics; W37 autodiff; W38 PyTorch validation, tiny transformer built on the Week 20 attention notes, adaptation and limitations.",
       "acceptanceTests": "Gradient checks against finite differences; train/validation separation; decreasing loss on controlled data; deterministic seed; inspect shape and mask failures; show ablation or comparison with a baseline.",
       "requiredEvidence": "Notebook/code, training configuration, data provenance, plots with caveats, unit tests and plain-language explanation of backprop and attention.",
       "learningReferences": [
@@ -3124,18 +2959,18 @@
         }
       ],
       "exitCondition": "Demonstrate the bounded milestone in its mapped week, pass the four gates, attach evidence and **manually verify**; otherwise keep the relevant week locked. Any project-wide completion claim must pass all core acceptance checks.",
-      "sourceLine": 1030
+      "sourceLine": 977
     },
     {
       "id": "P04",
       "title": "OS internals laboratory: scheduler, allocator, shell",
-      "weekStart": 48,
-      "weekEnd": 53,
+      "weekStart": 39,
+      "weekEnd": 44,
       "scope": "Core educational implementations.",
       "optional": false,
       "purpose": "Narrow standalone utilities or simulations, not an operating system.",
       "functionalRequirements": "Implement a scheduler simulation, synchronized queue, small allocator or allocator simulation, append-only crash test, namespace experiment and a toy shell or xv6 syscall exercise.",
-      "milestones": "W48 scheduling; W49 concurrency; W50 memory; W51 crash consistency; W52 namespaces; W53 syscalls and shell.",
+      "milestones": "W39 scheduling; W40 concurrency; W41 memory; W42 crash consistency; W43 namespaces; W44 syscalls and shell.",
       "acceptanceTests": "Scheduler behavior checked against hand-worked cases, concurrency stress tests, allocator boundary and reuse tests, crash recovery checks, safe process spawning and signal handling. Mark platform-dependent demonstrations.",
       "requiredEvidence": "Tests, trace logs, failure matrix, portability caveats and short comparison to actual kernel behavior.",
       "learningReferences": [
@@ -3149,18 +2984,18 @@
         }
       ],
       "exitCondition": "Demonstrate the bounded milestone in its mapped week, pass the four gates, attach evidence and **manually verify**; otherwise keep the relevant week locked. Any project-wide completion claim must pass all core acceptance checks.",
-      "sourceLine": 1040
+      "sourceLine": 987
     },
     {
       "id": "P05",
       "title": "Educational B-tree key-value store",
-      "weekStart": 54,
-      "weekEnd": 59,
+      "weekStart": 45,
+      "weekEnd": 50,
       "scope": "Core educational implementation.",
       "optional": false,
       "purpose": "Small persistent store to understand pages, buffer management and recovery; avoid production database claims.",
       "functionalRequirements": "Page layout and serialization, B-tree lookup/insert and split, cache eviction, simple iterator/filter, append-only WAL with recovery, basic benchmark.",
-      "milestones": "W54 pages; W55 B-tree; W56 buffer pool; W57 scans; W58 WAL/recovery; W59 tests and benchmarking.",
+      "milestones": "W45 pages; W46 B-tree; W47 buffer pool; W48 scans; W49 WAL/recovery; W50 tests and benchmarking.",
       "acceptanceTests": "Property tests against an in-memory reference map; restart/persistence tests; randomized inserts; split corner cases; corruption and crash-injection tests. Compare throughput with fixed hardware and input sizes.",
       "requiredEvidence": "File format design, correctness harness, crash-test logs, README and benchmark methodology.",
       "learningReferences": [
@@ -3174,18 +3009,18 @@
         }
       ],
       "exitCondition": "Demonstrate the bounded milestone in its mapped week, pass the four gates, attach evidence and **manually verify**; otherwise keep the relevant week locked. Any project-wide completion claim must pass all core acceptance checks.",
-      "sourceLine": 1050
+      "sourceLine": 997
     },
     {
       "id": "P06",
       "title": "Replicated key-value store laboratory",
-      "weekStart": 60,
-      "weekEnd": 65,
+      "weekStart": 51,
+      "weekEnd": 56,
       "scope": "Core educational subset.",
       "optional": false,
       "purpose": "A bounded replication and Raft experiment; full fault-tolerant production consensus is out of scope.",
       "functionalRequirements": "Lamport-clock simulation, primary-backup prototype, consensus traces, leader election, constrained log replication and deterministic fault tests.",
-      "milestones": "W60 clocks; W61 replication; W62 Paxos trace; W63 leader election; W64 log replication; W65 failure tests.",
+      "milestones": "W51 clocks; W52 replication; W53 Paxos trace; W54 leader election; W55 log replication; W56 failure tests.",
       "acceptanceTests": "Verify one leader per term in tested scenarios, no committed-entry divergence under modeled failures, correct replay following restarts, and documented known deviations from full Raft. Use deterministic schedules and assertions.",
       "requiredEvidence": "Simulation harness, invariant checks, event traces, model limitations and paper-based comparison.",
       "learningReferences": [
@@ -3199,18 +3034,18 @@
         }
       ],
       "exitCondition": "Demonstrate the bounded milestone in its mapped week, pass the four gates, attach evidence and **manually verify**; otherwise keep the relevant week locked. Any project-wide completion claim must pass all core acceptance checks.",
-      "sourceLine": 1060
+      "sourceLine": 1007
     },
     {
       "id": "P07",
       "title": "Train a small language model",
-      "weekStart": 66,
-      "weekEnd": 73,
+      "weekStart": 57,
+      "weekEnd": 64,
       "scope": "Core scaled experiment.",
       "optional": false,
       "purpose": "A small reproducible LM training experiment at available budget; no claim of frontier-scale training.",
       "functionalRequirements": "Build a clean documented corpus, training loop, optimizer comparison, architecture variation, memory accounting and small training run with held-out validation.",
-      "milestones": "W66 optimizers; W67 scaling sample; W68 architecture; W69 data; W70 precision/memory; W71 parallelism demonstration; W72 planning; W73 train and report.",
+      "milestones": "W57 optimizers; W58 scaling sample; W59 architecture; W60 data; W61 precision/memory; W62 parallelism demonstration; W63 planning; W64 train and report.",
       "acceptanceTests": "Prevent train/validation contamination, use reproducible seeds and token counts, report loss and compute cost, compare at least one baseline, run NaN and OOM handling tests.",
       "requiredEvidence": "Training code, config, dataset card, loss curves, compute ledger, reproducibility notes and limitations.",
       "learningReferences": [
@@ -3224,18 +3059,18 @@
         }
       ],
       "exitCondition": "Demonstrate the bounded milestone in its mapped week, pass the four gates, attach evidence and **manually verify**; otherwise keep the relevant week locked. Any project-wide completion claim must pass all core acceptance checks.",
-      "sourceLine": 1070
+      "sourceLine": 1017
     },
     {
       "id": "P08",
       "title": "GPU kernels and performance laboratory",
-      "weekStart": 74,
-      "weekEnd": 81,
+      "weekStart": 65,
+      "weekEnd": 72,
       "scope": "Core when GPU available; simulation is labeled.",
       "optional": false,
       "purpose": "Bounded kernels and measurements, explicitly simulated where physical profiling is inaccessible.",
       "functionalRequirements": "Bandwidth measurement, roofline estimate, vector add and tiled matrix multiplication, profiling, precision comparison, attention benchmark, TPU systolic-array trace and accelerator comparison.",
-      "milestones": "W74 memory bandwidth; W75 roofline; W76–77 kernels; W78 precision; W79 attention; W80 TPU; W81 interconnect comparison.",
+      "milestones": "W65 memory bandwidth; W66 roofline; W67–68 kernels; W69 precision; W70 attention; W71 TPU; W72 interconnect comparison.",
       "acceptanceTests": "Correctness within declared numerical tolerance, warmups and repetitions, hardware details, bandwidth and latency methodology, CPU/reference comparison, report speedups only against documented baselines.",
       "requiredEvidence": "Kernel source, benchmark harness, profiler exports or simulated tags, reproducible charts and hardware limitations.",
       "learningReferences": [
@@ -3249,18 +3084,18 @@
         }
       ],
       "exitCondition": "Demonstrate the bounded milestone in its mapped week, pass the four gates, attach evidence and **manually verify**; otherwise keep the relevant week locked. Any project-wide completion claim must pass all core acceptance checks.",
-      "sourceLine": 1080
+      "sourceLine": 1027
     },
     {
       "id": "P09",
       "title": "Energy per token measurement",
-      "weekStart": 82,
-      "weekEnd": 85,
+      "weekStart": 73,
+      "weekEnd": 76,
       "scope": "Core analysis; real energy only if counters available.",
       "optional": false,
       "purpose": "Quantify, or honestly estimate, energy and serving efficiency on a repeatable workload.",
       "functionalRequirements": "Published energy-cost estimation, GPU idle/load power logging where available, energy integration across inference workload, batch/precision comparison and data-center model.",
-      "milestones": "W82 methodology; W83 power measurements; W84 joules per token; W85 data-center model.",
+      "milestones": "W73 methodology; W74 power measurements; W75 joules per token; W76 data-center model.",
       "acceptanceTests": "Subtract or separately report idle power, sample counters over run time, document counter permissions and uncertainty, compare workloads at fixed token output, never label estimates as physical measurements.",
       "requiredEvidence": "Power logs or estimation model, units, assumptions, repeated run summary and uncertainty statement.",
       "learningReferences": [
@@ -3274,18 +3109,18 @@
         }
       ],
       "exitCondition": "Demonstrate the bounded milestone in its mapped week, pass the four gates, attach evidence and **manually verify**; otherwise keep the relevant week locked. Any project-wide completion claim must pass all core acceptance checks.",
-      "sourceLine": 1090
+      "sourceLine": 1037
     },
     {
       "id": "P10",
       "title": "Inference serving and open-source contribution",
-      "weekStart": 86,
-      "weekEnd": 91,
+      "weekStart": 77,
+      "weekEnd": 82,
       "scope": "Core learning; contribution submission not merge-guaranteed.",
       "optional": false,
       "purpose": "Investigate real inference bottlenecks and contribute an appropriately scoped patch, test or documentation improvement.",
       "functionalRequirements": "Measure KV cache, batching, quantization, speculative decoding and scheduler behavior; identify a reproducible issue and prepare a targeted upstream change.",
-      "milestones": "W86 KV sizing; W87 batching; W88 quantization; W89 speculative decoding; W90 source reading; W91 contribution submission.",
+      "milestones": "W77 KV sizing; W78 batching; W79 quantization; W80 speculative decoding; W81 source reading; W82 contribution submission.",
       "acceptanceTests": "Benchmark p50/p95 latency and throughput under fixed workloads, verify output quality where relevant, show reproducer + regression test for code fix, follow project contribution guidelines. No invented merged-PR result.",
       "requiredEvidence": "Benchmarks, code trace, reproducer, issue/PR link when available, review feedback and final technical case study.",
       "learningReferences": [
@@ -3299,188 +3134,196 @@
         }
       ],
       "exitCondition": "Demonstrate the bounded milestone in its mapped week, pass the four gates, attach evidence and **manually verify**; otherwise keep the relevant week locked. Any project-wide completion claim must pass all core acceptance checks.",
-      "sourceLine": 1100
+      "sourceLine": 1047
     }
   ],
   "milestones": [
     {
       "weeks": [
-        5
+        3
       ],
       "evidence": "Server deployed with TLS; you can debug from logs",
-      "rawWeekCell": "5"
+      "rawWeekCell": "3"
     },
     {
       "weeks": [
-        11
+        8
       ],
       "evidence": "1M-row schema, a race condition fixed, a restore drill done, RLS working",
-      "rawWeekCell": "11"
+      "rawWeekCell": "8"
     },
     {
       "weeks": [
-        16
+        12
       ],
       "evidence": "Push-to-deploy with monitoring",
-      "rawWeekCell": "16"
+      "rawWeekCell": "12"
     },
     {
       "weeks": [
-        24
+        19
       ],
-      "evidence": "Reliable ingestion pipeline, webhook service, defended design doc. Python checkpoint passed and first mock interview within Week 24",
-      "rawWeekCell": "24"
+      "evidence": "Reliable ingestion pipeline, webhook service, defended design doc. Python checkpoint passed and first mock interview within Week 19",
+      "rawWeekCell": "19"
+    },
+    {
+      "weeks": [
+        21
+      ],
+      "evidence": "You can explain tokens, embeddings and attention, and how fine-tuning and LoRA adapt a model",
+      "rawWeekCell": "21"
+    },
+    {
+      "weeks": [
+        28
+      ],
+      "evidence": "Working agent with eval numbers. Outreach began Week 25; first role-matched applications by Week 28 if ready",
+      "rawWeekCell": "28"
     },
     {
       "weeks": [
         32
       ],
-      "evidence": "You can explain backprop and attention; you built a tiny transformer",
+      "evidence": "Four-week pilot complete, case study published",
       "rawWeekCell": "32"
     },
     {
       "weeks": [
-        40
-      ],
-      "evidence": "Working agent with eval numbers. Outreach began Week 36; first role-matched applications by Week 40 if ready",
-      "rawWeekCell": "40"
-    },
-    {
-      "weeks": [
-        46
-      ],
-      "evidence": "Four-week pilot complete, case study published",
-      "rawWeekCell": "46"
-    },
-    {
-      "weeks": [
-        47
+        33
       ],
       "evidence": "Interview-ready",
-      "rawWeekCell": "47"
+      "rawWeekCell": "33"
     },
     {
       "weeks": [
-        53,
-        59,
-        65
+        38,
+        44,
+        50,
+        56
       ],
-      "evidence": "Allocator and toy shell / B-tree store / replicated store",
-      "rawWeekCell": "53 / 59 / 65"
+      "evidence": "Backprop explained and tiny transformer built (P03) / allocator and toy shell / B-tree store / replicated store",
+      "rawWeekCell": "38 / 44 / 50 / 56"
     },
     {
       "weeks": [
-        73,
-        81,
-        85
+        64,
+        72,
+        76
       ],
       "evidence": "Small LM trained / roofline and CUDA kernels / joules per token measured",
-      "rawWeekCell": "73 / 81 / 85"
+      "rawWeekCell": "64 / 72 / 76"
     },
     {
       "weeks": [
-        91
+        82
       ],
       "evidence": "First open-source contribution to an inference project",
-      "rawWeekCell": "91"
+      "rawWeekCell": "82"
     }
   ],
   "resourceRouting": [
     {
       "blockId": 1,
       "label": "1 Linux/networking",
-      "weeks": "1–5",
+      "weeks": "1–3",
       "universityAnchor": "MIT Missing Semester; Stanford CS144 (selected networking tasks)",
       "practicalCompanion": "OSTEP, man-pages, Beej"
     },
     {
       "blockId": 2,
       "label": "2 PostgreSQL",
-      "weeks": "6–11",
+      "weeks": "4–8",
       "universityAnchor": "CMU 15-445 SQL/index/transaction problems",
       "practicalCompanion": "PostgreSQL official docs"
     },
     {
       "blockId": 3,
       "label": "3 DevOps/testing",
-      "weeks": "12–16",
+      "weeks": "9–12",
       "universityAnchor": "MIT 6.1810 testing mindset",
       "practicalCompanion": "Docker/GitHub Actions/OpenTelemetry docs, Google SRE"
     },
     {
       "blockId": 4,
       "label": "4 Backend/design",
-      "weeks": "17–24",
+      "weeks": "13–19",
       "universityAnchor": "Stanford CS144 selective systems tasks",
       "practicalCompanion": "OWASP and framework reference docs"
     },
     {
       "blockId": 5,
       "label": "5 AI foundations",
-      "weeks": "25–32",
-      "universityAnchor": "Stanford CS229, CS336 selective exercises",
-      "practicalCompanion": "Karpathy Zero to Hero, PyTorch"
+      "weeks": "20–21",
+      "universityAnchor": "Stanford CS336 selective exercises",
+      "practicalCompanion": "Karpathy Zero to Hero, Hugging Face"
     },
     {
       "blockId": 6,
       "label": "6 Agents",
-      "weeks": "33–40",
+      "weeks": "22–28",
       "universityAnchor": "Stanford CS336 topics; Full Stack Deep Learning",
       "practicalCompanion": "Provider/MCP docs, OWASP LLM"
     },
     {
       "blockId": 7,
       "label": "7 FDE launch",
-      "weeks": "41–47",
+      "weeks": "29–33",
       "universityAnchor": "Stanford d.school discovery practices",
       "practicalCompanion": "Google SRE Workbook"
     },
     {
       "blockId": 8,
-      "label": "8 OS internals",
-      "weeks": "48–53",
+      "label": "8 Math/ML foundations",
+      "weeks": "34–38",
+      "universityAnchor": "Stanford CS229 selective exercises",
+      "practicalCompanion": "Karpathy Zero to Hero, PyTorch"
+    },
+    {
+      "blockId": 9,
+      "label": "9 OS internals",
+      "weeks": "39–44",
       "universityAnchor": "MIT 6.1810 xv6 labs",
       "practicalCompanion": "OSTEP"
     },
     {
-      "blockId": 9,
-      "label": "9 DB internals",
-      "weeks": "54–59",
+      "blockId": 10,
+      "label": "10 DB internals",
+      "weeks": "45–50",
       "universityAnchor": "CMU 15-445 project specifications",
       "practicalCompanion": "PostgreSQL source/docs"
     },
     {
-      "blockId": 10,
-      "label": "10 Distributed systems",
-      "weeks": "60–65",
+      "blockId": 11,
+      "label": "11 Distributed systems",
+      "weeks": "51–56",
       "universityAnchor": "MIT 6.5840 papers and Raft exercises",
       "practicalCompanion": "Raft paper, DDIA"
     },
     {
-      "blockId": 11,
-      "label": "11 Deep learning",
-      "weeks": "66–73",
+      "blockId": 12,
+      "label": "12 Deep learning",
+      "weeks": "57–64",
       "universityAnchor": "Stanford CS336, CS224n",
       "practicalCompanion": "PyTorch docs"
     },
     {
-      "blockId": 12,
-      "label": "12 Accelerators",
-      "weeks": "74–81",
+      "blockId": 13,
+      "label": "13 Accelerators",
+      "weeks": "65–72",
       "universityAnchor": "Stanford CS336 model-systems topics",
       "practicalCompanion": "CUDA documentation, FlashAttention"
     },
     {
-      "blockId": 13,
-      "label": "13 Energy",
-      "weeks": "82–85",
+      "blockId": 14,
+      "label": "14 Energy",
+      "weeks": "73–76",
       "universityAnchor": "Stanford CS336 cost context",
       "practicalCompanion": "Measurement papers and power tools"
     },
     {
-      "blockId": 14,
-      "label": "14 Inference",
-      "weeks": "86–91",
+      "blockId": 15,
+      "label": "15 Inference",
+      "weeks": "77–82",
       "universityAnchor": "Stanford CS336 serving topics",
       "practicalCompanion": "vLLM source, PagedAttention"
     }
@@ -3521,27 +3364,27 @@
       },
       {
         "id": "python_w24",
-        "label": "Python checkpoint before Week 24 verification",
-        "gatesWeek": 24,
-        "unlocksWeek": 25,
+        "label": "Python checkpoint before Week 19 verification",
+        "gatesWeek": 19,
+        "unlocksWeek": 20,
         "kind": "python"
       },
       {
         "id": "systems_w48",
-        "label": "Systems-language checkpoint before Stage 2 assessed work",
-        "gatesWeek": 48,
+        "label": "Systems-language checkpoint before Week 39 (OS internals)",
+        "gatesWeek": 39,
         "kind": "systems"
       },
       {
         "id": "gpu_w76",
-        "label": "Measured GPU evidence for Week 76",
-        "gatesWeek": 76,
+        "label": "Measured GPU evidence for Week 67",
+        "gatesWeek": 67,
         "kind": "hardware_gpu"
       },
       {
         "id": "pilot_consent",
         "label": "Real-data consent or SIMULATED pilot mode",
-        "gatesWeek": 43,
+        "gatesWeek": 31,
         "kind": "consent"
       }
     ],
@@ -3551,30 +3394,30 @@
       "docs/papers/paper-name.md": "Paper and original URL:\nQuestion addressed:\nImportant assumptions:\nMain mechanism / diagram:\nStrongest experimental result (with sample, hardware and caveat):\nOne limitation or counterexample:\nMy small replication/derivation (or why not feasible):"
     },
     "examinationProtocolSourceLines": [
-      1136,
-      1145
+      1083,
+      1092
     ],
     "pilotSourceLines": [
-      1236,
-      1242
+      1184,
+      1190
     ],
     "boundedCoreWeeks": [
-      26,
-      28,
-      31,
-      63,
+      20,
+      35,
+      37,
+      54,
+      55,
+      56,
       64,
-      65,
-      73,
-      76,
-      77,
+      67,
+      68,
+      69,
+      70,
+      74,
+      75,
       78,
       79,
-      83,
-      84,
-      87,
-      88,
-      89
+      80
     ]
   }
 }

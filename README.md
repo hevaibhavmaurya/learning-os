@@ -1,6 +1,6 @@
 # Learning OS
 
-Private single-user study desk for the 91-week FDE / deep-fundamentals roadmap. React SPA + same-origin Cloudflare Worker API (Hono) + D1 + R2. Curriculum authority is `reference/roadmap.md`; visual authority is `reference/index7.html`.
+Private single-user study desk for the 82-week (33-week FDE Stage 1 + Stage 2) FDE / deep-fundamentals roadmap. React SPA + same-origin Cloudflare Worker API (Hono) + D1 + R2. Curriculum authority is `reference/roadmap.md`; visual authority is `reference/index7.html`.
 
 This rebuild uses dedicated TanStack Router routes, feature modules, explicit Zod contracts, and scoped TanStack Query keys. It does **not** use a central view switch, an all-data workspace bootstrap, or a generic `act` dispatcher.
 

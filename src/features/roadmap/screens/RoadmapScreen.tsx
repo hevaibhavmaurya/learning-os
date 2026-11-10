@@ -23,6 +23,7 @@ import {
 } from "@/shared/lib/week-status";
 import type { RoadmapWeekCell } from "@/shared/contracts/roadmap";
 import { useRoadmapQuery } from "../queries";
+import { TOTAL_BLOCKS, TOTAL_WEEKS } from "@/shared/domain/curriculum-shape";
 
 function displayState(cell: RoadmapWeekCell): WeekDisplayState {
   return cell.locked ? "LOCKED" : cell.status;
@@ -213,7 +214,7 @@ export function RoadmapScreen() {
       <div className="flex flex-wrap items-end gap-4 justify-between">
         <div>
           <p className="text-sm muted flex items-center gap-2">
-            91 weeks · 14 blocks · 13 hours a week{" "}
+            {TOTAL_WEEKS} weeks · {TOTAL_BLOCKS} blocks · 13 hours a week{" "}
             {data.isDemo ? <DemoBadge /> : null}
           </p>
           <h1 className="serif text-4xl md:text-5xl mt-1">The journey</h1>
@@ -231,7 +232,7 @@ export function RoadmapScreen() {
         </Link>
       </div>
 
-      <section className="mt-8" aria-label="Overview of all 91 weeks">
+      <section className="mt-8" aria-label={`Overview of all ${TOTAL_WEEKS} weeks`}>
         <div
           className="grid gap-[3px]"
           style={{ gridTemplateColumns: "repeat(46,minmax(0,1fr))" }}

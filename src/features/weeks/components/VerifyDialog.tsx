@@ -5,6 +5,7 @@ import { Icon } from "@/components/ui/Icon";
 import { useLayer } from "@/components/ui/layer-context";
 import type { WeekDetailResponse } from "@/shared/contracts/weeks";
 import { GATES_UI } from "../lib/gates-ui";
+import { TOTAL_WEEKS } from "@/shared/domain/curriculum-shape";
 
 export function VerifyDialog({
   weekNumber,
@@ -56,7 +57,7 @@ export function VerifyDialog({
     >
       <p className="text-sm ink2">
         You are confirming that this evidence shows independent, reproducible
-        understanding. This unlocks Week {weekNumber + 1 > 91 ? "completion" : weekNumber + 1}{" "}
+        understanding. This unlocks Week {weekNumber + 1 > TOTAL_WEEKS ? "completion" : weekNumber + 1}{" "}
         and schedules reviews at +1, +4, +8 and +16 weeks from today.
       </p>
       {latest ? (

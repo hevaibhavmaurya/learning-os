@@ -1,5 +1,6 @@
 import { z } from "zod";
 import { cursorPageSchema } from "./common";
+import { TOTAL_WEEKS } from "@/shared/domain/curriculum-shape";
 
 export const postStatusSchema = z.enum([
   "idea",
@@ -82,7 +83,7 @@ export const postUpdateSchema = z.object({
   expectedRevision: z.number().int().nonnegative(),
   title: z.string().max(500).optional(),
   status: postStatusSchema.optional(),
-  weekNumber: z.number().int().min(1).max(91).nullable().optional(),
+  weekNumber: z.number().int().min(1).max(TOTAL_WEEKS).nullable().optional(),
   projectId: z.string().nullable().optional(),
   plannedAt: z.string().nullable().optional(),
   publishedAt: z.string().nullable().optional(),

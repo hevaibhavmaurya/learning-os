@@ -1,6 +1,6 @@
 # Curriculum Coverage Matrix
 
-Authority: `reference/roadmap.md` (SHA-256 `91f6581cfe57d985881617bd7cba43da8bd8d8dee852e909d4b9d789fcf9e595`).
+Authority: `reference/roadmap.md` (SHA-256 `9c3756e589d7153a9f56cb5fb131c95fa4db9dcafde290fa6d06b402673a7af6`).
 
 Generated content: `content/roadmap.json` via `pnpm content:build`. Drift check: `pnpm content:check`.
 
@@ -9,9 +9,9 @@ Generated content: `content/roadmap.json` via `pnpm content:build`. Drift check:
 | Section | Schema | Screens | Checks |
 | --- | --- | --- | --- |
 | Meta / version / hours | `meta` | Settings variance, Progress totals | content:check |
-| Stages 1–2 (47/48) | `stages` | Roadmap stage accordions | content:check |
-| 14 blocks | `blocks[]` | Roadmap, Week Overview | content:check |
-| 91 weeks | `weeks[]` | Week tabs, Roadmap heat | content:check + e2e |
+| Stages 1–2 (1–33 / 34–82) | `stages` | Roadmap stage accordions | content:check |
+| 15 blocks | `blocks[]` | Roadmap, Week Overview | content:check |
+| 82 weeks | `weeks[]` | Week tabs, Roadmap heat | content:check + e2e |
 | 16 bounded-core MTP | `weeks[].minimumToPass` | Week Build/Verify | content:check |
 | P01–P10 | `projects[]` | Projects | content:check |
 | 11 milestone rows | `milestones[]` | Progress, Roadmap | content:check |

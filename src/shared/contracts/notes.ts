@@ -1,5 +1,6 @@
 import { z } from "zod";
 import { cursorPageSchema } from "./common";
+import { TOTAL_WEEKS } from "@/shared/domain/curriculum-shape";
 
 export const noteKindSchema = z.enum(["note", "resource"]);
 
@@ -14,7 +15,7 @@ export const noteListFilterSchema = z.enum([
 export const noteListQuerySchema = cursorPageSchema.extend({
   q: z.string().max(200).optional(),
   tag: z.string().max(64).optional(),
-  weekNumber: z.number().int().min(1).max(91).optional(),
+  weekNumber: z.number().int().min(1).max(TOTAL_WEEKS).optional(),
   filter: noteListFilterSchema.optional(),
   includeArchived: z.boolean().optional(),
   includeTrashed: z.boolean().optional(),
@@ -72,7 +73,7 @@ export const noteCreateSchema = z.object({
   plainText: z.string().max(500_000).optional(),
   url: z.string().max(2000).nullable().optional(),
   tags: z.array(z.string().max(64)).max(50).optional(),
-  weekNumber: z.number().int().min(1).max(91).nullable().optional(),
+  weekNumber: z.number().int().min(1).max(TOTAL_WEEKS).nullable().optional(),
   projectId: z.string().nullable().optional(),
   templateId: z
     .enum(["evidence", "project", "block", "paper"])
@@ -88,7 +89,7 @@ export const noteUpdateSchema = z.object({
   plainText: z.string().max(500_000).optional(),
   url: z.string().max(2000).nullable().optional(),
   tags: z.array(z.string().max(64)).max(50).optional(),
-  weekNumber: z.number().int().min(1).max(91).nullable().optional(),
+  weekNumber: z.number().int().min(1).max(TOTAL_WEEKS).nullable().optional(),
   projectId: z.string().nullable().optional(),
 });
 
